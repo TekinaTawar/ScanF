@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './screens/intro_slider.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,6 +18,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(body: IntoScreen(),);
   }
 }
