@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './screens/intro_slider.dart';
+import './screens/create_profile_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,6 +19,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: IntoScreen(),);
+    return Scaffold(body:ProfileScreen(),);
   }
 }
