@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './screens/intro_slider.dart';
+// import './screens/intro_slider.dart';
 import './screens/create_profile_screen.dart';
 
 void main() => runApp(MyApp());
