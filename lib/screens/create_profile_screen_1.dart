@@ -137,6 +137,7 @@ class ProfileScreen extends StatelessWidget {
                   left: 37,
                 ),
               ),
+              SizedBox(height: 300,),
               Row(
                 children: <Widget>[
                   Container(
