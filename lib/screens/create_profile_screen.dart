@@ -121,7 +121,7 @@ class ProfileScreen extends StatelessWidget {
                       labelText: 'Phone Number',
                     ),
                   ),
-                  width: 264,
+                  width: 230,
                   height: 38.77,
                   padding: EdgeInsets.only(right: 10),
                 ),
