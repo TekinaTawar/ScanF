@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/dropdown_country_code.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
@@ -7,7 +8,7 @@ class ProfileScreen extends StatelessWidget {
     final double width = MediaQuery.of(context).size.width;
     return Container(
       // color: Colors.yellow,
-      // color: Color(0xfff5f5f5),
+      color: Color(0xfff5f5f5),
       child: SafeArea(
         child: Container(
           // color: Colors.purple,
@@ -18,19 +19,19 @@ class ProfileScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Container(
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.only(bottom: 5, left: 5, right: 5, top: 20),
                 // color: Colors.blue,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
                       'Create Profile',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 32),
                     ),
                     Text(
                       'This helps us to personalize your experience throughout the app.',
                       style: TextStyle(
-                          fontSize: 11, color: Color.fromRGBO(0, 0, 0, 0.38)),
+                          fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.38)),
                     )
                   ],
                 ),
@@ -41,51 +42,82 @@ class ProfileScreen extends StatelessWidget {
                 child: Center(
                   child: Stack(
                     children: <Widget>[
-                      CircleAvatar(
-                        backgroundColor: Colors.blue,
-                        child: Icon(
-                          Icons.account_circle,
-                          size: 71,
-                          color: Colors.grey,
+                      Center(
+                        child: Container(
+                          height: height * 0.2 - 40,
+                          width: height * 0.2 - 40,
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(colors: [
+                                Color(0xff518ef8),
+                                Color(0xff75e3fd)
+                              ]),
+                              borderRadius:
+                                  BorderRadius.circular(height * 0.2 - 40)),
                         ),
-                        radius: 41,
                       ),
+                      Center(
+                        child: Container(
+                          height: height * 0.2 - 55,
+                          width: height * 0.2 - 55,
+                          decoration: BoxDecoration(
+                              color: Color(0xfff5f5f5),
+                              borderRadius:
+                                  BorderRadius.circular(height * 0.2 - 55)),
+                        ),
+                      ),
+                      Center(
+                        child: Icon(
+                          Icons.person,
+                          size: height * 0.2 - 80,
+                          color: Color(0xffdedede),
+                        ),
+                      )
                     ],
                   ),
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(bottom: 5),
+                padding: EdgeInsets.only(bottom: 20, left: 5, right: 5),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    GestureDetector(
-                      child: Container(
-                        height: 8,
-                        width: 96,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4),
-                          color: Color(0xfffeb729),
+                    Expanded(
+                      flex: 1,
+                      child: GestureDetector(
+                        child: Container(
+                          height: 12,
+                          // width: 96,
+                          decoration: BoxDecoration(
+                            // border: Border.all(style: BorderStyle.solid),
+                            borderRadius: BorderRadius.circular(4),
+                            color: Color(0xfffeb729),
+                          ),
                         ),
                       ),
                     ),
-                    GestureDetector(
-                      child: Container(
-                        height: 8,
-                        width: 96,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4),
-                          color: Color(0xff0ed2f7),
+                    Expanded(
+                      flex: 1,
+                      child: GestureDetector(
+                        child: Container(
+                          height: 8,
+                          // width: 96,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color: Color(0xff0ed2f7),
+                          ),
                         ),
                       ),
                     ),
-                    GestureDetector(
-                      child: Container(
-                        height: 8,
-                        width: 96,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4),
-                          color: Color(0xff2970fe),
+                    Expanded(
+                      flex: 1,
+                      child: GestureDetector(
+                        child: Container(
+                          height: 8,
+                          // width: 96,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color: Color(0xff2970fe),
+                          ),
                         ),
                       ),
                     ),
@@ -97,18 +129,25 @@ class ProfileScreen extends StatelessWidget {
                 // color: Colors.lime,
                 height: height * 0.06,
                 width: double.infinity,
-                child: TextField(
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Color(0xff2970fe)),
+                child: Container(
+                  decoration: BoxDecoration(
+                      // boxShadow: [BoxShadow(spreadRadius: 1,offset: Offset.fromDirection(1.57),blurRadius: 1)],
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          borderSide: BorderSide(color: Color(0xff2970fe)),
                         ),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Color(0xfffeb729),width: 2),),
-                    labelText: 'Full Name',
-                    labelStyle: TextStyle(color:Color.fromRGBO(0, 0, 0, 0.38))
-
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          borderSide:
+                              BorderSide(color: Color(0xfffeb729), width: 2),
+                        ),
+                        labelText: 'Full Name',
+                        labelStyle:
+                            TextStyle(color: Color.fromRGBO(0, 0, 0, 0.38))),
                   ),
                 ),
               ),
@@ -120,39 +159,55 @@ class ProfileScreen extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Expanded(
-                      flex: 3,
-                      // color: Colors.pink,
-                      child: TextField(
-                        decoration: InputDecoration(
-                           focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Color(0xfffeb729)),
+                        flex: 3,
+                        // color: Colors.pink,
+                        child: CountryCodeSelector()
+                        // TextField(
+                        //   decoration: InputDecoration(
+                        //       focusedBorder: OutlineInputBorder(
+                        //         borderRadius:
+                        //             BorderRadius.all(Radius.circular(10)),
+                        //         borderSide: BorderSide(color: Color(0xff2970fe)),
+                        //       ),
+                        //       enabledBorder: OutlineInputBorder(
+                        //         borderRadius:
+                        //             BorderRadius.all(Radius.circular(10)),
+                        //         borderSide: BorderSide(
+                        //             color: Color(0xfffeb729), width: 2),
+                        //       ),
+                        //       labelText: '+',
+                        //       labelStyle:
+                        //           TextStyle(color: Color.fromRGBO(0, 0, 0, 0.38)),
+                        //       fillColor: Color(0xfffeb729)),
+                        // ),
                         ),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Color(0xfffeb729)),),
-                            labelText: '+',
-                            labelStyle: TextStyle(color:Color.fromRGBO(0, 0, 0, 0.38)),
-                            fillColor: Color(0xfffeb729)),
-                      ),
-                    ),
                     Expanded(
                       child: SizedBox(),
                       flex: 1,
                     ),
                     Expanded(
                       flex: 12,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Color(0xfffeb729)),
-                        ),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Color(0xfffeb729)),),
-                          labelText: 'Phone Number',
-                          labelStyle: TextStyle(color:Color.fromRGBO(0, 0, 0, 0.38))
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: TextField(
+                          decoration: InputDecoration(
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)),
+                                borderSide:
+                                    BorderSide(color: Color(0xff2970fe)),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)),
+                                borderSide: BorderSide(
+                                    color: Color(0xfffeb729), width: 2),
+                              ),
+                              labelText: 'Phone Number',
+                              labelStyle: TextStyle(
+                                  color: Color.fromRGBO(0, 0, 0, 0.38))),
                         ),
                       ),
                     ),
@@ -166,12 +221,12 @@ class ProfileScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Container(
+                      padding: EdgeInsets.only(left: 2),
                       child: Text(
                         'Date of Birth',
                         style: TextStyle(
                             fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.38)),
                       ),
-                      
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 3),
@@ -181,17 +236,27 @@ class ProfileScreen extends StatelessWidget {
                         children: <Widget>[
                           Expanded(
                             flex: 2,
-                            child: TextField(
-                              decoration: InputDecoration(
-                                focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Color(0xfffeb729)),
-                        ),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Color(0xfffeb729)),),
-                                labelText: 'dd',
-                                labelStyle: TextStyle(color:Color.fromRGBO(0, 0, 0, 0.38))
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(10)),
+                                      borderSide:
+                                          BorderSide(color: Color(0xff2970fe)),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(10)),
+                                      borderSide: BorderSide(
+                                          color: Color(0xfffeb729), width: 2),
+                                    ),
+                                    labelText: 'dd',
+                                    labelStyle: TextStyle(
+                                        color: Color.fromRGBO(0, 0, 0, 0.38))),
                               ),
                             ),
                           ),
@@ -201,17 +266,27 @@ class ProfileScreen extends StatelessWidget {
                           ),
                           Expanded(
                             flex: 2,
-                            child: TextField(
-                              decoration: InputDecoration(
-                                focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Color(0xfffeb729)),
-                        ),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Color(0xfffeb729)),),
-                                labelText: 'mm',
-                                labelStyle: TextStyle(color:Color.fromRGBO(0, 0, 0, 0.38))
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(10)),
+                                      borderSide:
+                                          BorderSide(color: Color(0xff2970fe)),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(10)),
+                                      borderSide: BorderSide(
+                                          color: Color(0xfffeb729), width: 2),
+                                    ),
+                                    labelText: 'mm',
+                                    labelStyle: TextStyle(
+                                        color: Color.fromRGBO(0, 0, 0, 0.38))),
                               ),
                             ),
                           ),
@@ -221,17 +296,27 @@ class ProfileScreen extends StatelessWidget {
                           ),
                           Expanded(
                             flex: 4,
-                            child: TextField(
-                              decoration: InputDecoration(
-                                focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Color(0xfffeb729)),
-                        ),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Color(0xfffeb729)),),
-                                labelText: 'yyyy',
-                                labelStyle: TextStyle(color:Color.fromRGBO(0, 0, 0, 0.38))
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(10)),
+                                      borderSide:
+                                          BorderSide(color: Color(0xff2970fe)),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(10)),
+                                      borderSide: BorderSide(
+                                          color: Color(0xfffeb729), width: 2),
+                                    ),
+                                    labelText: 'yyyy',
+                                    labelStyle: TextStyle(
+                                        color: Color.fromRGBO(0, 0, 0, 0.38))),
                               ),
                             ),
                           ),
@@ -247,7 +332,7 @@ class ProfileScreen extends StatelessWidget {
                             'Next',
                             style: TextStyle(color: Color(0xfffee729)),
                           ),
-                          width: 288,
+                          width: double.infinity,
                           alignment: Alignment.center,
                         ),
                         color: Color(0xff2970fe),
