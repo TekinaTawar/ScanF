@@ -14,7 +14,6 @@ class ProfileScreen extends StatelessWidget {
           height: double.infinity,
           width: double.infinity,
           margin: EdgeInsets.only(left: width * 0.07, right: width * 0.07),
-          // child: TextField(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -39,6 +38,59 @@ class ProfileScreen extends StatelessWidget {
               Container(
                 // color: Colors.orange,
                 height: height * 0.2,
+                child: Center(
+                  child: Stack(
+                    children: <Widget>[
+                      CircleAvatar(
+                        backgroundColor: Colors.blue,
+                        child: Icon(
+                          Icons.account_circle,
+                          size: 71,
+                          color: Colors.grey,
+                        ),
+                        radius: 41,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(bottom: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    GestureDetector(
+                      child: Container(
+                        height: 8,
+                        width: 96,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          color: Color(0xfffeb729),
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      child: Container(
+                        height: 8,
+                        width: 96,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          color: Color(0xff0ed2f7),
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      child: Container(
+                        height: 8,
+                        width: 96,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          color: Color(0xff2970fe),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Container(
                 margin: EdgeInsets.all(5),
@@ -47,8 +99,16 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: TextField(
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Color(0xff2970fe)),
+                        ),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Color(0xfffeb729),width: 2),),
                     labelText: 'Full Name',
+                    labelStyle: TextStyle(color:Color.fromRGBO(0, 0, 0, 0.38))
+
                   ),
                 ),
               ),
@@ -64,14 +124,17 @@ class ProfileScreen extends StatelessWidget {
                       // color: Colors.pink,
                       child: TextField(
                         decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: '+91',
-                            focusColor: Colors.black,
+                           focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Color(0xfffeb729)),
+                        ),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Color(0xfffeb729)),),
+                            labelText: '+',
+                            labelStyle: TextStyle(color:Color.fromRGBO(0, 0, 0, 0.38)),
                             fillColor: Color(0xfffeb729)),
                       ),
-                      // width: 80,
-                      // height: 38.77,
-                      // padding: EdgeInsets.only(left: 38, right: 10),
                     ),
                     Expanded(
                       child: SizedBox(),
@@ -81,33 +144,37 @@ class ProfileScreen extends StatelessWidget {
                       flex: 12,
                       child: TextField(
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(),
+                          focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Color(0xfffeb729)),
+                        ),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Color(0xfffeb729)),),
                           labelText: 'Phone Number',
+                          labelStyle: TextStyle(color:Color.fromRGBO(0, 0, 0, 0.38))
                         ),
                       ),
-                      // width: 200,
-                      // height: 38.77,
-                      // padding: EdgeInsets.only(right: 10),
                     ),
                   ],
                 ),
               ),
               Container(
+                padding: EdgeInsets.all(5),
                 // color: Colors.green,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.all(5),
-                      // color: Colors.red,
                       child: Text(
                         'Date of Birth',
                         style: TextStyle(
                             fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.38)),
                       ),
+                      
                     ),
                     Container(
-                      margin: EdgeInsets.all(5),
+                      margin: EdgeInsets.only(top: 3),
                       // color: Colors.indigo,
                       height: height * 0.06,
                       child: Row(
@@ -116,49 +183,81 @@ class ProfileScreen extends StatelessWidget {
                             flex: 2,
                             child: TextField(
                               decoration: InputDecoration(
-                                border: OutlineInputBorder(),
+                                focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Color(0xfffeb729)),
+                        ),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Color(0xfffeb729)),),
                                 labelText: 'dd',
+                                labelStyle: TextStyle(color:Color.fromRGBO(0, 0, 0, 0.38))
                               ),
                             ),
-                            // width: 100,
-                            // height: 38.77,
-                            // padding: EdgeInsets.only(left: 37),
                           ),
-                          Expanded(child: SizedBox(),flex: 1,),
                           Expanded(
-                            flex:2,
+                            child: SizedBox(),
+                            flex: 1,
+                          ),
+                          Expanded(
+                            flex: 2,
                             child: TextField(
                               decoration: InputDecoration(
-                                border: OutlineInputBorder(),
+                                focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Color(0xfffeb729)),
+                        ),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Color(0xfffeb729)),),
                                 labelText: 'mm',
+                                labelStyle: TextStyle(color:Color.fromRGBO(0, 0, 0, 0.38))
                               ),
                             ),
-                            // width: 87,
-                            // height: 38.77,
-                            // padding: EdgeInsets.only(left: 10),
                           ),
-                          Expanded(child: SizedBox(),flex: 1,),
+                          Expanded(
+                            child: SizedBox(),
+                            flex: 1,
+                          ),
                           Expanded(
                             flex: 4,
                             child: TextField(
                               decoration: InputDecoration(
-                                border: OutlineInputBorder(),
+                                focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Color(0xfffeb729)),
+                        ),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Color(0xfffeb729)),),
                                 labelText: 'yyyy',
+                                labelStyle: TextStyle(color:Color.fromRGBO(0, 0, 0, 0.38))
                               ),
                             ),
-                            // width: 100,
-                            // height: 38.77,
-                            // padding: EdgeInsets.only(left: 10),
                           ),
                         ],
                       ),
                     ),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      child: RaisedButton(
+                        onPressed: () {},
+                        child: Container(
+                          child: Text(
+                            'Next',
+                            style: TextStyle(color: Color(0xfffee729)),
+                          ),
+                          width: 288,
+                          alignment: Alignment.center,
+                        ),
+                        color: Color(0xff2970fe),
+                      ),
+                    )
                   ],
                 ),
               ),
             ],
           ),
-          // color: Colors.yellow,
         ),
       ),
     );
