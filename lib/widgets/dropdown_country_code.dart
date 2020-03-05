@@ -7,28 +7,33 @@ class CountryCodeSelector extends StatefulWidget {
 
 class _CountryCodeSelectorState extends State<CountryCodeSelector> {
   @override
+  
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
     String _value = '2';
-    return DropdownButton(
-      
-      items: [
-        DropdownMenuItem(
-          child: Text('+91'),
-          value: '1',
-        ),
-        DropdownMenuItem(
-          child: Text('+1'),
-          value: '2',
-        )
-      ],
-      onChanged: (value) {
-        print(value);
-        setState(() {
-          _value = value;
-        });
-      },
-      value: _value,
-      // isExpanded: true,
+    return Container(
+      height: height * 0.06,
+      child: DropdownButton(
+        
+        items: [
+          DropdownMenuItem(
+            child: Text('+91'),
+            value: '1',
+          ),
+          DropdownMenuItem(
+            child: Text('+1'),
+            value: '2',
+          )
+        ],
+        onChanged: (value) {
+          // print(value);
+          setState(() {
+            _value = value;
+          });
+        },
+        value: _value,
+        // isExpanded: true,
+      ),
     );
   }
 }

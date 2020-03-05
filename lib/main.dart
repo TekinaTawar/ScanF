@@ -3,7 +3,7 @@
 
 import 'package:flutter/material.dart';
 // import './screens/intro_slider.dart';
-import './screens/create_profile_screen_2.dart';
+import './screens/create_profile_screen_1.dart';
 
 void main() => runApp(MyApp());
 
