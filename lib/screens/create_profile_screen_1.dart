@@ -199,24 +199,26 @@ class ProfileScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Container(
-                      padding: EdgeInsets.all(5),
-                      child: RaisedButton(
-                        onPressed: () {},
-                        child: Container(
-                          child: Text(
-                            'Next',
-                            style: TextStyle(color: Color(0xfffee729)),
-                          ),
-                          width: double.infinity,
-                          alignment: Alignment.center,
-                        ),
-                        color: Color(0xff2970fe),
-                      ),
-                    )
                   ],
                 ),
               ),
+              Expanded(child: SizedBox(),flex: 1,),
+              Container(
+                margin: EdgeInsets.only(bottom: 20),
+                padding: EdgeInsets.all(5),
+                child: RaisedButton(
+                  onPressed: () {},
+                  child: Container(
+                    child: Text(
+                      'Next',
+                      style: TextStyle(color: Color(0xfffee729)),
+                    ),
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                  ),
+                  color: Color(0xff2970fe),
+                ),
+              )
             ],
           ),
         ),
