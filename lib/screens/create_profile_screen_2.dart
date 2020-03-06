@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../widgets/input_box.dart';
 
 class ProfileScreen2 extends StatefulWidget {
-
   @override
   _ProfileScreen2State createState() => _ProfileScreen2State();
 }
@@ -13,7 +12,7 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
-          body: Container(
+      body: Container(
         // color: Colors.yellow,
         color: Color(0xfff5f5f5),
         child: SafeArea(
@@ -26,7 +25,8 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  padding: EdgeInsets.only(bottom: 5, left: 5, right: 5, top: 20),
+                  padding:
+                      EdgeInsets.only(bottom: 5, left: 5, right: 5, top: 20),
                   // color: Colors.blue,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -144,17 +144,21 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                     ),
                     Row(
                       children: <Widget>[
-                        InputBox(
+                        Expanded(
                           flex: 10,
-                          text: 'Approx. Weight',
+                          child: InputBox(
+                            text: 'Approx. Weight',
+                          ),
                         ),
                         Expanded(
                           child: SizedBox(),
                           flex: 1,
                         ),
-                        InputBox(
+                        Expanded(
                           flex: 10,
-                          text: 'Approx. Height',
+                          child: InputBox(
+                            text: 'Approx. Height',
+                          ),
                         )
                       ],
                     )
@@ -170,7 +174,8 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                         child: Text(
                           'Some More Details',
                           style: TextStyle(
-                              fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.38)),
+                              fontSize: 16,
+                              color: Color.fromRGBO(0, 0, 0, 0.38)),
                         ),
                       ),
                       Container(
@@ -188,11 +193,16 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                             ),
                             // Expanded(child: SizedBox(),flex: 1,),
                             Container(
-                              height: height*0.06,
+                              height: height * 0.06,
                               width: 200,
                               child: Column(
                                 children: <Widget>[
-                                  InputBox(text: 'XS/S/M/L/XL/XXL',flex: 1,),
+                                  Expanded(
+                                    child: InputBox(
+                                      text: 'XS/S/M/L/XL/XXL',
+                                    ),
+                                    flex: 1,
+                                  ),
                                 ],
                               ),
                             ),
@@ -214,11 +224,16 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                             ),
                             // Expanded(child: SizedBox(),flex: 1,),
                             Container(
-                              height: height*0.06,
+                              height: height * 0.06,
                               width: 200,
                               child: Column(
                                 children: <Widget>[
-                                  InputBox(text: '10 - 50',flex: 1,),
+                                  Expanded(
+                                    child: InputBox(
+                                      text: '10 - 50',
+                                    ),
+                                    flex: 1,
+                                  ),
                                 ],
                               ),
                             ),
@@ -236,7 +251,8 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                   margin: EdgeInsets.only(bottom: 20),
                   padding: EdgeInsets.all(5),
                   child: RaisedButton(
-                    onPressed: () => Navigator.pushNamed(context, 'create-profile-3'),
+                    onPressed: () =>
+                        Navigator.pushNamed(context, 'create-profile-3'),
                     child: Container(
                       child: Text(
                         'Next',
