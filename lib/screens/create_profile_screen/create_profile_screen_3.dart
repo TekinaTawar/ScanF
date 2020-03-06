@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import '../widgets/input_box.dart';
+import '../../widgets/input_box.dart';
 
-class ProfileScreen2 extends StatefulWidget {
-  @override
-  _ProfileScreen2State createState() => _ProfileScreen2State();
-}
-
-class _ProfileScreen2State extends State<ProfileScreen2> {
+class ProfileScreen3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
@@ -43,45 +38,9 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                     ],
                   ),
                 ),
-                Container(
-                  // color: Colors.orange,
-                  height: height * 0.2,
-                  child: Center(
-                    child: Stack(
-                      children: <Widget>[
-                        Center(
-                          child: Container(
-                            height: height * 0.2 - 40,
-                            width: height * 0.2 - 40,
-                            decoration: BoxDecoration(
-                                gradient: LinearGradient(colors: [
-                                  Color(0xff518ef8),
-                                  Color(0xff75e3fd)
-                                ]),
-                                borderRadius:
-                                    BorderRadius.circular(height * 0.2 - 40)),
-                          ),
-                        ),
-                        Center(
-                          child: Container(
-                            height: height * 0.2 - 55,
-                            width: height * 0.2 - 55,
-                            decoration: BoxDecoration(
-                                color: Color(0xfff5f5f5),
-                                borderRadius:
-                                    BorderRadius.circular(height * 0.2 - 55)),
-                          ),
-                        ),
-                        Center(
-                          child: Icon(
-                            Icons.person,
-                            size: height * 0.2 - 80,
-                            color: Color(0xffdedede),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
+              
+                SizedBox(
+                  height: height * 0.02,
                 ),
                 Container(
                   padding: EdgeInsets.only(bottom: 20, left: 5, right: 5),
@@ -106,7 +65,7 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                         flex: 1,
                         child: GestureDetector(
                           child: Container(
-                            height: 12,
+                            height: 8,
                             // width: 96,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(4),
@@ -119,7 +78,7 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                         flex: 1,
                         child: GestureDetector(
                           child: Container(
-                            height: 8,
+                            height: 12,
                             // width: 96,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(4),
@@ -131,38 +90,27 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                     ],
                   ),
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      child: Text(
-                        'Your Body Mass Index',
-                        style: TextStyle(
-                            fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.38)),
+                Container(
+                  padding: EdgeInsets.all(5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        child: Text(
+                          'Your Family Belongs to',
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Color.fromRGBO(0, 0, 0, 0.38)),
+                        ),
+                        padding: EdgeInsets.all(5),
                       ),
-                      padding: EdgeInsets.all(5),
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Expanded(
-                          flex: 10,
+                      Container(
+                          height: height * 0.06,
                           child: InputBox(
-                            text: 'Approx. Weight',
-                          ),
-                        ),
-                        Expanded(
-                          child: SizedBox(),
-                          flex: 1,
-                        ),
-                        Expanded(
-                          flex: 10,
-                          child: InputBox(
-                            text: 'Approx. Height',
-                          ),
-                        )
-                      ],
-                    )
-                  ],
+                            text: 'State',
+                          ))
+                    ],
+                  ),
                 ),
                 Container(
                   padding: EdgeInsets.all(5),
@@ -170,73 +118,97 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(bottom: 10, top: 10),
                         child: Text(
-                          'Some More Details',
+                          'Currently you are Living in',
                           style: TextStyle(
                               fontSize: 16,
                               color: Color.fromRGBO(0, 0, 0, 0.38)),
                         ),
+                        padding: EdgeInsets.all(5),
                       ),
                       Container(
-                        padding: EdgeInsets.all(5),
+                        height: height * 0.06,
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            Container(
-                              child: Text(
-                                'Shirt Size',
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color.fromRGBO(0, 0, 0, 0.38)),
+                            Expanded(
+                              flex: 6,
+                              child: InputBox(
+                                text: 'City',
                               ),
                             ),
-                            // Expanded(child: SizedBox(),flex: 1,),
-                            Container(
-                              height: height * 0.06,
-                              width: 200,
-                              child: Column(
-                                children: <Widget>[
-                                  Expanded(
-                                    child: InputBox(
-                                      text: 'XS/S/M/L/XL/XXL',
-                                    ),
-                                    flex: 1,
-                                  ),
-                                ],
+                            Expanded(
+                              child: SizedBox(),
+                              flex: 1,
+                            ),
+                            Expanded(
+                              flex: 12,
+                              child: InputBox(
+                                text: 'State',
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        child: Text(
+                          'Three other states you lived',
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Color.fromRGBO(0, 0, 0, 0.38)),
+                        ),
+                        padding: EdgeInsets.all(5),
+                      ),
+                      Container(
+                        height: height * 0.06,
+                        child: Row(
+                          children: <Widget>[
+                            Expanded(
+                              flex: 6,
+                              child: InputBox(
+                                text: 'City',
                               ),
                             ),
+                            Expanded(
+                              child: SizedBox(),
+                              flex: 1,
+                            ),
+                            Expanded(
+                              flex: 12,
+                              child: InputBox(
+                                text: 'State',
+                              ),
+                            )
                           ],
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.all(5),
+                        margin: EdgeInsets.only(top: 10),
+                        height: height * 0.06,
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            Container(
-                              child: Text(
-                                'Waist Size',
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color.fromRGBO(0, 0, 0, 0.38)),
+                            Expanded(
+                              flex: 2,
+                              child: InputBox(
+                                text: 'Years',
                               ),
                             ),
-                            // Expanded(child: SizedBox(),flex: 1,),
-                            Container(
-                              height: height * 0.06,
-                              width: 200,
-                              child: Column(
-                                children: <Widget>[
-                                  Expanded(
-                                    child: InputBox(
-                                      text: '10 - 50',
-                                    ),
-                                    flex: 1,
-                                  ),
-                                ],
-                              ),
+                            Expanded(
+                              child: SizedBox(),
+                              flex: 1,
                             ),
+                            IconButton(
+                              icon: Icon(Icons.add),
+                              onPressed: null,
+                              color: Color(0xfffeb729),
+                            )
                           ],
                         ),
                       )
@@ -251,8 +223,7 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                   margin: EdgeInsets.only(bottom: 20),
                   padding: EdgeInsets.all(5),
                   child: RaisedButton(
-                    onPressed: () =>
-                        Navigator.pushNamed(context, 'create-profile-3'),
+                    onPressed: () {},
                     child: Container(
                       child: Text(
                         'Next',

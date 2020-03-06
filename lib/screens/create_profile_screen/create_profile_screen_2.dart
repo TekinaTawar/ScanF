@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import '../widgets/dropdown_country_code.dart';
-import '../widgets/input_box.dart';
+import '../../widgets/input_box.dart';
 
-class ProfileScreen1 extends StatelessWidget {
+class ProfileScreen2 extends StatefulWidget {
+  @override
+  _ProfileScreen2State createState() => _ProfileScreen2State();
+}
+
+class _ProfileScreen2State extends State<ProfileScreen2> {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
@@ -28,7 +32,7 @@ class ProfileScreen1 extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        'Create Profile',
+                        'Advanced BMI',
                         style: TextStyle(fontSize: 32),
                       ),
                       Text(
@@ -88,7 +92,7 @@ class ProfileScreen1 extends StatelessWidget {
                         flex: 1,
                         child: GestureDetector(
                           child: Container(
-                            height: 12,
+                            height: 8,
                             // width: 96,
                             decoration: BoxDecoration(
                               // border: Border.all(style: BorderStyle.solid),
@@ -102,7 +106,7 @@ class ProfileScreen1 extends StatelessWidget {
                         flex: 1,
                         child: GestureDetector(
                           child: Container(
-                            height: 8,
+                            height: 12,
                             // width: 96,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(4),
@@ -127,88 +131,115 @@ class ProfileScreen1 extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  height: height * 0.06,
-                  width: double.infinity,
-                  margin: EdgeInsets.all(5),
-                  child: InputBox(
-                    text: 'Full name',
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(5),
-                  height: height * 0.06,
-                  // color: Colors.cyan,
-                  width: double.infinity,
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                          flex: 3,
-                          // color: Colors.pink,
-                          child: CountryCodeSelector()),
-                      Expanded(
-                        child: SizedBox(),
-                        flex: 1,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      child: Text(
+                        'Your Body Mass Index',
+                        style: TextStyle(
+                            fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.38)),
                       ),
-                      Expanded(
-                        flex: 12,
-                        child: InputBox(
-                          text: 'Phone Number',
+                      padding: EdgeInsets.all(5),
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                          flex: 10,
+                          child: InputBox(
+                            text: 'Approx. Weight',
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                        Expanded(
+                          child: SizedBox(),
+                          flex: 1,
+                        ),
+                        Expanded(
+                          flex: 10,
+                          child: InputBox(
+                            text: 'Approx. Height',
+                          ),
+                        )
+                      ],
+                    )
+                  ],
                 ),
                 Container(
                   padding: EdgeInsets.all(5),
-                  // color: Colors.green,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
-                        padding: EdgeInsets.only(left: 2),
+                        margin: EdgeInsets.only(bottom: 10, top: 10),
                         child: Text(
-                          'Date of Birth',
+                          'Some More Details',
                           style: TextStyle(
                               fontSize: 16,
                               color: Color.fromRGBO(0, 0, 0, 0.38)),
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 3),
-                        // color: Colors.indigo,
-                        height: height * 0.06,
+                        padding: EdgeInsets.all(5),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            Expanded(
-                              flex: 2,
-                              child: InputBox(
-                                text: 'dd',
+                            Container(
+                              child: Text(
+                                'Shirt Size',
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: Color.fromRGBO(0, 0, 0, 0.38)),
                               ),
                             ),
-                            Expanded(
-                              child: SizedBox(),
-                              flex: 1,
-                            ),
-                            Expanded(
-                              flex: 2,
-                              child: InputBox(
-                                text: 'mm',
+                            // Expanded(child: SizedBox(),flex: 1,),
+                            Container(
+                              height: height * 0.06,
+                              width: 200,
+                              child: Column(
+                                children: <Widget>[
+                                  Expanded(
+                                    child: InputBox(
+                                      text: 'XS/S/M/L/XL/XXL',
+                                    ),
+                                    flex: 1,
+                                  ),
+                                ],
                               ),
                             ),
-                            Expanded(
-                              child: SizedBox(),
-                              flex: 1,
-                            ),
-                            Expanded(
-                              flex: 4,
-                              child: InputBox(
-                                text: 'yyyy',
-                              ),
-                            )
                           ],
                         ),
                       ),
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Container(
+                              child: Text(
+                                'Waist Size',
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: Color.fromRGBO(0, 0, 0, 0.38)),
+                              ),
+                            ),
+                            // Expanded(child: SizedBox(),flex: 1,),
+                            Container(
+                              height: height * 0.06,
+                              width: 200,
+                              child: Column(
+                                children: <Widget>[
+                                  Expanded(
+                                    child: InputBox(
+                                      text: '10 - 50',
+                                    ),
+                                    flex: 1,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -221,7 +252,7 @@ class ProfileScreen1 extends StatelessWidget {
                   padding: EdgeInsets.all(5),
                   child: RaisedButton(
                     onPressed: () =>
-                        Navigator.pushNamed(context, 'create-profile-2'),
+                        Navigator.pushNamed(context, 'create-profile-3'),
                     child: Container(
                       child: Text(
                         'Next',

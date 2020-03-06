@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../widgets/input_box.dart';
+import '../../widgets/dropdown_country_code.dart';
+import '../../widgets/input_box.dart';
 
-class ProfileScreen3 extends StatelessWidget {
+class ProfileScreen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
@@ -27,7 +28,7 @@ class ProfileScreen3 extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        'Advanced BMI',
+                        'Create Profile',
                         style: TextStyle(fontSize: 32),
                       ),
                       Text(
@@ -38,9 +39,45 @@ class ProfileScreen3 extends StatelessWidget {
                     ],
                   ),
                 ),
-              
-                SizedBox(
-                  height: height * 0.02,
+                Container(
+                  // color: Colors.orange,
+                  height: height * 0.2,
+                  child: Center(
+                    child: Stack(
+                      children: <Widget>[
+                        Center(
+                          child: Container(
+                            height: height * 0.2 - 40,
+                            width: height * 0.2 - 40,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(colors: [
+                                  Color(0xff518ef8),
+                                  Color(0xff75e3fd)
+                                ]),
+                                borderRadius:
+                                    BorderRadius.circular(height * 0.2 - 40)),
+                          ),
+                        ),
+                        Center(
+                          child: Container(
+                            height: height * 0.2 - 55,
+                            width: height * 0.2 - 55,
+                            decoration: BoxDecoration(
+                                color: Color(0xfff5f5f5),
+                                borderRadius:
+                                    BorderRadius.circular(height * 0.2 - 55)),
+                          ),
+                        ),
+                        Center(
+                          child: Icon(
+                            Icons.person,
+                            size: height * 0.2 - 80,
+                            color: Color(0xffdedede),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                 ),
                 Container(
                   padding: EdgeInsets.only(bottom: 20, left: 5, right: 5),
@@ -51,7 +88,7 @@ class ProfileScreen3 extends StatelessWidget {
                         flex: 1,
                         child: GestureDetector(
                           child: Container(
-                            height: 8,
+                            height: 12,
                             // width: 96,
                             decoration: BoxDecoration(
                               // border: Border.all(style: BorderStyle.solid),
@@ -78,7 +115,7 @@ class ProfileScreen3 extends StatelessWidget {
                         flex: 1,
                         child: GestureDetector(
                           child: Container(
-                            height: 12,
+                            height: 8,
                             // width: 96,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(4),
@@ -91,62 +128,32 @@ class ProfileScreen3 extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(5),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-                        child: Text(
-                          'Your Family Belongs to',
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Color.fromRGBO(0, 0, 0, 0.38)),
-                        ),
-                        padding: EdgeInsets.all(5),
-                      ),
-                      Container(
-                          height: height * 0.06,
-                          child: InputBox(
-                            text: 'State',
-                          ))
-                    ],
+                  height: height * 0.06,
+                  width: double.infinity,
+                  margin: EdgeInsets.all(5),
+                  child: InputBox(
+                    text: 'Full name',
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(5),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  margin: EdgeInsets.all(5),
+                  height: height * 0.06,
+                  // color: Colors.cyan,
+                  width: double.infinity,
+                  child: Row(
                     children: <Widget>[
-                      Container(
-                        child: Text(
-                          'Currently you are Living in',
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Color.fromRGBO(0, 0, 0, 0.38)),
-                        ),
-                        padding: EdgeInsets.all(5),
+                      Expanded(
+                          flex: 3,
+                          // color: Colors.pink,
+                          child: CountryCodeSelector()),
+                      Expanded(
+                        child: SizedBox(),
+                        flex: 1,
                       ),
-                      Container(
-                        height: height * 0.06,
-                        child: Row(
-                          children: <Widget>[
-                            Expanded(
-                              flex: 6,
-                              child: InputBox(
-                                text: 'City',
-                              ),
-                            ),
-                            Expanded(
-                              child: SizedBox(),
-                              flex: 1,
-                            ),
-                            Expanded(
-                              flex: 12,
-                              child: InputBox(
-                                text: 'State',
-                              ),
-                            )
-                          ],
+                      Expanded(
+                        flex: 12,
+                        child: InputBox(
+                          text: 'Phone Number',
                         ),
                       ),
                     ],
@@ -154,64 +161,54 @@ class ProfileScreen3 extends StatelessWidget {
                 ),
                 Container(
                   padding: EdgeInsets.all(5),
+                  // color: Colors.green,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
+                        padding: EdgeInsets.only(left: 2),
                         child: Text(
-                          'Three other states you lived',
+                          'Date of Birth',
                           style: TextStyle(
                               fontSize: 16,
                               color: Color.fromRGBO(0, 0, 0, 0.38)),
                         ),
-                        padding: EdgeInsets.all(5),
                       ),
                       Container(
-                        height: height * 0.06,
-                        child: Row(
-                          children: <Widget>[
-                            Expanded(
-                              flex: 6,
-                              child: InputBox(
-                                text: 'City',
-                              ),
-                            ),
-                            Expanded(
-                              child: SizedBox(),
-                              flex: 1,
-                            ),
-                            Expanded(
-                              flex: 12,
-                              child: InputBox(
-                                text: 'State',
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 10),
+                        margin: EdgeInsets.only(top: 3),
+                        // color: Colors.indigo,
                         height: height * 0.06,
                         child: Row(
                           children: <Widget>[
                             Expanded(
                               flex: 2,
                               child: InputBox(
-                                text: 'Years',
+                                text: 'dd',
                               ),
                             ),
                             Expanded(
                               child: SizedBox(),
                               flex: 1,
                             ),
-                            IconButton(
-                              icon: Icon(Icons.add),
-                              onPressed: null,
-                              color: Color(0xfffeb729),
+                            Expanded(
+                              flex: 2,
+                              child: InputBox(
+                                text: 'mm',
+                              ),
+                            ),
+                            Expanded(
+                              child: SizedBox(),
+                              flex: 1,
+                            ),
+                            Expanded(
+                              flex: 4,
+                              child: InputBox(
+                                text: 'yyyy',
+                              ),
                             )
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -223,7 +220,8 @@ class ProfileScreen3 extends StatelessWidget {
                   margin: EdgeInsets.only(bottom: 20),
                   padding: EdgeInsets.all(5),
                   child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: () =>
+                        Navigator.pushNamed(context, 'create-profile-2'),
                     child: Container(
                       child: Text(
                         'Next',
