@@ -2,9 +2,9 @@
 //Manage State of dropdown
 
 import 'package:flutter/material.dart';
-import './screens/create_profile_screen_1.dart';
-import './screens/create_profile_screen_2.dart';
-import './screens/create_profile_screen_3.dart';
+import './screens/create_profile_screen/create_profile_screen_1.dart';
+import './screens/create_profile_screen/create_profile_screen_2.dart';
+import './screens/create_profile_screen/create_profile_screen_3.dart';
 import './screens/splash_screen.dart';
 
 void main() => runApp(MyApp());
