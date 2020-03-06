@@ -2,6 +2,8 @@
 //Manage State of dropdown
 
 import 'package:flutter/material.dart';
+import 'dart:async';
+
 import './screens/create_profile_screen/create_profile_screen_1.dart';
 import './screens/create_profile_screen/create_profile_screen_2.dart';
 import './screens/create_profile_screen/create_profile_screen_3.dart';
@@ -26,9 +28,10 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(),
       routes: {
-        'create-profile-1': (ctx)=> ProfileScreen1(),
-        'create-profile-2': (ctx)=> ProfileScreen2(),
-        'create-profile-3': (ctx)=> ProfileScreen3()
+        'create-profile-1': (ctx) => ProfileScreen1(),
+        'create-profile-2': (ctx) => ProfileScreen2(),
+        'create-profile-3': (ctx) => ProfileScreen3(),
+        'splash-screen': (ctx) => SplashScreen()
       },
     );
   }
@@ -37,6 +40,11 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SplashScreen();
+    Navigator.pushNamed(context, 'splash-screen');
+    Timer(Duration(seconds: 2), () {
+      Navigator.pop(context);
+      
+    });
+    return ProfileScreen1();
   }
 }
