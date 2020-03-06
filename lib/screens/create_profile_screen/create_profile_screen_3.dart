@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/input_box.dart';
+import '../../widgets/input_box.dart';
 
 class ProfileScreen3 extends StatelessWidget {
   @override
@@ -7,7 +7,7 @@ class ProfileScreen3 extends StatelessWidget {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
-          body: Container(
+      body: Container(
         // color: Colors.yellow,
         color: Color(0xfff5f5f5),
         child: SafeArea(
@@ -20,7 +20,8 @@ class ProfileScreen3 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  padding: EdgeInsets.only(bottom: 5, left: 5, right: 5, top: 20),
+                  padding:
+                      EdgeInsets.only(bottom: 5, left: 5, right: 5, top: 20),
                   // color: Colors.blue,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,46 +38,7 @@ class ProfileScreen3 extends StatelessWidget {
                     ],
                   ),
                 ),
-                // Container(
-                //   // color: Colors.orange,
-                //   height: height * 0.2,
-                //   child: Center(
-                //     child: Stack(
-                //       children: <Widget>[
-                //         Center(
-                //           child: Container(
-                //             height: height * 0.2 - 40,
-                //             width: height * 0.2 - 40,
-                //             decoration: BoxDecoration(
-                //                 gradient: LinearGradient(colors: [
-                //                   Color(0xff518ef8),
-                //                   Color(0xff75e3fd)
-                //                 ]),
-                //                 borderRadius:
-                //                     BorderRadius.circular(height * 0.2 - 40)),
-                //           ),
-                //         ),
-                //         Center(
-                //           child: Container(
-                //             height: height * 0.2 - 55,
-                //             width: height * 0.2 - 55,
-                //             decoration: BoxDecoration(
-                //                 color: Color(0xfff5f5f5),
-                //                 borderRadius:
-                //                     BorderRadius.circular(height * 0.2 - 55)),
-                //           ),
-                //         ),
-                //         Center(
-                //           child: Icon(
-                //             Icons.person,
-                //             size: height * 0.2 - 80,
-                //             color: Color(0xffdedede),
-                //           ),
-                //         )
-                //       ],
-                //     ),
-                //   ),
-                // ),
+              
                 SizedBox(
                   height: height * 0.02,
                 ),
@@ -137,21 +99,16 @@ class ProfileScreen3 extends StatelessWidget {
                         child: Text(
                           'Your Family Belongs to',
                           style: TextStyle(
-                              fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.38)),
+                              fontSize: 16,
+                              color: Color.fromRGBO(0, 0, 0, 0.38)),
                         ),
                         padding: EdgeInsets.all(5),
                       ),
                       Container(
-                        height: height * 0.06,
-                        child: Column(
-                          children: <Widget>[
-                            InputBox(
-                              flex: 1,
-                              text: 'State',
-                            )
-                          ],
-                        ),
-                      )
+                          height: height * 0.06,
+                          child: InputBox(
+                            text: 'State',
+                          ))
                     ],
                   ),
                 ),
@@ -164,7 +121,8 @@ class ProfileScreen3 extends StatelessWidget {
                         child: Text(
                           'Currently you are Living in',
                           style: TextStyle(
-                              fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.38)),
+                              fontSize: 16,
+                              color: Color.fromRGBO(0, 0, 0, 0.38)),
                         ),
                         padding: EdgeInsets.all(5),
                       ),
@@ -172,17 +130,21 @@ class ProfileScreen3 extends StatelessWidget {
                         height: height * 0.06,
                         child: Row(
                           children: <Widget>[
-                            InputBox(
+                            Expanded(
                               flex: 6,
-                              text: 'City',
+                              child: InputBox(
+                                text: 'City',
+                              ),
                             ),
                             Expanded(
                               child: SizedBox(),
                               flex: 1,
                             ),
-                            InputBox(
+                            Expanded(
                               flex: 12,
-                              text: 'State',
+                              child: InputBox(
+                                text: 'State',
+                              ),
                             )
                           ],
                         ),
@@ -199,7 +161,8 @@ class ProfileScreen3 extends StatelessWidget {
                         child: Text(
                           'Three other states you lived',
                           style: TextStyle(
-                              fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.38)),
+                              fontSize: 16,
+                              color: Color.fromRGBO(0, 0, 0, 0.38)),
                         ),
                         padding: EdgeInsets.all(5),
                       ),
@@ -207,17 +170,21 @@ class ProfileScreen3 extends StatelessWidget {
                         height: height * 0.06,
                         child: Row(
                           children: <Widget>[
-                            InputBox(
+                            Expanded(
                               flex: 6,
-                              text: 'City',
+                              child: InputBox(
+                                text: 'City',
+                              ),
                             ),
                             Expanded(
                               child: SizedBox(),
                               flex: 1,
                             ),
-                            InputBox(
+                            Expanded(
                               flex: 12,
-                              text: 'State',
+                              child: InputBox(
+                                text: 'State',
+                              ),
                             )
                           ],
                         ),
@@ -227,9 +194,11 @@ class ProfileScreen3 extends StatelessWidget {
                         height: height * 0.06,
                         child: Row(
                           children: <Widget>[
-                            InputBox(
+                            Expanded(
                               flex: 2,
-                              text: 'Years',
+                              child: InputBox(
+                                text: 'Years',
+                              ),
                             ),
                             Expanded(
                               child: SizedBox(),

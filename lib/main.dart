@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
                 //fontWeight: FontWeight.bold,
                 fontSize: 20,
               ),
-              
             ),
       ),
       home: MyHomePage(),
@@ -40,5 +39,4 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SplashScreen();
   }
-
 }

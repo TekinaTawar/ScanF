@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 
 class InputBox extends StatelessWidget {
-  final int flex;
   @required final String text;
-  InputBox({this.flex, this.text});
+  InputBox({this.text});
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
-    return Expanded(
-      flex: flex,
-      child: Container(
+    return Container(
         // margin: EdgeInsets.all(5),
         height: height * 0.06,
         decoration: BoxDecoration(
@@ -27,7 +24,6 @@ class InputBox extends StatelessWidget {
               labelText: text,
               labelStyle: TextStyle(color: Color.fromRGBO(0, 0, 0, 0.38))),
         ),
-      ),
-    );
+      );
   }
 }

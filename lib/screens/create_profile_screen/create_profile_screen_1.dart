@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../widgets/dropdown_country_code.dart';
-import '../widgets/input_box.dart';
+import '../../widgets/dropdown_country_code.dart';
+import '../../widgets/input_box.dart';
 
 class ProfileScreen1 extends StatelessWidget {
   @override
@@ -8,7 +8,7 @@ class ProfileScreen1 extends StatelessWidget {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
-          body: Container(
+      body: Container(
         // color: Colors.yellow,
         color: Color(0xfff5f5f5),
         child: SafeArea(
@@ -21,7 +21,8 @@ class ProfileScreen1 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  padding: EdgeInsets.only(bottom: 5, left: 5, right: 5, top: 20),
+                  padding:
+                      EdgeInsets.only(bottom: 5, left: 5, right: 5, top: 20),
                   // color: Colors.blue,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,14 +128,13 @@ class ProfileScreen1 extends StatelessWidget {
                   ),
                 ),
                 Container(
-                    height: height * 0.06,
-                    width: double.infinity,
-                    margin: EdgeInsets.all(5),
-                    child: Column(children: <Widget>[
-                      InputBox(
-                        text: 'Full name',
-                      ),
-                    ])),
+                  height: height * 0.06,
+                  width: double.infinity,
+                  margin: EdgeInsets.all(5),
+                  child: InputBox(
+                    text: 'Full name',
+                  ),
+                ),
                 Container(
                   margin: EdgeInsets.all(5),
                   height: height * 0.06,
@@ -150,9 +150,11 @@ class ProfileScreen1 extends StatelessWidget {
                         child: SizedBox(),
                         flex: 1,
                       ),
-                      InputBox(
+                      Expanded(
                         flex: 12,
-                        text: 'Phone Number',
+                        child: InputBox(
+                          text: 'Phone Number',
+                        ),
                       ),
                     ],
                   ),
@@ -168,7 +170,8 @@ class ProfileScreen1 extends StatelessWidget {
                         child: Text(
                           'Date of Birth',
                           style: TextStyle(
-                              fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.38)),
+                              fontSize: 16,
+                              color: Color.fromRGBO(0, 0, 0, 0.38)),
                         ),
                       ),
                       Container(
@@ -177,25 +180,31 @@ class ProfileScreen1 extends StatelessWidget {
                         height: height * 0.06,
                         child: Row(
                           children: <Widget>[
-                            InputBox(
+                            Expanded(
                               flex: 2,
-                              text: 'dd',
+                              child: InputBox(
+                                text: 'dd',
+                              ),
                             ),
                             Expanded(
                               child: SizedBox(),
                               flex: 1,
                             ),
-                            InputBox(
+                            Expanded(
                               flex: 2,
-                              text: 'mm',
+                              child: InputBox(
+                                text: 'mm',
+                              ),
                             ),
                             Expanded(
                               child: SizedBox(),
                               flex: 1,
                             ),
-                            InputBox(
+                            Expanded(
                               flex: 4,
-                              text: 'yyyy',
+                              child: InputBox(
+                                text: 'yyyy',
+                              ),
                             )
                           ],
                         ),
@@ -203,12 +212,16 @@ class ProfileScreen1 extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(child: SizedBox(),flex: 1,),
+                Expanded(
+                  child: SizedBox(),
+                  flex: 1,
+                ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20),
                   padding: EdgeInsets.all(5),
                   child: RaisedButton(
-                    onPressed: () => Navigator.pushNamed(context, 'create-profile-2'),
+                    onPressed: () =>
+                        Navigator.pushNamed(context, 'create-profile-2'),
                     child: Container(
                       child: Text(
                         'Next',
