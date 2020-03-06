@@ -50,6 +50,7 @@ class ProfileScreen3 extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: GestureDetector(
+                          onTap: (){Navigator.pop(context);Navigator.pop(context);},
                           child: Container(
                             height: 8,
                             // width: 96,
@@ -64,6 +65,7 @@ class ProfileScreen3 extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: GestureDetector(
+                          onTap: (){Navigator.pop(context);},
                           child: Container(
                             height: 8,
                             // width: 96,

@@ -91,6 +91,7 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                       Expanded(
                         flex: 1,
                         child: GestureDetector(
+                          onTap: (){Navigator.pop(context);},
                           child: Container(
                             height: 8,
                             // width: 96,
@@ -118,6 +119,7 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                       Expanded(
                         flex: 1,
                         child: GestureDetector(
+                          onTap: (){Navigator.pushNamed(context, 'create-profile-3');},
                           child: Container(
                             height: 8,
                             // width: 96,

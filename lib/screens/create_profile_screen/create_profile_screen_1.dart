@@ -101,6 +101,7 @@ class ProfileScreen1 extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: GestureDetector(
+                          onTap: (){Navigator.pushNamed(context, 'create-profile-2');},
                           child: Container(
                             height: 8,
                             // width: 96,
@@ -114,6 +115,10 @@ class ProfileScreen1 extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, 'create-profile-2');
+                            Navigator.pushNamed(context, 'create-profile-3');
+                          },
                           child: Container(
                             height: 8,
                             // width: 96,
