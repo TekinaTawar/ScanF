@@ -1,11 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 
 class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
-      body: Center(),
+      body: Container(color: Color(0xff005aa7),
+        width: double.infinity,
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        
+        children: <Widget>[
+          SvgPicture.asset("assets/images/logo.svg",),
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Text('F for Food',style: TextStyle(color: Colors.white),),
+          ),
+        ],
+      )
+,
+
+      ),
     );
 
   }
