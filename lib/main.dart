@@ -1,5 +1,8 @@
 //TODO_
 //Manage State of dropdown
+//Black screen issue
+//Loading time of svg
+//Transitions between pages
 
 import 'package:flutter/material.dart';
 import 'dart:async';
