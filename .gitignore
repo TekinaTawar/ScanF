@@ -30,6 +30,10 @@
 .pub/
 /build/
 
+# Files added by me to ignore
+pubspec.lock
+ios
+
 # Web related
 lib/generated_plugin_registrant.dart
 
