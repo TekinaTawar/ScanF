@@ -36,7 +36,7 @@ flutter_icons:
   android: true 
   ios: true
   image_path: "dev_assets/icon.png"
-  adaptive_icon_background: "dev_assets/Background Plane.png"
+  adaptive_icon_background: "dev_assets/Background.png"
   adaptive_icon_foreground: "dev_assets/Foreground.png"
   # flutter pub run flutter_launcher_icons:main
 
