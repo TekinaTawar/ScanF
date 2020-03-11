@@ -7,11 +7,12 @@
 import 'package:flutter/material.dart';
 // import 'dart:async';
 
-// import './screens/create_profile_screen/create_profile_screen_1.dart';
-// import './screens/create_profile_screen/create_profile_screen_2.dart';
-// import './screens/create_profile_screen/create_profile_screen_3.dart';
-// import './screens/splash_screen.dart';
-import './screens/create_profile_screen/test.dart';
+import './screens/create_profile_screen/create_profile_screen_1.dart';
+import './screens/create_profile_screen/create_profile_screen_2.dart';
+import './screens/create_profile_screen/create_profile_screen_3.dart';
+import './screens/splash_screen.dart';
+import './screens/on-boarding-screen.dart';
+// import './screens/create_profile_screen/test.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,10 +33,10 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(),
       routes: {
-        // 'create-profile-1': (ctx) => ProfileScreen1(),
-        // 'create-profile-2': (ctx) => ProfileScreen2(),
-        // 'create-profile-3': (ctx) => ProfileScreen3(),
-        // 'splash-screen': (ctx) => SplashScreen()
+        'create-profile-1': (ctx) => ProfileScreen1(),
+        'create-profile-2': (ctx) => ProfileScreen2(),
+        'create-profile-3': (ctx) => ProfileScreen3(),
+        'splash-screen': (ctx) => SplashScreen()
       },
     );
   }
@@ -49,6 +50,6 @@ class MyHomePage extends StatelessWidget {
     //   Navigator.pop(context);
       
     // });
-    return CreateProf();
+    return OnBoard();
   }
 }

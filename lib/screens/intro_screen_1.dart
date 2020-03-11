@@ -50,7 +50,7 @@ class IntroScreen1 extends StatelessWidget {
                           ],
                     ),
             
-            SvgPicture.asset("assets/images/Group 90.svg",),
+            // SvgPicture.asset("assets/images/Group 90.svg",),
             Padding(
               padding: const EdgeInsets.all(5.0),
               child: Text('F for Food',style: TextStyle(color: Colors.white),),
