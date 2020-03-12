@@ -1,4 +1,4 @@
-# eatu
+# ScanF
 
 A new Flutter project.
 
