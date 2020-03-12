@@ -1,8 +1,5 @@
-//TODO_
-//Manage State of dropdown
-//Black screen issue
-//Loading time of svg
-//Transitions between pages
+//TODO_: For todo list check folder ./other/work.c
+
 
 import 'package:flutter/material.dart';
 // import 'dart:async';

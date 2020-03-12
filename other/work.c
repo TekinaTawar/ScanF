@@ -1,19 +1,12 @@
-
-
-
-
 // ? How to use gitignore file to not track chages in some of the file in vs code. 
 
-// * Important information
+//todo: Manage State of dropdown
+//todo: Black screen issue
+//todo: Loading time of svg
+//todo: Transitions between pages
+
+
+// * Done:
 //! To delete
-//todo: 
-
-
-
-
-
-
-
-
 
 // use the extension better comments to use this file properly.
