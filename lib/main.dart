@@ -1,17 +1,14 @@
-//TODO_: For todo list check folder ./other/work.c
-
-
 import 'package:flutter/material.dart';
-// import 'dart:async';
+
 
 import './screens/create_profile_screen/create_profile_screen_1.dart';
 import './screens/create_profile_screen/create_profile_screen_2.dart';
 import './screens/create_profile_screen/create_profile_screen_3.dart';
 import './screens/splash_screen.dart';
 import './screens/on-boarding-screen.dart';
-// import './screens/create_profile_screen/test.dart';
 
 void main() => runApp(MyApp());
+
 
 class MyApp extends StatelessWidget {
   @override
@@ -21,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
         fontFamily: 'Montserrat',
         textTheme: ThemeData.light().textTheme.copyWith(
-              title: TextStyle(
+              headline6: TextStyle(
                 fontFamily: 'Open_Sans',
                 //fontWeight: FontWeight.bold,
                 fontSize: 20,
@@ -50,3 +47,4 @@ class MyHomePage extends StatelessWidget {
     return OnBoard();
   }
 }
+
