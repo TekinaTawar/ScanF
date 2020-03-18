@@ -135,7 +135,7 @@ class ProfileScreen3 extends StatelessWidget {
                             Expanded(
                               flex: 6,
                               child: InputBox(
-                                text: 'City',
+                                text: 'City',keyboardStyle: TextInputType.text,
                               ),
                             ),
                             Expanded(
@@ -145,7 +145,7 @@ class ProfileScreen3 extends StatelessWidget {
                             Expanded(
                               flex: 12,
                               child: InputBox(
-                                text: 'State',
+                                text: 'State',keyboardStyle: TextInputType.text,
                               ),
                             )
                           ],
@@ -185,7 +185,7 @@ class ProfileScreen3 extends StatelessWidget {
                             Expanded(
                               flex: 12,
                               child: InputBox(
-                                text: 'State',
+                                text: 'State',keyboardStyle: TextInputType.text,
                               ),
                             )
                           ],
@@ -199,7 +199,7 @@ class ProfileScreen3 extends StatelessWidget {
                             Expanded(
                               flex: 2,
                               child: InputBox(
-                                text: 'Years',
+                                text: 'Years',  keyboardStyle: TextInputType.number,
                               ),
                             ),
                             Expanded(

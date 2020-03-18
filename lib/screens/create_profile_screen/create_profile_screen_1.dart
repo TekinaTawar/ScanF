@@ -137,7 +137,7 @@ class ProfileScreen1 extends StatelessWidget {
                   width: double.infinity,
                   margin: EdgeInsets.all(5),
                   child: InputBox(
-                    text: 'Full name',
+                    text: 'Full name',keyboardStyle: TextInputType.text,
                   ),
                 ),
                 Container(
@@ -158,7 +158,7 @@ class ProfileScreen1 extends StatelessWidget {
                       Expanded(
                         flex: 12,
                         child: InputBox(
-                          text: 'Phone Number',
+                          text: 'Phone Number',keyboardStyle: TextInputType.number,
                         ),
                       ),
                     ],
@@ -188,7 +188,7 @@ class ProfileScreen1 extends StatelessWidget {
                             Expanded(
                               flex: 2,
                               child: InputBox(
-                                text: 'dd',
+                                text: 'dd',keyboardStyle: TextInputType.number,
                               ),
                             ),
                             Expanded(
@@ -198,7 +198,7 @@ class ProfileScreen1 extends StatelessWidget {
                             Expanded(
                               flex: 2,
                               child: InputBox(
-                                text: 'mm',
+                                text: 'mm',keyboardStyle: TextInputType.number,
                               ),
                             ),
                             Expanded(
@@ -208,7 +208,7 @@ class ProfileScreen1 extends StatelessWidget {
                             Expanded(
                               flex: 4,
                               child: InputBox(
-                                text: 'yyyy',
+                                text: 'yyyy',keyboardStyle: TextInputType.number,
                               ),
                             )
                           ],

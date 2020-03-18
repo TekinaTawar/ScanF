@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class InputBox extends StatelessWidget {
   @required final String text;
-  InputBox({this.text});
+  @required final keyboardStyle;
+  InputBox({this.text,this.keyboardStyle});
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
@@ -16,6 +17,7 @@ class InputBox extends StatelessWidget {
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 borderSide: BorderSide(color: Color(0xff2970fe)),
+                
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -23,7 +25,7 @@ class InputBox extends StatelessWidget {
               ),
               labelText: text,
               labelStyle: TextStyle(color: Color.fromRGBO(0, 0, 0, 0.38))),
-        ),
+        keyboardType: keyboardStyle,),
       );
   }
 }
