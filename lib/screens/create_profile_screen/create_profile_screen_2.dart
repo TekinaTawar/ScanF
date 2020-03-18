@@ -149,7 +149,7 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                         Expanded(
                           flex: 10,
                           child: InputBox(
-                            text: 'Approx. Weight',
+                            text: 'Approx. Weight',keyboardStyle: TextInputType.number,
                           ),
                         ),
                         Expanded(
@@ -159,7 +159,7 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                         Expanded(
                           flex: 10,
                           child: InputBox(
-                            text: 'Approx. Height',
+                            text: 'Approx. Height',keyboardStyle: TextInputType.number,
                           ),
                         )
                       ],
@@ -201,7 +201,7 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                                 children: <Widget>[
                                   Expanded(
                                     child: InputBox(
-                                      text: 'XS/S/M/L/XL/XXL',
+                                      text: 'XS/S/M/L/XL/XXL',keyboardStyle: TextInputType.text,
                                     ),
                                     flex: 1,
                                   ),
@@ -232,7 +232,7 @@ class _ProfileScreen2State extends State<ProfileScreen2> {
                                 children: <Widget>[
                                   Expanded(
                                     child: InputBox(
-                                      text: '10 - 50',
+                                      text: '10 - 50',keyboardStyle: TextInputType.number,
                                     ),
                                     flex: 1,
                                   ),
