@@ -3,6 +3,27 @@ import '../../widgets/dropdown_country_code.dart';
 import '../../widgets/input_box.dart';
 
 class ProfileScreen1 extends StatelessWidget {
+  Widget _upperTexts() {
+    return Container(
+      padding: EdgeInsets.only(bottom: 5, left: 5, right: 5, top: 20),
+      // color: Colors.blue,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'Create Profile',
+            style: TextStyle(fontSize: 32),
+          ),
+          Text(
+            'This helps us to personalize your experience throughout the app.',
+            style:
+                TextStyle(fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.38)),
+          )
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
@@ -20,25 +41,7 @@ class ProfileScreen1 extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Container(
-                  padding:
-                      EdgeInsets.only(bottom: 5, left: 5, right: 5, top: 20),
-                  // color: Colors.blue,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Create Profile',
-                        style: TextStyle(fontSize: 32),
-                      ),
-                      Text(
-                        'This helps us to personalize your experience throughout the app.',
-                        style: TextStyle(
-                            fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.38)),
-                      )
-                    ],
-                  ),
-                ),
+                _upperTexts(),
                 Container(
                   // color: Colors.orange,
                   height: height * 0.2,
@@ -101,7 +104,9 @@ class ProfileScreen1 extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: GestureDetector(
-                          onTap: (){Navigator.pushNamed(context, 'create-profile-2');},
+                          onTap: () {
+                            Navigator.pushNamed(context, 'create-profile-2');
+                          },
                           child: Container(
                             height: 8,
                             // width: 96,
@@ -137,7 +142,8 @@ class ProfileScreen1 extends StatelessWidget {
                   width: double.infinity,
                   margin: EdgeInsets.all(5),
                   child: InputBox(
-                    text: 'Full name',keyboardStyle: TextInputType.text,
+                    text: 'Full name',
+                    keyboardStyle: TextInputType.text,
                   ),
                 ),
                 Container(
@@ -158,7 +164,8 @@ class ProfileScreen1 extends StatelessWidget {
                       Expanded(
                         flex: 12,
                         child: InputBox(
-                          text: 'Phone Number',keyboardStyle: TextInputType.number,
+                          text: 'Phone Number',
+                          keyboardStyle: TextInputType.number,
                         ),
                       ),
                     ],
@@ -188,7 +195,8 @@ class ProfileScreen1 extends StatelessWidget {
                             Expanded(
                               flex: 2,
                               child: InputBox(
-                                text: 'dd',keyboardStyle: TextInputType.number,
+                                text: 'dd',
+                                keyboardStyle: TextInputType.number,
                               ),
                             ),
                             Expanded(
@@ -198,7 +206,8 @@ class ProfileScreen1 extends StatelessWidget {
                             Expanded(
                               flex: 2,
                               child: InputBox(
-                                text: 'mm',keyboardStyle: TextInputType.number,
+                                text: 'mm',
+                                keyboardStyle: TextInputType.number,
                               ),
                             ),
                             Expanded(
@@ -208,7 +217,8 @@ class ProfileScreen1 extends StatelessWidget {
                             Expanded(
                               flex: 4,
                               child: InputBox(
-                                text: 'yyyy',keyboardStyle: TextInputType.number,
+                                text: 'yyyy',
+                                keyboardStyle: TextInputType.number,
                               ),
                             )
                           ],
