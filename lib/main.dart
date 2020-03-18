@@ -18,8 +18,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
         fontFamily: 'Montserrat',
-<<<<<<< HEAD
-<<<<<<< HEAD
         textTheme: ThemeData.light().textTheme.copyWith(
               title: TextStyle(
                 fontFamily: 'Open_Sans',
@@ -27,9 +25,6 @@ class MyApp extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
-=======
-=======
->>>>>>> 789e8a7f5f26cfd4e6a648c86d548d534ad1d003
         // textTheme: ThemeData.light().textTheme.copyWith(
         //       headline6: TextStyle(
         //         fontFamily: 'Open_Sans',
@@ -37,10 +32,6 @@ class MyApp extends StatelessWidget {
         //         fontSize: 20,
         //       ),
         //     ),
-<<<<<<< HEAD
->>>>>>> profile screen 4 added
-=======
->>>>>>> 789e8a7f5f26cfd4e6a648c86d548d534ad1d003
       ),
       home: MyHomePage(),
       routes: {
