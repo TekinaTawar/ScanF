@@ -47,11 +47,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Navigator.pushNamed(context, 'splash-screen');
-    // Timer(Duration(seconds: 2), () {
-    //   Navigator.pop(context);
-      
-    // });
     return ProfileScreen4();
   }
 }
