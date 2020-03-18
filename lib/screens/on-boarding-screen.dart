@@ -22,13 +22,44 @@ class _OnBoardState extends State<OnBoard> {
 
   Widget _indicator(bool isActive, int page) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 700),
-      margin: EdgeInsets.symmetric(horizontal: 8),
+      duration: Duration(milliseconds: 100),
+      margin: EdgeInsets.symmetric(horizontal: 7.5),
       height: 8,
       width: isActive ? 24 : 16,
       decoration: BoxDecoration(
           color: isActive ? Colors.black : Colors.black45,
           borderRadius: BorderRadius.circular(12)),
+    );
+  }
+
+  Widget _nextButton() {
+    return Container(
+      alignment: Alignment.centerRight,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          gradient:
+              LinearGradient(colors: [Color(0xff75E3FD), Color(0xff518EF8)]),
+        ),
+        width: 70,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.white,
+          ),
+          margin: EdgeInsets.all(3),
+          child: Center(
+            child: Text(
+              'SKIP',
+              style: TextStyle(
+                color: Color(0xff518EF8),
+                fontSize: 16,
+                fontFamily: 'Open_Sans',
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 
@@ -44,33 +75,12 @@ class _OnBoardState extends State<OnBoard> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Container(
-                alignment: Alignment.centerRight,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    gradient: LinearGradient(
-                        colors: [Color(0xff75E3FD), Color(0xff518EF8)]),
-                  ),
-                  width: 70,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white,
-                    ),
-                    margin: EdgeInsets.all(3),
-                    child: Center(
-                      child: Text(
-                        'SKIP',
-                        style: TextStyle(
-                          color: Color(0xff518EF8),
-                          fontSize: 16,
-                          fontFamily: 'Open_Sans',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+              GestureDetector(
+                child: _nextButton(),
+                onTap: () {
+                  _pageController.animateToPage(4,
+                      duration: Duration(milliseconds: 500), curve: Curves.ease);
+                },
               ),
               Container(
                 height: MediaQuery.of(context).size.height - 200,
@@ -177,7 +187,10 @@ class _OnBoardState extends State<OnBoard> {
               ),
               _currentPage == 4
                   ? GestureDetector(
-                    onTap: (){Navigator.pop(context);Navigator.pushNamed(context, 'create-profile-1');},
+                      onTap: () {
+                        Navigator.pop(context);
+                        Navigator.pushNamed(context, 'create-profile-1');
+                      },
                       child: Container(
                         margin: EdgeInsets.symmetric(horizontal: 10),
                         decoration: BoxDecoration(
