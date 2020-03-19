@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import './screens/create_profile_screen/create_profile_screen_1.dart';
 import './screens/create_profile_screen/create_profile_screen_2.dart';
 import './screens/create_profile_screen/create_profile_screen_3.dart';
+import './screens/create_profile_screen/create_profile_screen_4.dart';
 import './screens/splash_screen.dart';
 import './screens/on-boarding-screen.dart';
 
@@ -24,6 +25,13 @@ class MyApp extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
+        // textTheme: ThemeData.light().textTheme.copyWith(
+        //       headline6: TextStyle(
+        //         fontFamily: 'Open_Sans',
+        //         //fontWeight: FontWeight.bold,
+        //         fontSize: 20,
+        //       ),
+        //     ),
       ),
       home: MyHomePage(),
       routes: {
@@ -39,12 +47,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Navigator.pushNamed(context, 'splash-screen');
-    // Timer(Duration(seconds: 2), () {
-    //   Navigator.pop(context);
-      
-    // });
-    return OnBoard();
+    return ProfileScreen4();
   }
 }
 
