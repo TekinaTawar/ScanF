@@ -5,6 +5,7 @@ import './screens/create_profile_screen/create_profile_screen_1.dart';
 import './screens/create_profile_screen/create_profile_screen_2.dart';
 import './screens/create_profile_screen/create_profile_screen_3.dart';
 import './screens/create_profile_screen/create_profile_screen_4.dart';
+import './screens/create_profile_screen/test.dart';
 import './screens/splash_screen.dart';
 import './screens/on-boarding-screen.dart';
 
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ProfileScreen4();
+    return CreateProf();
   }
 }
 
