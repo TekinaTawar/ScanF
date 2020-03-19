@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "361071010423",
+    "firebase_url": "https://scanf-app.firebaseio.com",
+    "project_id": "scanf-app",
+    "storage_bucket": "scanf-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361071010423:android:ecabac24e86cad09e35c72",
+        "android_client_info": {
+          "package_name": "com.uff.ScanF"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361071010423-69slgvohmo8gvkuec5phqmdsr4kukiio.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uff.ScanF",
+            "certificate_hash": "f18ba51de8b298a0d4ed43f19254cd1f7b159641"
+          }
+        },
+        {
+          "client_id": "361071010423-1as9odd7jdtki7aqovuv23ueqcrj51qo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc6_pamo3ILBHKo6RNn4heGjR-n_Ak_xA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "361071010423-1as9odd7jdtki7aqovuv23ueqcrj51qo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
