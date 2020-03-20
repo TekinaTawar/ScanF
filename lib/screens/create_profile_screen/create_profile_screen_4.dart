@@ -28,6 +28,7 @@ class ProfileScreen4 extends StatelessWidget {
     final double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: Container(
         color: Color(0xfff5f5f5),
         child: SafeArea(
