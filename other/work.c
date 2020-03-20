@@ -23,6 +23,8 @@
 // * Done: Animate Google login button and next button on onboarding screen
 // * Done: Change color/remove red indicators on end pages of pageview(onboard screen)
 
+// * Done: keyboard error (pixel over flow)
+
 //! To delete
 
 // use the extension better comments to use this file properly.
