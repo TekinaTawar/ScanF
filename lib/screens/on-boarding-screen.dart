@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:flutter/services.dart';
@@ -32,7 +33,7 @@ class _OnBoardState extends State<OnBoard> {
     );
   }
 
-  Widget _nextButton() {
+  Widget _skipButton() {
     return Container(
       alignment: Alignment.centerRight,
       child: Container(
@@ -63,6 +64,61 @@ class _OnBoardState extends State<OnBoard> {
     );
   }
 
+  Widget _loginButton = GestureDetector(
+    onTap: () {},
+    child: Container(
+      margin: EdgeInsets.symmetric(horizontal: 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromRGBO(0, 0, 0, 0.2),
+            blurRadius: 4.0, // has the effect of softening the shadow
+            offset: Offset(
+              4.0, // horizontal, move right 10
+              4.0, // vertical, move down 10
+            ),
+          )
+        ],
+      ),
+      width: double.infinity,
+      height: 50,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: SvgPicture.asset(
+              'assets/images/google_icon.svg',
+              height: 30,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomRight: Radius.circular(20)),
+                color: Color(0xff518EF8),
+              ),
+              child: Center(
+                child: Text(
+                  'Sign in with Google',
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 20,
+                      color: Colors.white),
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,16 +131,27 @@ class _OnBoardState extends State<OnBoard> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              GestureDetector(
-                child: _nextButton(),
-                onTap: () {
-                  _pageController.animateToPage(4,
-                      duration: Duration(milliseconds: 500), curve: Curves.ease);
-                },
-              ),
+              AnimatedCrossFade(
+                  firstChild: GestureDetector(
+                    child: _skipButton(),
+                    onTap: () {
+                      _pageController.animateToPage(4,
+                          duration: Duration(milliseconds: 500),
+                          curve: Curves.ease);
+                    },
+                  ),
+                  secondChild: Container(
+                    height: 22,
+                  ),
+                  crossFadeState: _currentPage < 4
+                      ? CrossFadeState.showFirst
+                      : CrossFadeState.showSecond,
+                  duration: Duration(milliseconds: 300)),
               Container(
                 height: MediaQuery.of(context).size.height - 200,
                 child: PageView(
+                  pageSnapping: true,
+                  scrollDirection: Axis.horizontal,
                   physics: ClampingScrollPhysics(),
                   controller: _pageController,
                   onPageChanged: (int page) {
@@ -185,72 +252,18 @@ class _OnBoardState extends State<OnBoard> {
                 child: SizedBox(),
                 flex: 1,
               ),
-              _currentPage == 4
-                  ? GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                        Navigator.pushNamed(context, 'create-profile-1');
-                      },
-                      child: Container(
-                        margin: EdgeInsets.symmetric(horizontal: 10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Color.fromRGBO(0, 0, 0, 0.2),
-                              blurRadius:
-                                  4.0, // has the effect of softening the shadow
-                              offset: Offset(
-                                4.0, // horizontal, move right 10
-                                4.0, // vertical, move down 10
-                              ),
-                            )
-                          ],
-                        ),
-                        width: double.infinity,
-                        height: 50,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: SvgPicture.asset(
-                                'assets/images/google_icon.svg',
-                                height: 30,
-                              ),
-                            ),
-                            Expanded(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(20),
-                                      bottomRight: Radius.circular(20)),
-                                  color: Color(0xff518EF8),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'Sign in with Google',
-                                    style: TextStyle(
-                                        fontFamily: 'Montserrat',
-                                        fontSize: 20,
-                                        color: Colors.white),
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    )
-                  : Row(
+              Expanded(
+                child: AnimatedCrossFade(
+                    firstChild: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: _buildPageIndicator(),
                     ),
-              Expanded(
-                child: SizedBox(),
-                flex: 1,
+                    secondChild: _loginButton,
+                    crossFadeState: _currentPage < 4
+                        ? CrossFadeState.showFirst
+                        : CrossFadeState.showSecond,
+                    duration: Duration(milliseconds: 300)),
+                flex: 2,
               )
             ],
           ),
