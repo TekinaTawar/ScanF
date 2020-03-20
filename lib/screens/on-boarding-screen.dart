@@ -152,7 +152,7 @@ class _OnBoardState extends State<OnBoard> {
                 child: PageView(
                   pageSnapping: true,
                   scrollDirection: Axis.horizontal,
-                  physics: ClampingScrollPhysics(),
+                  physics: BouncingScrollPhysics(),
                   controller: _pageController,
                   onPageChanged: (int page) {
                     setState(() {
