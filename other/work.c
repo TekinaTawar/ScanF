@@ -10,7 +10,7 @@
 //todo: Make next button in create profile screens to look better
 //todo: Make text boxes more easy to next rather to only presss tick button on keyboard
 //todo: Change focus color of text boxes as of non-focused box
-//todo: Animate Google login button on onboarding screens
+//todo: Change color/remove red indicators on end pages of pageview(onboarch screen)
 
 //todo: Check test file for create profile screen
 //todo: Change fonts in test file for create profile screen
@@ -21,6 +21,7 @@
 
 
 // * Done: Add Transitions between pages
+// * Done: Animate Google login button and next button on onboarding screen
 
 //! To delete
 
