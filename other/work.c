@@ -1,5 +1,7 @@
 // ? How to use gitignore file to not track chages in some of the file in vs code. 
 
+//todo: Make google login button fucntional to really get loged in through Google Account.
+//todo: Get user data from google and show it in input boxes.
 //todo: Manage State of dropdown(find effective way to use dropdowns)
 //todo: Black screen issue on poping and sudden pushing screens
 //todo: Loading time of svg
@@ -23,9 +25,4 @@
 //! To delete
 
 // use the extension better comments to use this file properly.
-// added comment solve_problem1.
 
-//added a random comment
-//added more random comment1
-//added more things that are different.
-//added more random comment2
