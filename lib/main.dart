@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.red,
+        accentColor: null,
         fontFamily: 'Montserrat',
         textTheme: ThemeData.light().textTheme.copyWith(
               title: TextStyle(
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ProfileScreen1();
+    return CreateProf();
   }
 }
 
