@@ -72,7 +72,7 @@ class _CreateProfState extends State<CreateProf> {
               children: <Widget>[
                 SingleChildScrollView(
                               child: Container( 
-                    height: height,
+                    height: height*0.95,
                     width: double.infinity,
                     margin: EdgeInsets.only(left: width * 0.07, right: width * 0.07),
                     child: Column(
