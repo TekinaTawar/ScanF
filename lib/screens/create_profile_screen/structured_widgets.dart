@@ -109,7 +109,7 @@ List<Widget> mainBoxes(height, width) {
             width: double.infinity,
             margin: EdgeInsets.all(5),
             child: InputBox(
-              text: 'Full name',
+              text: 'Full name',keyboardStyle: TextInputType.text,
             ),
           ),
           Container(
@@ -126,7 +126,7 @@ List<Widget> mainBoxes(height, width) {
                 Expanded(
                   flex: 12,
                   child: InputBox(
-                    text: 'Phone Number',
+                    text: 'Phone Number',keyboardStyle: TextInputType.number
                   ),
                 ),
               ],
@@ -155,7 +155,7 @@ List<Widget> mainBoxes(height, width) {
                       Expanded(
                         flex: 2,
                         child: InputBox(
-                          text: 'dd',
+                          text: 'dd',keyboardStyle: TextInputType.number
                         ),
                       ),
                       Expanded(
@@ -165,7 +165,7 @@ List<Widget> mainBoxes(height, width) {
                       Expanded(
                         flex: 2,
                         child: InputBox(
-                          text: 'mm',
+                          text: 'mm',keyboardStyle: TextInputType.number
                         ),
                       ),
                       Expanded(
@@ -175,7 +175,7 @@ List<Widget> mainBoxes(height, width) {
                       Expanded(
                         flex: 4,
                         child: InputBox(
-                          text: 'yyyy',
+                          text: 'yyyy',keyboardStyle: TextInputType.number
                         ),
                       )
                     ],
@@ -209,7 +209,7 @@ List<Widget> mainBoxes(height, width) {
                   Expanded(
                     flex: 10,
                     child: InputBox(
-                      text: 'Approx. Weight',
+                      text: 'Approx. Weight',keyboardStyle: TextInputType.number
                     ),
                   ),
                   Expanded(
@@ -219,7 +219,7 @@ List<Widget> mainBoxes(height, width) {
                   Expanded(
                     flex: 10,
                     child: InputBox(
-                      text: 'Approx. Height',
+                      text: 'Approx. Height',keyboardStyle: TextInputType.number
                     ),
                   )
                 ],
@@ -289,7 +289,7 @@ List<Widget> mainBoxes(height, width) {
                           children: <Widget>[
                             Expanded(
                               child: InputBox(
-                                text: '10 - 50',
+                                text: '10 - 50',keyboardStyle: TextInputType.number
                               ),
                               flex: 1,
                             ),
@@ -327,7 +327,7 @@ List<Widget> mainBoxes(height, width) {
                 Container(
                   height: height * 0.06,
                   child: InputBox(
-                    text: 'State',
+                    text: 'State',keyboardStyle: TextInputType.text
                   ),
                 )
               ],
@@ -353,7 +353,7 @@ List<Widget> mainBoxes(height, width) {
                       Expanded(
                         flex: 6,
                         child: InputBox(
-                          text: 'City',
+                          text: 'City',keyboardStyle: TextInputType.text
                         ),
                       ),
                       Expanded(
@@ -363,7 +363,7 @@ List<Widget> mainBoxes(height, width) {
                       Expanded(
                         flex: 12,
                         child: InputBox(
-                          text: 'State',
+                          text: 'State',keyboardStyle: TextInputType.text
                         ),
                       )
                     ],
@@ -392,7 +392,7 @@ List<Widget> mainBoxes(height, width) {
                       Expanded(
                         flex: 6,
                         child: InputBox(
-                          text: 'City',
+                          text: 'City',keyboardStyle: TextInputType.text
                         ),
                       ),
                       Expanded(
@@ -402,7 +402,7 @@ List<Widget> mainBoxes(height, width) {
                       Expanded(
                         flex: 12,
                         child: InputBox(
-                          text: 'State',
+                          text: 'State',keyboardStyle: TextInputType.text,
                         ),
                       )
                     ],
@@ -416,7 +416,7 @@ List<Widget> mainBoxes(height, width) {
                       Expanded(
                         flex: 2,
                         child: InputBox(
-                          text: 'Years',
+                          text: 'Years',keyboardStyle: TextInputType.number
                         ),
                       ),
                       Expanded(
