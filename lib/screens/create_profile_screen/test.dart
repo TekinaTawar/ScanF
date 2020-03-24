@@ -65,22 +65,21 @@ class _CreateProfState extends State<CreateProf> {
         value: SystemUiOverlayStyle.dark,
         child: Container(
           color: Color(0xfff5f5f5),
-          
-          
           child: SafeArea(
             child: Stack(
               children: <Widget>[
                 SingleChildScrollView(
-                              child: Container( 
-                    height: height*0.95,
+                  child: Container(
+                    height: height * 0.95,
                     width: double.infinity,
-                    margin: EdgeInsets.only(left: width * 0.07, right: width * 0.07),
+                    margin: EdgeInsets.only(
+                        left: width * 0.07, right: width * 0.07),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
                         Padding(
-                          padding:
-                              EdgeInsets.only(bottom: 5, left: 5, right: 5, top: 20),
+                          padding: EdgeInsets.only(
+                              bottom: 5, left: 5, right: 5, top: 20),
                           child: AnimatedCrossFade(
                               firstChild: upperTexts[0],
                               secondChild: upperTexts[1],
@@ -98,7 +97,8 @@ class _CreateProfState extends State<CreateProf> {
                               : CrossFadeState.showSecond,
                         ),
                         Container(
-                          padding: EdgeInsets.only(bottom: 20, left: 5, right: 5),
+                          padding:
+                              EdgeInsets.only(bottom: 20, left: 5, right: 5),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: _buildPageIndicator(),
@@ -117,36 +117,38 @@ class _CreateProfState extends State<CreateProf> {
                             children: mainBoxes(height, width),
                           ),
                         ),
-                        
                       ],
                     ),
                   ),
                 ),
-              Positioned(
-                          top: height*0.86,left: 5,right: 5,
-                          child: RaisedButton(
-                            color: Color(0xff2970fe),
-                            onPressed: () {
-                              setState(
-                                () {
-                                  if (_currentPage < 2) {
-                                    _pageController.animateToPage((_currentPage + 1),
-                                        duration: Duration(milliseconds: 500),
-                                        curve: Curves.ease);
-                                  }
-                                },
-                              );
-                            },
-                            child: Container(
-                              width: double.infinity,
-                              alignment: Alignment.center,
-                              child: Text(
-                                'Next',
-                                style: TextStyle(color: Color(0xfffee729)),
-                              ),
-                            ),
-                          ),
-                        ),],
+                Positioned(
+                  top: height * 0.86,
+                  left: width * 0.07,
+                  right: width * 0.07,
+                  child: RaisedButton(
+                    color: Color(0xff2970fe),
+                    onPressed: () {
+                      setState(
+                        () {
+                          if (_currentPage < 2) {
+                            _pageController.animateToPage((_currentPage + 1),
+                                duration: Duration(milliseconds: 500),
+                                curve: Curves.ease);
+                          }
+                        },
+                      );
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Next',
+                        style: TextStyle(color: Color(0xfffee729)),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
