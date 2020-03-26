@@ -113,10 +113,7 @@ app.*.symbols
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 !/dev/ci/**/Gemfile.lock
 pubspec.lock
-<<<<<<< HEAD
 android/local.properties
-=======
->>>>>>> 6e0e7acb64313d697251923b525f47f228c558a9
 android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
 ios/Runner/GeneratedPluginRegistrant.h
 ios/Runner/GeneratedPluginRegistrant.m
