@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         //       ),
         //     ),
       ),
-      home: MyHomePage(),
+      home: CreateProf(),
       routes: {
         'create-profile-1': (ctx) => ProfileScreen1(),
         'create-profile-2': (ctx) => ProfileScreen2(),
@@ -46,10 +46,4 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return CreateProf();
-  }
-}
 
