@@ -86,7 +86,7 @@ class _CreateProfState extends State<CreateProf> {
                               crossFadeState: (_currentPage == 0)
                                   ? CrossFadeState.showFirst
                                   : CrossFadeState.showSecond,
-                              duration: Duration(milliseconds: 300)),
+                              duration: Duration(milliseconds: 500)),
                         ),
                         AnimatedCrossFade(
                           firstChild: circleAvatar(height),

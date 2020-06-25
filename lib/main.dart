@@ -7,7 +7,8 @@ import './screens/create_profile_screen/create_profile_screen_3.dart';
 import './screens/create_profile_screen/create_profile_screen_4.dart';
 import './screens/create_profile_screen/test.dart';
 import './screens/splash_screen.dart';
-import './screens/on-boarding-screen.dart';
+import './screens/onboard.dart';
+// import './screens/on-boarding-screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         //       ),
         //     ),
       ),
-      home: CreateProf(),
+      home: OnBoard(),
       routes: {
         'create-profile-1': (ctx) => ProfileScreen1(),
         'create-profile-2': (ctx) => ProfileScreen2(),
