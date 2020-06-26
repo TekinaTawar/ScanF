@@ -202,7 +202,7 @@ class _OnBoardState extends State<OnBoard> {
                 ),
               ),
               Expanded(
-                child: FittedBox(fit: BoxFit.contain,),
+                child: SizedBox(),
                 flex: 1,
               ),
             ],
