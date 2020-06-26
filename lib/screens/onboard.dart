@@ -70,8 +70,9 @@ class _OnBoardState extends State<OnBoard> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Container(
-                height: 500,
+              Expanded(
+                // height: 500,
+                flex: 5,
                 child: PageView(
                   pageSnapping: true,
                   scrollDirection: Axis.horizontal,
@@ -84,13 +85,28 @@ class _OnBoardState extends State<OnBoard> {
                   },
                   children: <Widget>[
                     Container(
-                      color: Colors.red,
+                      child: Image.asset(
+                        "assets/images/clipart-happy-traveller-9-transparent.png",
+                        cacheHeight: 300,
+                        // filterQuality: FilterQuality.high,
+                      ),
                     ),
                     Container(
-                      color: Colors.green,
+                      // color: Colors.green,
+                      child: Image.asset(
+                        "assets/images/road.png",
+                        
+                        cacheHeight: 500,
+                        cacheWidth: 500,
+                      ),
                     ),
                     Container(
-                      color: Colors.blue,
+                      // color: Colors.blue,
+                      child: Image.asset(
+                        "assets/images/dosa.jpg",
+                        cacheHeight: 1000,
+                        cacheWidth: 1000,
+                      ),
                     ),
                     Container(
                       color: Colors.yellow,
@@ -106,7 +122,7 @@ class _OnBoardState extends State<OnBoard> {
                 children: _buildPageIndicator(),
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical:17),
+                margin: EdgeInsets.symmetric(vertical: 17),
                 height: 5,
                 width: double.infinity,
                 color: Colors.blue,
@@ -184,6 +200,10 @@ class _OnBoardState extends State<OnBoard> {
                     )
                   ],
                 ),
+              ),
+              Expanded(
+                child: FittedBox(fit: BoxFit.contain,),
+                flex: 1,
               ),
             ],
           ),
