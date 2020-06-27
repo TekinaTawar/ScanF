@@ -1,3 +1,5 @@
+// import 'package:ScanF/screens/create_profile_screen/landing_page.dart';
+import 'package:ScanF/screens/create_profile_screen/test2.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -74,6 +76,7 @@ class Login extends StatelessWidget {
                 color: Colors.blue,
               ),
               child: GestureDetector(
+                onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context) => CreateProf()),);},
                 child: Container(
                   child: Align(
                       child: Text(

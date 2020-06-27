@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import './login.dart';
 class OnBoard extends StatefulWidget {
   OnBoard({Key key}) : super(key: key);
 
@@ -95,7 +95,6 @@ class _OnBoardState extends State<OnBoard> {
                       // color: Colors.green,
                       child: Image.asset(
                         "assets/images/road.png",
-                        
                         cacheHeight: 500,
                         cacheWidth: 500,
                       ),
@@ -152,20 +151,24 @@ class _OnBoardState extends State<OnBoard> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Align(
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 285,
-                    height: 47,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(13)),
-                    child: Text(
-                      'SET SEARCH LOCATION',
-                      style: TextStyle(
+                  child: GestureDetector(
+                    onTap:(){ Navigator.push(context,MaterialPageRoute(builder: (context) => Login()),);},
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 285,
+                      height: 47,
+                      decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(13)),
+                      child: Text(
+                        'SET SEARCH LOCATION',
+                        style: TextStyle(
                           fontSize: 20,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'Open_Sans'),
+                          fontFamily: 'Open_Sans',
+                        ),
+                      ),
                     ),
                   ),
                 ),

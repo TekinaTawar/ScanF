@@ -1,3 +1,4 @@
+import 'package:ScanF/screens/create_profile_screen/landing_page.dart';
 import 'package:flutter/material.dart';
 
 import './structured_widgets.dart';
@@ -63,7 +64,7 @@ class _CreateProfState extends State<CreateProf> {
                             crossFadeState: (_currentPage == 0)
                                 ? CrossFadeState.showFirst
                                 : CrossFadeState.showSecond,
-                            duration: Duration(milliseconds: 500)),
+                            duration: Duration(milliseconds: 500),),
                       ),
                       circleAvatar(height),
                       Container(
@@ -122,6 +123,7 @@ class _CreateProfState extends State<CreateProf> {
                                   duration: Duration(milliseconds: 300),
                                   curve: Curves.ease);
                             }
+                            if (_currentPage == 2){Navigator.push(context,MaterialPageRoute(builder: (context) => LandingPage()),);};
                           },
                         );
                       },

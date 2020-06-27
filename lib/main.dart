@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 
-import './screens/create_profile_screen/create_profile_screen_1.dart';
-import './screens/create_profile_screen/create_profile_screen_2.dart';
-import './screens/create_profile_screen/create_profile_screen_3.dart';
-import './screens/create_profile_screen/create_profile_screen_4.dart';
-import './screens/create_profile_screen/test.dart';
-import './screens/splash_screen.dart';
+// import './screens/create_profile_screen/create_profile_screen_1.dart';
+// import './screens/create_profile_screen/create_profile_screen_2.dart';
+// import './screens/create_profile_screen/create_profile_screen_3.dart';
+// import './screens/create_profile_screen/create_profile_screen_4.dart';
+// import './screens/create_profile_screen/test2.dart';
+// import './screens/splash_screen.dart';
 import './screens/onboard.dart';
 // import './screens/on-boarding-screen.dart';
 
@@ -22,13 +22,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
         accentColor: null,
         fontFamily: 'Montserrat',
-        textTheme: ThemeData.light().textTheme.copyWith(
-              title: TextStyle(
-                fontFamily: 'Open_Sans',
-                //fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
-            ),
+        // textTheme: ThemeData.light().textTheme.copyWith(
+        //       title: TextStyle(
+        //         fontFamily: 'Open_Sans',
+        //         //fontWeight: FontWeight.bold,
+        //         fontSize: 20,
+        //       ),
+        //     ),
         // textTheme: ThemeData.light().textTheme.copyWith(
         //       headline6: TextStyle(
         //         fontFamily: 'Open_Sans',
@@ -38,12 +38,12 @@ class MyApp extends StatelessWidget {
         //     ),
       ),
       home: OnBoard(),
-      routes: {
-        'create-profile-1': (ctx) => ProfileScreen1(),
-        'create-profile-2': (ctx) => ProfileScreen2(),
-        'create-profile-3': (ctx) => ProfileScreen3(),
-        'splash-screen': (ctx) => SplashScreen()
-      },
+    //   routes: {
+    //     'create-profile-1': (ctx) => ProfileScreen1(),
+    //     'create-profile-2': (ctx) => ProfileScreen2(),
+    //     'create-profile-3': (ctx) => ProfileScreen3(),
+    //     'splash-screen': (ctx) => SplashScreen()
+    //   },
     );
   }
 }
