@@ -114,7 +114,7 @@ class _CreateProfState extends State<CreateProf> {
                                 _currentPage = page;
                               });
                             },
-                            children: mainBoxes(height, width),
+                            // children: mainBoxes(height, width),
                           ),
                         ),
                       ],

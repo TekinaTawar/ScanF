@@ -1,5 +1,5 @@
 // import 'package:ScanF/screens/create_profile_screen/landing_page.dart';
-import 'package:ScanF/screens/create_profile_screen/test2.dart';
+import './profile_screens.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
