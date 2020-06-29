@@ -10,6 +10,7 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
+    double cardWidth = MediaQuery.of(context).size.width * 0.232;
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -78,7 +79,6 @@ class _LandingPageState extends State<LandingPage> {
                         Icon(Icons.location_on),
                         Column(
                           children: <Widget>[
-
                             // yaha error aya tha puri screen blank ho jati shayad wo height ka koi prob hai! maine aaj dekha nhi waise dekh lena
 
                             // Container(
@@ -130,146 +130,174 @@ class _LandingPageState extends State<LandingPage> {
                 child: Text(
                   "QUICK LINKS",
                   style: TextStyle(
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w700,
                     fontFamily: "Open_Sans",
                   ),
                 ),
                 alignment: Alignment.centerLeft,
               ),
               Container(
-                height: MediaQuery.of(context).size.height * 0.15,
+                height: MediaQuery.of(context).size.height * 0.115,
                 // margin: EdgeInsets.all(8),
 
                 // color:Colors.amber,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
+                child: Row(
+                  // scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.only(top: 8,bottom: 8,right: 8),
-                      height: MediaQuery.of(context).size.height * 0.1,
-                      width: MediaQuery.of(context).size.width * 0.30,
+                      padding: EdgeInsets.only(top: 5, bottom: 5, right: 5),
+                      height: cardWidth,
+                      width: cardWidth * 0.95,
                       child: Card(
                         child: Align(
                           alignment: Alignment.center,
-                          child: Text(
-                            "TEA AND COFFEE",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: "Open_Sans",
-                              fontWeight: FontWeight.w700,
+                          child: InkWell(
+                            splashColor: Colors.blue.withAlpha(30),
+                            onTap: () {
+                              print('Card tapped.');
+                            },
+                            child: Text(
+                              "TEA & COFFEE",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "Open_Sans",
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
+                              ),
                             ),
                           ),
                         ),
                         color: Colors.blue,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(8),
-                      height: MediaQuery.of(context).size.height * 0.1,
-                      width: MediaQuery.of(context).size.width * 0.32,
+                      padding: EdgeInsets.all(5),
+                      height: cardWidth,
+                      width: cardWidth,
                       child: Card(
                         child: Align(
                           alignment: Alignment.center,
-                          child: Text(
-                            "STREET FOOD",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: "Open_Sans",
-                              fontWeight: FontWeight.w700,
+                          child: InkWell(
+                            splashColor: Colors.blue.withAlpha(30),
+                            onTap: () {
+                              print('Card tapped.');
+                            },
+                            child: Text(
+                              "STREET FOOD",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "Open_Sans",
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
+                              ),
                             ),
                           ),
                         ),
                         color: Colors.pink[300],
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(8),
-                      height: MediaQuery.of(context).size.height * 0.1,
-                      width: MediaQuery.of(context).size.width * 0.32,
+                      padding: EdgeInsets.all(5),
+                      height: cardWidth,
+                      width: cardWidth,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(10),
                         // color: Colors.deepOrangeAccent,
                       ),
                       child: Card(
                         child: Align(
                           alignment: Alignment.center,
-                          child: Text(
-                            "PURE VEG",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: "Open_Sans",
-                              fontWeight: FontWeight.w700,
+                          child: InkWell(
+                            splashColor: Colors.blue.withAlpha(30),
+                            onTap: () {
+                              print('Card tapped.');
+                            },
+                            child: Text(
+                              "PURE \n VEG",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "Open_Sans",
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
+                              ),
                             ),
                           ),
                         ),
                         color: Colors.green,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(8),
-                      height: MediaQuery.of(context).size.height * 0.1,
-                      width: MediaQuery.of(context).size.width * 0.32,
+                      padding: EdgeInsets.only(top: 5, bottom: 5, left: 5),
+                      height: cardWidth,
+                      width: cardWidth * 0.95,
                       child: Card(
                         child: Align(
                           alignment: Alignment.center,
-                          child: Text(
-                            "LOCAL DISHES",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: "Open_Sans",
-                              fontWeight: FontWeight.w700,
+                          child: InkWell(
+                            splashColor: Colors.blue.withAlpha(30),
+                            onTap: () {
+                              print('Card tapped.');
+                            },
+                            child: Text(
+                              "LOCAL DISHES",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "Open_Sans",
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
+                              ),
                             ),
                           ),
                         ),
                         color: Colors.deepOrangeAccent,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
-                    Container(
-                      padding: EdgeInsets.all(8),
-                      height: MediaQuery.of(context).size.height * 0.1,
-                      width: MediaQuery.of(context).size.width * 0.32,
-                      child: Card(
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            "TEA AND COFFEE",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: "Open_Sans",
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ),
-                        color: Colors.blue,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                    ),
+                    // Container(
+                    //   padding: EdgeInsets.all(8),
+                    //   height: MediaQuery.of(context).size.height * 0.1,
+                    //   width: MediaQuery.of(context).size.width * 0.32,
+                    //   child: Card(
+                    //     child: Align(
+                    //       alignment: Alignment.center,
+                    //       child: Text(
+                    //         "TEA AND COFFEE",
+                    //         textAlign: TextAlign.center,
+                    //         style: TextStyle(
+                    //           color: Colors.white,
+                    //           fontFamily: "Open_Sans",
+                    //           fontWeight: FontWeight.w700,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //     color: Colors.blue,
+                    //     shape: RoundedRectangleBorder(
+                    //       borderRadius: BorderRadius.circular(15),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(top:20.0),
+                  padding: const EdgeInsets.only(top: 20.0),
                   child: Text(
                     "NEARBY RESTAURANTS",
                     style: TextStyle(
@@ -279,7 +307,6 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ),
               ),
-
             ],
           ),
         ),
