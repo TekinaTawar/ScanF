@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 // import './screens/create_profile_screen/create_profile_screen_1.dart';
 // import './screens/create_profile_screen/create_profile_screen_2.dart';
 // import './screens/create_profile_screen/create_profile_screen_3.dart';
-// import './screens/create_profile_screen/create_profile_screen_4.dart';
-import './screens/profile_screens.dart';
+import './screens/create_profile_screen/landing_page.dart';
+// import './screens/profile_screens.dart';
 // import './screens/splash_screen.dart';
-// import './screens/onboard.dart';
+ import './screens/onboard.dart';
 // import './screens/on-boarding-screen.dart';
 
 void main() => runApp(MyApp());
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         //       ),
         //     ),
       ),
-      home: CreateProf(),
+      home: LandingPage(),
     //   routes: {
     //     'create-profile-1': (ctx) => ProfileScreen1(),
     //     'create-profile-2': (ctx) => ProfileScreen2(),

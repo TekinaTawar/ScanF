@@ -57,6 +57,22 @@ flutter:
     - assets/images/clipart-happy-traveller-9-transparent.png
     - assets/images/road.png
     - assets/images/dosa.jpg
+    - assets/images/Group 10.svg
+    - assets/images/loc_des.svg
+    - assets/images/durbin.svg
+    - assets/images/google_map.svg
+    - assets/images/group 86.png
+    - assets/images/like.svg
+    - assets/images/loc_des.svg
+    - assets/images/local_speciality.svg
+    - assets/images/location.svg
+    - assets/images/meal.svg
+    - assets/images/non-veg.svg
+    - assets/images/search.svg
+    - assets/images/search_ultra.svg
+    - assets/images/veg.svg
+
+    
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

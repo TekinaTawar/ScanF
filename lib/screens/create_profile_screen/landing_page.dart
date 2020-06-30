@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LandingPage extends StatefulWidget {
   LandingPage({Key key}) : super(key: key);
@@ -14,21 +15,33 @@ class _LandingPageState extends State<LandingPage> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
-                        "MANALI",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          SvgPicture.asset(
+                            "assets/images/location.svg",
+                            height: 26,
+                            width: 26,
+                          ),
+                          Text(
+                            "  MANALI",
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
                       Text(
-                        "MALL ROAD, MANALI",
+                        "  MALL ROAD, MANALI",
                         style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.bold,
@@ -39,10 +52,10 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                   Align(
                     alignment: Alignment.centerRight,
-                    child: Icon(
-                      Icons.account_circle,
-                      color: Color.fromRGBO(210, 210, 210, 1),
-                      size: 50,
+                    child: SvgPicture.asset(
+                      "assets/images/Group 10.svg",
+                      height: 35,
+                      width: 35,
                     ),
                   ),
                 ],
@@ -52,77 +65,111 @@ class _LandingPageState extends State<LandingPage> {
                 height: 45,
                 child: TextFormField(
                   decoration: InputDecoration(
+                    prefixIcon: IconButton(
+                      icon: SvgPicture.asset("assets/images/search_ultra.svg",
+                          height: 20, width: 20),
+                      onPressed: () => {},
+                    ),
                     hintText: "Search by dish, cuisine, etc.",
                     hintStyle: TextStyle(
-                        fontSize: 13,
-                        color: Color.fromRGBO(0, 0, 0, 0.25),
-                        fontWeight: FontWeight.w500),
+                      fontSize: 13,
+                      color: Color.fromRGBO(0, 0, 0, 0.25),
+                      fontWeight: FontWeight.w500,
+                    ),
                     border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(7),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue),
                       borderRadius: BorderRadius.circular(7),
                     ),
                   ),
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height * 0.17,
+                // color: Colors.amber,
+                height: MediaQuery.of(context).size.height * 0.14,
+
                 child: Row(
                   children: <Widget>[
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(
-                          "SEARCH ALONG ROUTE",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Open_Sans",
+                        Padding(
+                          padding: const EdgeInsets.only(top: 0, bottom: 8),
+                          child: Text(
+                            "SEARCH ALONG ROUTE",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontFamily: "Montserrat",
+                                fontSize: 15),
                           ),
                         ),
-                        Icon(Icons.location_on),
-                        Column(
+                        Row(
+                          // crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            // yaha error aya tha puri screen blank ho jati shayad wo height ka koi prob hai! maine aaj dekha nhi waise dekh lena
-
-                            // Container(
-                            //   margin: EdgeInsets.symmetric(vertical: 15),
-                            //   height: 45,
-                            //   child: TextFormField(
-                            //     decoration: InputDecoration(
-                            //       hintText:
-                            //           "Search by dish, cuisine, etc.",
-                            //       hintStyle: TextStyle(
-                            //           fontSize: 13,
-                            //           color:
-                            //               Color.fromRGBO(0, 0, 0, 0.25),
-                            //           fontWeight: FontWeight.w500),
-                            //       border: OutlineInputBorder(
-                            //         borderRadius:
-                            //             BorderRadius.circular(7),
-                            //       ),
-                            //     ),
-                            //   ),
-                            // ),
-                            // Container(
-                            //   margin: EdgeInsets.symmetric(vertical: 15),
-                            //   height: 45,
-                            //   child: TextFormField(
-                            //     decoration: InputDecoration(
-                            //       hintText:
-                            //           "Search by dish, cuisine, etc.",
-                            //       hintStyle: TextStyle(
-                            //           fontSize: 13,
-                            //           color:
-                            //               Color.fromRGBO(0, 0, 0, 0.25),
-                            //           fontWeight: FontWeight.w500),
-                            //       border: OutlineInputBorder(
-                            //         borderRadius:
-                            //             BorderRadius.circular(7),
-                            //       ),
-                            //     ),
-                            //   ),
-                            // ),
+                            SvgPicture.asset("assets/images/loc_des.svg",
+                                width: 20),
+                            Column(
+                              children: <Widget>[
+                                Container(
+                                  // color:Colors.blue,
+                                  margin: EdgeInsets.only(bottom: 10, left: 5),
+                                  height: MediaQuery.of(context).size.height *
+                                      0.035,
+                                  width: MediaQuery.of(context).size.width * .4,
+                                  child: TextFormField(
+                                    textAlignVertical: TextAlignVertical.center,
+                                    textAlign: TextAlign.left,
+                                    decoration: InputDecoration(
+                                      hintText: "Your Location",
+                                      hintStyle: TextStyle(
+                                          fontSize: 11,
+                                          color: Color.fromRGBO(0, 0, 0, 0.3),
+                                          fontWeight: FontWeight.w500),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(6),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide:
+                                            BorderSide(color: Colors.blue),
+                                        borderRadius: BorderRadius.circular(6),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  // color:Colors.blue,
+                                  margin: EdgeInsets.only(top: 10, left: 5),
+                                  height: MediaQuery.of(context).size.height *
+                                      0.035,
+                                  width: MediaQuery.of(context).size.width * .4,
+                                  child: TextFormField(
+                                    textAlignVertical: TextAlignVertical.center,
+                                    textAlign: TextAlign.left,
+                                    decoration: InputDecoration(
+                                      hintText: "Choose Destination",
+                                      hintStyle: TextStyle(
+                                          fontSize: 11,
+                                          color: Color.fromRGBO(0, 0, 0, 0.3),
+                                          fontWeight: FontWeight.w500),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(6),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide:
+                                            BorderSide(color: Colors.blue),
+                                        borderRadius: BorderRadius.circular(6),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )
                           ],
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -131,7 +178,6 @@ class _LandingPageState extends State<LandingPage> {
                   "QUICK LINKS",
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
-                    fontFamily: "Open_Sans",
                   ),
                 ),
                 alignment: Alignment.centerLeft,
@@ -142,7 +188,7 @@ class _LandingPageState extends State<LandingPage> {
 
                 // color:Colors.amber,
                 child: Row(
-                  // scrollDirection: Axis.horizontal,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Container(
                       padding: EdgeInsets.only(top: 5, bottom: 5, right: 5),
@@ -161,7 +207,6 @@ class _LandingPageState extends State<LandingPage> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Colors.white,
-                                fontFamily: "Open_Sans",
                                 fontWeight: FontWeight.w700,
                                 fontSize: 12,
                               ),
@@ -191,7 +236,6 @@ class _LandingPageState extends State<LandingPage> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Colors.white,
-                                fontFamily: "Open_Sans",
                                 fontWeight: FontWeight.w700,
                                 fontSize: 12,
                               ),
@@ -225,7 +269,6 @@ class _LandingPageState extends State<LandingPage> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Colors.white,
-                                fontFamily: "Open_Sans",
                                 fontWeight: FontWeight.w700,
                                 fontSize: 12,
                               ),
@@ -255,7 +298,6 @@ class _LandingPageState extends State<LandingPage> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Colors.white,
-                                fontFamily: "Open_Sans",
                                 fontWeight: FontWeight.w700,
                                 fontSize: 12,
                               ),
@@ -268,29 +310,6 @@ class _LandingPageState extends State<LandingPage> {
                         ),
                       ),
                     ),
-                    // Container(
-                    //   padding: EdgeInsets.all(8),
-                    //   height: MediaQuery.of(context).size.height * 0.1,
-                    //   width: MediaQuery.of(context).size.width * 0.32,
-                    //   child: Card(
-                    //     child: Align(
-                    //       alignment: Alignment.center,
-                    //       child: Text(
-                    //         "TEA AND COFFEE",
-                    //         textAlign: TextAlign.center,
-                    //         style: TextStyle(
-                    //           color: Colors.white,
-                    //           fontFamily: "Open_Sans",
-                    //           fontWeight: FontWeight.w700,
-                    //         ),
-                    //       ),
-                    //     ),
-                    //     color: Colors.blue,
-                    //     shape: RoundedRectangleBorder(
-                    //       borderRadius: BorderRadius.circular(15),
-                    //     ),
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
@@ -301,7 +320,6 @@ class _LandingPageState extends State<LandingPage> {
                   child: Text(
                     "NEARBY RESTAURANTS",
                     style: TextStyle(
-                      fontFamily: "Open_Sans",
                       fontWeight: FontWeight.w700,
                     ),
                   ),
