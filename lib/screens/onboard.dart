@@ -124,7 +124,7 @@ class _OnBoardState extends State<OnBoard> {
                 margin: EdgeInsets.symmetric(vertical: 17),
                 height: 5,
                 width: double.infinity,
-                color: Colors.blue,
+                color: Color(0xff0070C0),
               ),
               Padding(
                 padding:
@@ -141,7 +141,7 @@ class _OnBoardState extends State<OnBoard> {
                     'Looking for a place to eat?',
                     style: TextStyle(
                         fontSize: 15,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                         fontFamily: "Open_Sans"),
                     textAlign: TextAlign.center,
                   ),
@@ -158,7 +158,7 @@ class _OnBoardState extends State<OnBoard> {
                       width: 285,
                       height: 47,
                       decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: Color(0xff1A5B94),
                           borderRadius: BorderRadius.circular(13)),
                       child: Text(
                         'SET SEARCH LOCATION',
@@ -183,7 +183,7 @@ class _OnBoardState extends State<OnBoard> {
                       'Have an account?',
                       style: TextStyle(
                           fontSize: 15,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w600,
                           fontFamily: "Open_Sans"),
                       textAlign: TextAlign.center,
                     ),
@@ -195,7 +195,7 @@ class _OnBoardState extends State<OnBoard> {
                         ' LOGIN',
                         style: TextStyle(
                             fontSize: 15,
-                            color: Colors.blue,
+                            color: Color(0xff1A5B94),
                             fontWeight: FontWeight.bold,
                             fontFamily: "Open_Sans"),
                         textAlign: TextAlign.center,

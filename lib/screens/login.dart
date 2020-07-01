@@ -73,7 +73,7 @@ class Login extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                color: Colors.blue,
+                color: Color(0xff1A5B94),
               ),
               child: GestureDetector(
                 onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context) => CreateProf()),);},
@@ -108,7 +108,7 @@ class Login extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 // borderRadius: BorderRadius.circular(5),
-                color: Colors.lightBlue,
+                color: Color(0xff3C66C4),
               ),
               child: GestureDetector(
                 child: Container(
@@ -139,7 +139,7 @@ class Login extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 // borderRadius: BorderRadius.circular(5),
-                color: Colors.redAccent,
+                color: Color(0xffCF4332),
               ),
               child: GestureDetector(
                 child: Container(

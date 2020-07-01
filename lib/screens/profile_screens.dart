@@ -1,4 +1,4 @@
-import 'package:ScanF/screens/create_profile_screen/landing_page.dart';
+import 'package:ScanF/screens/HomeScreens/landing_page.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/text_field.dart';

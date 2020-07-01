@@ -1,11 +1,12 @@
 // import 'package:ScanF/screens/create_profile_screen/test.dart';
+import 'package:ScanF/screens/HomeScreens/hotelDetails.dart';
 import 'package:flutter/material.dart';
 
 
 // import './screens/create_profile_screen/create_profile_screen_1.dart';
 // import './screens/create_profile_screen/create_profile_screen_2.dart';
 // import './screens/create_profile_screen/create_profile_screen_3.dart';
-import './screens/create_profile_screen/landing_page.dart';
+import 'screens/HomeScreens/landing_page.dart';
 // import './screens/profile_screens.dart';
 // import './screens/splash_screen.dart';
  import './screens/onboard.dart';
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
         //       ),
         //     ),
       ),
-      home: LandingPage(),
+      home: HotelDetails(),
     //   routes: {
     //     'create-profile-1': (ctx) => ProfileScreen1(),
     //     'create-profile-2': (ctx) => ProfileScreen2(),

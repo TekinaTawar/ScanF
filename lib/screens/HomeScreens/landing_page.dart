@@ -60,8 +60,9 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ],
               ),
+              Divider(thickness: 0.7,),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 15),
+                margin: EdgeInsets.only(bottom: 15),
                 height: 45,
                 child: TextFormField(
                   decoration: InputDecoration(
@@ -170,9 +171,14 @@ class _LandingPageState extends State<LandingPage> {
                         ),
                       ],
                     ),
+                    Image.asset(
+                      "assets/images/car.jpg",
+                      alignment: Alignment.bottomCenter,
+                    ),
                   ],
                 ),
               ),
+              Divider(thickness: 3.5,color: Color.fromRGBO(128, 128, 128, 0.07),),
               Align(
                 child: Text(
                   "QUICK LINKS",
@@ -213,7 +219,7 @@ class _LandingPageState extends State<LandingPage> {
                             ),
                           ),
                         ),
-                        color: Colors.blue,
+                        color: Color(0xff2685C9),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -242,7 +248,7 @@ class _LandingPageState extends State<LandingPage> {
                             ),
                           ),
                         ),
-                        color: Colors.pink[300],
+                        color: Color(0xffD452A8),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -275,7 +281,7 @@ class _LandingPageState extends State<LandingPage> {
                             ),
                           ),
                         ),
-                        color: Colors.green,
+                        color: Color(0xff47CC5E),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -304,7 +310,7 @@ class _LandingPageState extends State<LandingPage> {
                             ),
                           ),
                         ),
-                        color: Colors.deepOrangeAccent,
+                        color: Color(0xffFF5226),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -313,6 +319,7 @@ class _LandingPageState extends State<LandingPage> {
                   ],
                 ),
               ),
+             Divider(thickness: 3.5,color: Color.fromRGBO(128, 128, 128, 0.07),),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
