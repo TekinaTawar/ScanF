@@ -1,5 +1,5 @@
 // import 'package:ScanF/screens/create_profile_screen/test.dart';
-import 'package:ScanF/screens/HomeScreens/hotelDetails.dart';
+// import 'package:ScanF/screens/HomeScreens/hotelDetails.dart';
 import 'package:flutter/material.dart';
 
 
@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'screens/HomeScreens/landing_page.dart';
 // import './screens/profile_screens.dart';
 // import './screens/splash_screen.dart';
- import './screens/onboard.dart';
+//  import './screens/onboard.dart';
 // import './screens/on-boarding-screen.dart';
 
 void main() => runApp(MyApp());
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         //       ),
         //     ),
       ),
-      home: HotelDetails(),
+      home: LandingPage(),
     //   routes: {
     //     'create-profile-1': (ctx) => ProfileScreen1(),
     //     'create-profile-2': (ctx) => ProfileScreen2(),

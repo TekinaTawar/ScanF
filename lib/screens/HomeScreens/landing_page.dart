@@ -60,7 +60,9 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ],
               ),
-              Divider(thickness: 0.7,),
+              Divider(
+                thickness: 0.7,
+              ),
               Container(
                 margin: EdgeInsets.only(bottom: 15),
                 height: 45,
@@ -89,7 +91,7 @@ class _LandingPageState extends State<LandingPage> {
               ),
               Container(
                 // color: Colors.amber,
-                height: MediaQuery.of(context).size.height * 0.14,
+                height: MediaQuery.of(context).size.height * 0.15,
 
                 child: Row(
                   children: <Widget>[
@@ -178,7 +180,10 @@ class _LandingPageState extends State<LandingPage> {
                   ],
                 ),
               ),
-              Divider(thickness: 3.5,color: Color.fromRGBO(128, 128, 128, 0.07),),
+              Divider(
+                thickness: 3.5,
+                color: Color.fromRGBO(128, 128, 128, 0.07),
+              ),
               Align(
                 child: Text(
                   "QUICK LINKS",
@@ -189,7 +194,7 @@ class _LandingPageState extends State<LandingPage> {
                 alignment: Alignment.centerLeft,
               ),
               Container(
-                height: MediaQuery.of(context).size.height * 0.115,
+                // height: MediaQuery.of(context).size.height * 0.115,
                 // margin: EdgeInsets.all(8),
 
                 // color:Colors.amber,
@@ -199,7 +204,7 @@ class _LandingPageState extends State<LandingPage> {
                     Container(
                       padding: EdgeInsets.only(top: 5, bottom: 5, right: 5),
                       height: cardWidth,
-                      width: cardWidth * 0.95,
+                      width: cardWidth - 5,
                       child: Card(
                         child: Align(
                           alignment: Alignment.center,
@@ -319,7 +324,10 @@ class _LandingPageState extends State<LandingPage> {
                   ],
                 ),
               ),
-             Divider(thickness: 3.5,color: Color.fromRGBO(128, 128, 128, 0.07),),
+              Divider(
+                thickness: 3.5,
+                color: Color.fromRGBO(128, 128, 128, 0.07),
+              ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
@@ -330,6 +338,88 @@ class _LandingPageState extends State<LandingPage> {
                       fontWeight: FontWeight.w700,
                     ),
                   ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 5),
+                height: 215,
+                width: double.infinity,
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 130,
+                      child: Row(
+                        children: <Widget>[
+                          SizedBox(
+                            height: 130,
+                            width:
+                                (MediaQuery.of(context).size.width * 0.5) - 10,
+                            child: Container(
+                              color: Colors.green,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 130,
+                            width:
+                                (MediaQuery.of(context).size.width * 0.5) - 10,
+                            child: Column(
+                              children: <Widget>[
+                                Container(
+                                  height: 32.5,
+                                  color: Colors.teal,
+                                ),
+                                Container(
+                                  height: 32.5,
+                                  color: Colors.yellow,
+                                ),
+                                Container(
+                                  height: 32.5,
+                                  color: Colors.teal,
+                                ),
+                                Container(
+                                  height: 32.5,
+                                  color: Colors.yellow,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 85,
+                      color: Colors.grey,
+                      child: Row(children: <Widget>[
+                        Container(
+                          width: (MediaQuery.of(context).size.width * 0.5) - 10,
+                          color: Colors.deepPurple,
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                height: 25,
+                                color: Colors.pink,
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          width: (MediaQuery.of(context).size.width * 0.5) - 10,
+                          color: Colors.red,
+                          child: Row(
+                            children: <Widget>[
+                              Container(
+                                width:
+                                    ((MediaQuery.of(context).size.width * 0.5) -
+                                            10) *
+                                        0.5,
+                                color: Colors.lime,
+                              )
+                            ],
+                          ),
+                        )
+                      ]),
+                    ),
+                  ],
                 ),
               ),
             ],
