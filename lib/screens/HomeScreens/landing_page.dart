@@ -440,7 +440,11 @@ class _LandingPageState extends State<LandingPage> {
                                     child: Row(
                                       children: <Widget>[
                                         SizedBox(
-                                          width: 125,
+                                          width: (MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.5) -
+                                              80,
                                           height: 32.5,
                                           child: Stack(
                                             alignment: Alignment.centerLeft,
@@ -458,7 +462,13 @@ class _LandingPageState extends State<LandingPage> {
                                               ),
                                               Container(
                                                 margin: EdgeInsets.only(
-                                                    left: 4.3 / 5 * 100),
+                                                    left: 4.3 /
+                                                        5 *
+                                                        ((MediaQuery.of(context)
+                                                                    .size
+                                                                    .width *
+                                                                0.5) -
+                                                            105)),
                                                 alignment: Alignment.center,
                                                 child: Text(
                                                   '4.3',
@@ -487,28 +497,30 @@ class _LandingPageState extends State<LandingPage> {
                                             ],
                                           ),
                                         ),
-                                        Expanded(
+                                        SizedBox(
+                                            width: 40,
                                             child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            Text(
-                                              '4.3',
-                                              style: TextStyle(
-                                                fontSize: 12,
-                                                color: Color(0xff705123),
-                                              ),
-                                            ),
-                                            Text(
-                                              '(100+)',
-                                              style: TextStyle(
-                                                fontFamily: "Montserrat-Medium",
-                                                fontSize: 10,
-                                                color: Color(0xff705123),
-                                              ),
-                                            )
-                                          ],
-                                        ))
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: <Widget>[
+                                                Text(
+                                                  '4.3',
+                                                  style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Color(0xff705123),
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '(100+)',
+                                                  style: TextStyle(
+                                                    fontFamily:
+                                                        "Montserrat-Medium",
+                                                    fontSize: 10,
+                                                    color: Color(0xff705123),
+                                                  ),
+                                                )
+                                              ],
+                                            ))
                                       ],
                                     ),
                                   ),
@@ -517,7 +529,11 @@ class _LandingPageState extends State<LandingPage> {
                                     child: Row(
                                       children: <Widget>[
                                         SizedBox(
-                                          width: 125,
+                                          width: (MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.5) -
+                                              80,
                                           height: 32.5,
                                           child: Stack(
                                             alignment: Alignment.centerLeft,
@@ -535,7 +551,11 @@ class _LandingPageState extends State<LandingPage> {
                                               ),
                                               Container(
                                                 margin: EdgeInsets.only(
-                                                    left: 4.5 / 5 * 100),
+                                                    left: 4.5 / 5 * ((MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.5) -
+                                              105)),
                                                 alignment: Alignment.center,
                                                 child: Text(
                                                   '4.5',
@@ -564,7 +584,8 @@ class _LandingPageState extends State<LandingPage> {
                                             ],
                                           ),
                                         ),
-                                        Expanded(
+                                        SizedBox(
+                                          width: 40,
                                             child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -594,7 +615,11 @@ class _LandingPageState extends State<LandingPage> {
                                     child: Row(
                                       children: <Widget>[
                                         SizedBox(
-                                          width: 125,
+                                          width: (MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.5) -
+                                              80,
                                           height: 32.5,
                                           child: Stack(
                                             alignment: Alignment.centerLeft,
@@ -612,7 +637,11 @@ class _LandingPageState extends State<LandingPage> {
                                               ),
                                               Container(
                                                 margin: EdgeInsets.only(
-                                                    left: 10 / 60 * 100),
+                                                    left: 10 / 60 * ((MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.5) -
+                                              105)),
                                                 alignment: Alignment.center,
                                                 child: Text(
                                                   '10 m',
@@ -641,7 +670,8 @@ class _LandingPageState extends State<LandingPage> {
                                             ],
                                           ),
                                         ),
-                                        Expanded(
+                                        SizedBox(
+                                          width: 40,
                                             child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceAround,
