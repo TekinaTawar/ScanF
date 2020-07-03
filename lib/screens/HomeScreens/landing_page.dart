@@ -859,6 +859,7 @@ class _LandingPageState extends State<LandingPage> {
                     ],
                   ),
                 ),
+                
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 5),
                   height: 215,
@@ -896,7 +897,11 @@ class _LandingPageState extends State<LandingPage> {
                                     child: Row(
                                       children: <Widget>[
                                         SizedBox(
-                                          width: 125,
+                                          width: (MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.5) -
+                                              80,
                                           height: 32.5,
                                           child: Stack(
                                             alignment: Alignment.centerLeft,
@@ -914,7 +919,13 @@ class _LandingPageState extends State<LandingPage> {
                                               ),
                                               Container(
                                                 margin: EdgeInsets.only(
-                                                    left: 4.3 / 5 * 100),
+                                                    left: 4.3 /
+                                                        5 *
+                                                        ((MediaQuery.of(context)
+                                                                    .size
+                                                                    .width *
+                                                                0.5) -
+                                                            105)),
                                                 alignment: Alignment.center,
                                                 child: Text(
                                                   '4.3',
@@ -943,28 +954,30 @@ class _LandingPageState extends State<LandingPage> {
                                             ],
                                           ),
                                         ),
-                                        Expanded(
+                                        SizedBox(
+                                            width: 40,
                                             child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            Text(
-                                              '4.3',
-                                              style: TextStyle(
-                                                fontSize: 12,
-                                                color: Color(0xff705123),
-                                              ),
-                                            ),
-                                            Text(
-                                              '(100+)',
-                                              style: TextStyle(
-                                                fontFamily: "Montserrat-Medium",
-                                                fontSize: 10,
-                                                color: Color(0xff705123),
-                                              ),
-                                            )
-                                          ],
-                                        ))
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: <Widget>[
+                                                Text(
+                                                  '4.3',
+                                                  style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Color(0xff705123),
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '(100+)',
+                                                  style: TextStyle(
+                                                    fontFamily:
+                                                        "Montserrat-Medium",
+                                                    fontSize: 10,
+                                                    color: Color(0xff705123),
+                                                  ),
+                                                )
+                                              ],
+                                            ))
                                       ],
                                     ),
                                   ),
@@ -973,7 +986,11 @@ class _LandingPageState extends State<LandingPage> {
                                     child: Row(
                                       children: <Widget>[
                                         SizedBox(
-                                          width: 125,
+                                          width: (MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.5) -
+                                              80,
                                           height: 32.5,
                                           child: Stack(
                                             alignment: Alignment.centerLeft,
@@ -991,7 +1008,11 @@ class _LandingPageState extends State<LandingPage> {
                                               ),
                                               Container(
                                                 margin: EdgeInsets.only(
-                                                    left: 4.5 / 5 * 100),
+                                                    left: 4.5 / 5 * ((MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.5) -
+                                              105)),
                                                 alignment: Alignment.center,
                                                 child: Text(
                                                   '4.5',
@@ -1020,7 +1041,8 @@ class _LandingPageState extends State<LandingPage> {
                                             ],
                                           ),
                                         ),
-                                        Expanded(
+                                        SizedBox(
+                                          width: 40,
                                             child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -1050,7 +1072,11 @@ class _LandingPageState extends State<LandingPage> {
                                     child: Row(
                                       children: <Widget>[
                                         SizedBox(
-                                          width: 125,
+                                          width: (MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.5) -
+                                              80,
                                           height: 32.5,
                                           child: Stack(
                                             alignment: Alignment.centerLeft,
@@ -1068,7 +1094,11 @@ class _LandingPageState extends State<LandingPage> {
                                               ),
                                               Container(
                                                 margin: EdgeInsets.only(
-                                                    left: 10 / 60 * 100),
+                                                    left: 10 / 60 * ((MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.5) -
+                                              105)),
                                                 alignment: Alignment.center,
                                                 child: Text(
                                                   '10 m',
@@ -1097,7 +1127,8 @@ class _LandingPageState extends State<LandingPage> {
                                             ],
                                           ),
                                         ),
-                                        Expanded(
+                                        SizedBox(
+                                          width: 40,
                                             child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceAround,
@@ -1154,140 +1185,138 @@ class _LandingPageState extends State<LandingPage> {
                       SizedBox(
                         height: 85,
                         // color: Colors.grey,
-                        child: Row(
-                          children: <Widget>[
-                            SizedBox(
-                              width: (MediaQuery.of(context).size.width * 0.5) +
-                                  20,
-                              // color: Colors.deepPurple,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  SizedBox(
-                                    height: 3,
+                        child: Row(children: <Widget>[
+                          SizedBox(
+                            width:
+                                (MediaQuery.of(context).size.width * 0.5) + 20,
+                            // color: Colors.deepPurple,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                SizedBox(
+                                  height: 3,
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Text(
+                                      "Sher-E-Punjab   ",
+                                      style: TextStyle(
+                                        fontFamily: "Montserrat-Medium",
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                    SvgPicture.asset(
+                                      "assets/images/veg.svg",
+                                      height: 15,
+                                    ),
+                                    SizedBox(
+                                      width: 3,
+                                    ),
+                                    SvgPicture.asset(
+                                      "assets/images/non-veg.svg",
+                                      height: 15,
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 8),
+                                Text(
+                                  "North Indian, Chinese, South Indian",
+                                  style: TextStyle(
+                                    wordSpacing: 1,
+                                    fontSize: 10,
+                                    fontFamily: "Montserrat-Medium",
+                                    color: Color(0xff7f7f7f),
                                   ),
-                                  Row(
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  "Open Hours : 9 am - 11 pm ■  Since 1990​​",
+                                  style: TextStyle(
+                                    wordSpacing: 1,
+                                    fontSize: 10,
+                                    fontFamily: "Montserrat-Medium",
+                                    color: Color(0xff7f7f7f),
+                                  ),
+                                ),
+                                SizedBox(height: 6),
+                                Text(
+                                  "10 mins away |  ₹ 250 for two​",
+                                  style: TextStyle(
+                                    wordSpacing: 1,
+                                    fontSize: 10,
+                                    fontFamily: "Montserrat-Medium",
+                                    color: Color(0xff7f7f7f),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            width:
+                                (MediaQuery.of(context).size.width * 0.5) - 40,
+                            // color: Colors.red,
+                            child: Row(
+                              children: <Widget>[
+                                SizedBox(
+                                  width: ((MediaQuery.of(context).size.width *
+                                              0.5) -
+                                          40) *
+                                      0.5,
+                                  // color: Colors.lime,
+                                  child: Column(
+                                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
                                     children: <Widget>[
+                                      SizedBox(height: 17),
+                                      SvgPicture.asset(
+                                        "assets/images/google_map.svg",
+                                        height: 45,
+                                      ),
+                                      SizedBox(height: 2),
                                       Text(
-                                        "Sher-E-Punjab   ",
+                                        "Locate",
                                         style: TextStyle(
+                                          fontSize: 9,
                                           fontFamily: "Montserrat-Medium",
-                                          fontSize: 14,
                                         ),
-                                      ),
-                                      SvgPicture.asset(
-                                        "assets/images/veg.svg",
-                                        height: 15,
-                                      ),
-                                      SizedBox(
-                                        width: 3,
-                                      ),
-                                      SvgPicture.asset(
-                                        "assets/images/non-veg.svg",
-                                        height: 15,
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 8),
-                                  Text(
-                                    "North Indian, Chinese, South Indian",
-                                    style: TextStyle(
-                                      wordSpacing: 1,
-                                      fontSize: 10,
-                                      fontFamily: "Montserrat-Medium",
-                                      color: Color(0xff7f7f7f),
-                                    ),
+                                ),
+                                SizedBox(
+                                  width: ((MediaQuery.of(context).size.width *
+                                              0.5) -
+                                          40) *
+                                      0.5,
+                                  // color: Colors.lime,
+                                  child: Column(
+                                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: <Widget>[
+                                      SizedBox(height: 17),
+                                      // SvgPicture.asset(
+                                      //   "assets/images/google_map.svg",
+                                      //   height: 45,
+                                      // ),
+                                      Icon(Icons.shopping_cart, size: 45),
+                                      SizedBox(height: 2),
+                                      Text(
+                                        "Place Order",
+                                        style: TextStyle(
+                                          fontSize: 9,
+                                          fontFamily: "Montserrat-Medium",
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  SizedBox(height: 4),
-                                  Text(
-                                    "Open Hours : 9 am - 11 pm ■  Since 1990​​",
-                                    style: TextStyle(
-                                      wordSpacing: 1,
-                                      fontSize: 10,
-                                      fontFamily: "Montserrat-Medium",
-                                      color: Color(0xff7f7f7f),
-                                    ),
-                                  ),
-                                  SizedBox(height: 6),
-                                  Text(
-                                    "10 mins away |  ₹ 250 for two​",
-                                    style: TextStyle(
-                                      wordSpacing: 1,
-                                      fontSize: 10,
-                                      fontFamily: "Montserrat-Medium",
-                                      color: Color(0xff7f7f7f),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                            SizedBox(
-                              width: (MediaQuery.of(context).size.width * 0.5) -
-                                  40,
-                              // color: Colors.red,
-                              child: Row(
-                                children: <Widget>[
-                                  SizedBox(
-                                    width: ((MediaQuery.of(context).size.width *
-                                                0.5) -
-                                            40) *
-                                        0.5,
-                                    // color: Colors.lime,
-                                    child: Column(
-                                      // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                      children: <Widget>[
-                                        SizedBox(height: 17),
-                                        SvgPicture.asset(
-                                          "assets/images/google_map.svg",
-                                          height: 45,
-                                        ),
-                                        SizedBox(height: 2),
-                                        Text(
-                                          "Locate",
-                                          style: TextStyle(
-                                            fontSize: 9,
-                                            fontFamily: "Montserrat-Medium",
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: ((MediaQuery.of(context).size.width *
-                                                0.5) -
-                                            40) *
-                                        0.5,
-                                    // color: Colors.lime,
-                                    child: Column(
-                                      // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                      children: <Widget>[
-                                        SizedBox(height: 17),
-                                        // SvgPicture.asset(
-                                        //   "assets/images/google_map.svg",
-                                        //   height: 45,
-                                        // ),
-                                        Icon(Icons.shopping_cart, size: 45),
-                                        SizedBox(height: 2),
-                                        Text(
-                                          "Place Order",
-                                          style: TextStyle(
-                                            fontSize: 9,
-                                            fontFamily: "Montserrat-Medium",
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                          )
+                        ]),
                       ),
                     ],
                   ),
                 ),
-              ],
+                              ],
             ),
           ),
         ),
