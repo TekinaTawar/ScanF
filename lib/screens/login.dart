@@ -16,13 +16,7 @@ class Login extends StatelessWidget {
             // textDirection: TextDirection.ltr,
             children: <Widget>[
               Expanded(
-                child: Align(
-                  child: Text(
-                    "OTP SCREEN",
-                    style: TextStyle(fontSize: 25),
-                  ),
-                  alignment: Alignment.bottomCenter,
-                ),
+                child: SizedBox(),
                 flex: 4,
               ),
               Divider(
