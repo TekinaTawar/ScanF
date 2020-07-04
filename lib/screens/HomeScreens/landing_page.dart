@@ -146,7 +146,7 @@ class _LandingPageState extends State<LandingPage> {
                 Container(
                   // color: Colors.amber,
                   // height: MediaQuery.of(context).size.height * 0.15,
-                  height:110,
+                  height: 110,
 
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -177,7 +177,7 @@ class _LandingPageState extends State<LandingPage> {
                                         EdgeInsets.only(bottom: 10, left: 5),
                                     // height: MediaQuery.of(context).size.height *
                                     //     0.035,
-                                    height:27,
+                                    height: 27,
                                     width:
                                         MediaQuery.of(context).size.width * .4,
                                     child: TextFormField(
@@ -208,7 +208,7 @@ class _LandingPageState extends State<LandingPage> {
                                     margin: EdgeInsets.only(top: 10, left: 5),
                                     // height: MediaQuery.of(context).size.height *
                                     //     0.035,
-                                    height:27,
+                                    height: 27,
                                     width:
                                         MediaQuery.of(context).size.width * .4,
                                     child: TextFormField(
@@ -240,10 +240,10 @@ class _LandingPageState extends State<LandingPage> {
                           ),
                         ],
                       ),
-                      Image.asset(
-                        "assets/images/car.jpg",
+                      SvgPicture.asset(
+                        "assets/images/car2.svg",
+                        height: 90,
                         alignment: Alignment.bottomCenter,
-                      
                       ),
                     ],
                   ),
@@ -253,7 +253,7 @@ class _LandingPageState extends State<LandingPage> {
                   color: Color.fromRGBO(128, 128, 128, 0.07),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0,top:5),
+                  padding: const EdgeInsets.only(bottom: 8.0, top: 5),
                   child: Align(
                     child: Text(
                       "QUICK LINKS",
@@ -320,9 +320,6 @@ class _LandingPageState extends State<LandingPage> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-
-                     
-
                       Container(
                         height: cardWidth,
                         width: cardWidth,
@@ -349,43 +346,37 @@ class _LandingPageState extends State<LandingPage> {
                           color: Color(0xff47CC5E),
                         ),
                       ),
-
-                     
-                       
-                         Container(
-                           height: cardWidth,
+                      Container(
+                        height: cardWidth,
                         width: cardWidth,
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: InkWell(
-                              splashColor: Colors.blue.withAlpha(30),
-                              onTap: () {
-                                print('Card tapped.');
-                              },
-                              child: Text(
-                                "LOCAL DISHES",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 12,
-                                ),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: InkWell(
+                            splashColor: Colors.blue.withAlpha(30),
+                            onTap: () {
+                              print('Card tapped.');
+                            },
+                            child: Text(
+                              "LOCAL DISHES",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
                               ),
                             ),
                           ),
-                          decoration: BoxDecoration(
+                        ),
+                        decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffFF5226),
                         ),
-                          
-                         
-                        ),
-                      
+                      ),
                     ],
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top:8,bottom:4),
+                  padding: const EdgeInsets.only(top: 8, bottom: 4),
                   child: Divider(
                     thickness: 3.5,
                     color: Color.fromRGBO(128, 128, 128, 0.07),
