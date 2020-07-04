@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import './login.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -62,6 +64,22 @@ class _OnBoardState extends State<OnBoard> {
   ];
 
   @override
+  void initState() {
+  super.initState();
+  Timer.periodic(Duration(seconds: 3), (Timer timer) {
+    if (_currentPage < 3) {
+      _currentPage++;
+    } else {
+      _currentPage = 0;
+    }
+
+    _pageController.animateToPage(
+      _currentPage,
+      duration: Duration(milliseconds: 200),
+      curve: Curves.easeIn,
+    );
+  });
+}
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
