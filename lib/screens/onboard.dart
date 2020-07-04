@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './login.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 class OnBoard extends StatefulWidget {
   OnBoard({Key key}) : super(key: key);
 
@@ -88,43 +89,58 @@ class _OnBoardState extends State<OnBoard> {
                     Container(
                       child: Stack(
                         children: <Widget>[
-                          SvgPicture.asset(
-                            "assets/images/betterBack.svg",
-                            // cacheHeight: 300,
-                            // filterQuality: FilterQuality.high,
+                          Align(
+                            child: SizedBox(
+                              // width: double.infinity,
+                              height: 240,
+                              child: SvgPicture.asset(
+                                "assets/images/betterBack.svg",
+                                // cacheHeight: 300,
+                                // filterQuality: FilterQuality.high,
+                              ),
+                            ),
                           ),
-                          SvgPicture.asset(
-                            "assets/images/ladkaLadki.svg",
-                            // height:250,
-                            // cacheHeight: 300,
-                            // filterQuality: FilterQuality.high,
+                          Align(
+                            child: SizedBox(
+                              height: 300,
+                              child: SvgPicture.asset(
+                                "assets/images/ladkaLadki.svg",
+                                // height:250,
+                                // cacheHeight: 300,
+                                // filterQuality: FilterQuality.high,
+                              ),
+                            ),
                           ),
-
                         ],
                       ),
                     ),
-                    Container(
-                      // color: Colors.green,
-                      child: SvgPicture.asset(
+                    Padding(
+                      padding: const EdgeInsets.only(left: 50),
+                      child: Align(
+                        alignment: Alignment.center,
+                        // color: Colors.green,
+                        child: SizedBox(
+                          height: 300,
+                          child: SvgPicture.asset(
                             "assets/images/searchAlong.svg",
                             // cacheHeight: 300,
                             // filterQuality: FilterQuality.high,
                           ),
-                    ),
-                    Container(
-                      // color: Colors.blue,
-                      child: Image.asset(
-                        "assets/images/dosa.jpg",
-                        cacheHeight: 1000,
-                        cacheWidth: 1000,
+                        ),
                       ),
                     ),
+                    Image(
+                        image: AssetImage(
+                          "assets/images/dosa.jpg",
+                        ),
+                        fit: BoxFit.fill,
+                      ),
                     Container(
-                      child:SvgPicture.asset(
-                            "assets/images/loc.svg",
-                            // cacheHeight: 300,
-                            // filterQuality: FilterQuality.high,
-                          ),
+                      child: SvgPicture.asset(
+                        "assets/images/loc.svg",
+                        // cacheHeight: 300,
+                        // filterQuality: FilterQuality.high,
+                      ),
                       // color: Colors.yellow,
                     ),
                   ],
@@ -169,7 +185,12 @@ class _OnBoardState extends State<OnBoard> {
                 padding: const EdgeInsets.all(8.0),
                 child: Align(
                   child: GestureDetector(
-                    onTap:(){ Navigator.push(context,MaterialPageRoute(builder: (context) => Login()),);},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Login()),
+                      );
+                    },
                     child: Container(
                       alignment: Alignment.center,
                       width: 285,

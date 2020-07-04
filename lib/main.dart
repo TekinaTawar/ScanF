@@ -1,5 +1,6 @@
 // import 'package:ScanF/screens/create_profile_screen/test.dart';
 // import 'package:ScanF/screens/HomeScreens/hotelDetails.dart';
+import 'package:ScanF/screens/HomeScreens/hotelDetails.dart';
 import 'package:ScanF/screens/onboard.dart';
 import 'package:flutter/material.dart';
 
