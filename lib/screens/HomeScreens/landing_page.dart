@@ -11,13 +11,13 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
-    double cardWidth = MediaQuery.of(context).size.width * 0.232;
+    double cardWidth = MediaQuery.of(context).size.width * 0.2;
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/images/search.svg", height: 22),
+            icon: SvgPicture.asset("assets/images/search.svg", height: 20),
             title: Text(
               'Search',
               style: TextStyle(
@@ -28,7 +28,7 @@ class _LandingPageState extends State<LandingPage> {
             ),
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/images/durbin.svg", height: 20),
+            icon: SvgPicture.asset("assets/images/durbin.svg", height: 18),
             title: Text(
               'Discover',
               style: TextStyle(
@@ -83,18 +83,18 @@ class _LandingPageState extends State<LandingPage> {
                           children: <Widget>[
                             SvgPicture.asset(
                               "assets/images/location.svg",
-                              height: 26,
-                              width: 26,
+                              height: 20,
+                              width: 22,
                             ),
                             Text(
-                              "  MANALI",
+                              " MANALI",
                               style: TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
                         Text(
-                          "  MALL ROAD, MANALI",
+                          " MALL ROAD, MANALI",
                           style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
@@ -145,7 +145,8 @@ class _LandingPageState extends State<LandingPage> {
                 ),
                 Container(
                   // color: Colors.amber,
-                  height: MediaQuery.of(context).size.height * 0.15,
+                  // height: MediaQuery.of(context).size.height * 0.15,
+                  height:110,
 
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -174,8 +175,9 @@ class _LandingPageState extends State<LandingPage> {
                                     // color:Colors.blue,
                                     margin:
                                         EdgeInsets.only(bottom: 10, left: 5),
-                                    height: MediaQuery.of(context).size.height *
-                                        0.035,
+                                    // height: MediaQuery.of(context).size.height *
+                                    //     0.035,
+                                    height:27,
                                     width:
                                         MediaQuery.of(context).size.width * .4,
                                     child: TextFormField(
@@ -204,8 +206,9 @@ class _LandingPageState extends State<LandingPage> {
                                   Container(
                                     // color:Colors.blue,
                                     margin: EdgeInsets.only(top: 10, left: 5),
-                                    height: MediaQuery.of(context).size.height *
-                                        0.035,
+                                    // height: MediaQuery.of(context).size.height *
+                                    //     0.035,
+                                    height:27,
                                     width:
                                         MediaQuery.of(context).size.width * .4,
                                     child: TextFormField(
@@ -240,6 +243,7 @@ class _LandingPageState extends State<LandingPage> {
                       Image.asset(
                         "assets/images/car.jpg",
                         alignment: Alignment.bottomCenter,
+                      
                       ),
                     ],
                   ),
@@ -248,119 +252,109 @@ class _LandingPageState extends State<LandingPage> {
                   thickness: 3.5,
                   color: Color.fromRGBO(128, 128, 128, 0.07),
                 ),
-                Align(
-                  child: Text(
-                    "QUICK LINKS",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0,top:5),
+                  child: Align(
+                    child: Text(
+                      "QUICK LINKS",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
+                    alignment: Alignment.centerLeft,
                   ),
-                  alignment: Alignment.centerLeft,
                 ),
                 Container(
-                  // height: MediaQuery.of(context).size.height * 0.115,
-                  // margin: EdgeInsets.all(8),
-
-                  // color:Colors.amber,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Container(
-                        padding: EdgeInsets.only(top: 5, bottom: 5, right: 5),
                         height: cardWidth,
-                        width: cardWidth - 5,
-                        child: Card(
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: InkWell(
-                              splashColor: Colors.blue.withAlpha(30),
-                              onTap: () {
-                                print('Card tapped.');
-                              },
-                              child: Text(
-                                "TEA & COFFEE",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 12,
-                                ),
+                        width: cardWidth,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: InkWell(
+                            splashColor: Colors.blue.withAlpha(30),
+                            onTap: () {
+                              print('Card tapped.');
+                            },
+                            child: Text(
+                              "TEA & COFFEE",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
                               ),
                             ),
                           ),
-                          color: Color(0xff2685C9),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
                         ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(5),
-                        height: cardWidth,
-                        width: cardWidth,
-                        child: Card(
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: InkWell(
-                              splashColor: Colors.blue.withAlpha(30),
-                              onTap: () {
-                                print('Card tapped.');
-                              },
-                              child: Text(
-                                "STREET FOOD",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ),
-                          ),
-                          color: Color(0xffD452A8),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(5),
-                        height: cardWidth,
-                        width: cardWidth,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          // color: Colors.deepOrangeAccent,
-                        ),
-                        child: Card(
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: InkWell(
-                              splashColor: Colors.blue.withAlpha(30),
-                              onTap: () {
-                                print('Card tapped.');
-                              },
-                              child: Text(
-                                "PURE \n VEG",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ),
-                          ),
-                          color: Color(0xff47CC5E),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
+                          color: Color(0xff2685C9),
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.only(top: 5, bottom: 5, left: 5),
                         height: cardWidth,
-                        width: cardWidth * 0.95,
-                        child: Card(
+                        width: cardWidth,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: InkWell(
+                            splashColor: Colors.blue.withAlpha(30),
+                            onTap: () {
+                              print('Card tapped.');
+                            },
+                            child: Text(
+                              "STREET FOOD",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ),
+                        ),
+                        decoration: BoxDecoration(
+                          color: Color(0xffD452A8),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+
+                     
+
+                      Container(
+                        height: cardWidth,
+                        width: cardWidth,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: InkWell(
+                            splashColor: Colors.blue.withAlpha(30),
+                            onTap: () {
+                              print('Card tapped.');
+                            },
+                            child: Text(
+                              "PURE \n VEG",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ),
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xff47CC5E),
+                        ),
+                      ),
+
+                     
+                       
+                         Container(
+                           height: cardWidth,
+                        width: cardWidth,
                           child: Align(
                             alignment: Alignment.center,
                             child: InkWell(
@@ -379,23 +373,28 @@ class _LandingPageState extends State<LandingPage> {
                               ),
                             ),
                           ),
+                          decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
                           color: Color(0xffFF5226),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
                         ),
-                      ),
+                          
+                         
+                        ),
+                      
                     ],
                   ),
                 ),
-                Divider(
-                  thickness: 3.5,
-                  color: Color.fromRGBO(128, 128, 128, 0.07),
+                Padding(
+                  padding: const EdgeInsets.only(top:8,bottom:4),
+                  child: Divider(
+                    thickness: 3.5,
+                    color: Color.fromRGBO(128, 128, 128, 0.07),
+                  ),
                 ),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 20.0),
+                    padding: const EdgeInsets.only(top: 0.0),
                     child: Text(
                       "NEARBY RESTAURANTS",
                       style: TextStyle(
@@ -552,11 +551,13 @@ class _LandingPageState extends State<LandingPage> {
                                               ),
                                               Container(
                                                 margin: EdgeInsets.only(
-                                                    left: 4.5 / 5 * ((MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.5) -
-                                              105)),
+                                                    left: 4.5 /
+                                                        5 *
+                                                        ((MediaQuery.of(context)
+                                                                    .size
+                                                                    .width *
+                                                                0.5) -
+                                                            105)),
                                                 alignment: Alignment.center,
                                                 child: Text(
                                                   '4.5',
@@ -586,28 +587,29 @@ class _LandingPageState extends State<LandingPage> {
                                           ),
                                         ),
                                         SizedBox(
-                                          width: 40,
+                                            width: 40,
                                             child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            Text(
-                                              '4.5',
-                                              style: TextStyle(
-                                                fontSize: 12,
-                                                color: Color(0xff705123),
-                                              ),
-                                            ),
-                                            Text(
-                                              '(95)',
-                                              style: TextStyle(
-                                                fontFamily: "Montserrat-Medium",
-                                                fontSize: 10,
-                                                color: Color(0xff705123),
-                                              ),
-                                            )
-                                          ],
-                                        ))
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: <Widget>[
+                                                Text(
+                                                  '4.5',
+                                                  style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Color(0xff705123),
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '(95)',
+                                                  style: TextStyle(
+                                                    fontFamily:
+                                                        "Montserrat-Medium",
+                                                    fontSize: 10,
+                                                    color: Color(0xff705123),
+                                                  ),
+                                                )
+                                              ],
+                                            ))
                                       ],
                                     ),
                                   ),
@@ -638,11 +640,13 @@ class _LandingPageState extends State<LandingPage> {
                                               ),
                                               Container(
                                                 margin: EdgeInsets.only(
-                                                    left: 10 / 60 * ((MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.5) -
-                                              105)),
+                                                    left: 10 /
+                                                        60 *
+                                                        ((MediaQuery.of(context)
+                                                                    .size
+                                                                    .width *
+                                                                0.5) -
+                                                            105)),
                                                 alignment: Alignment.center,
                                                 child: Text(
                                                   '10 m',
@@ -672,20 +676,20 @@ class _LandingPageState extends State<LandingPage> {
                                           ),
                                         ),
                                         SizedBox(
-                                          width: 40,
+                                            width: 40,
                                             child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
-                                          children: <Widget>[
-                                            Text(
-                                              '10m',
-                                              style: TextStyle(
-                                                fontSize: 12,
-                                                color: Color(0xff705123),
-                                              ),
-                                            ),
-                                          ],
-                                        ))
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              children: <Widget>[
+                                                Text(
+                                                  '10m',
+                                                  style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Color(0xff705123),
+                                                  ),
+                                                ),
+                                              ],
+                                            ))
                                       ],
                                     ),
                                   ),
@@ -860,7 +864,6 @@ class _LandingPageState extends State<LandingPage> {
                     ],
                   ),
                 ),
-                
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 5),
                   height: 215,
@@ -1009,11 +1012,13 @@ class _LandingPageState extends State<LandingPage> {
                                               ),
                                               Container(
                                                 margin: EdgeInsets.only(
-                                                    left: 4.5 / 5 * ((MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.5) -
-                                              105)),
+                                                    left: 4.5 /
+                                                        5 *
+                                                        ((MediaQuery.of(context)
+                                                                    .size
+                                                                    .width *
+                                                                0.5) -
+                                                            105)),
                                                 alignment: Alignment.center,
                                                 child: Text(
                                                   '4.5',
@@ -1043,28 +1048,29 @@ class _LandingPageState extends State<LandingPage> {
                                           ),
                                         ),
                                         SizedBox(
-                                          width: 40,
+                                            width: 40,
                                             child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            Text(
-                                              '4.5',
-                                              style: TextStyle(
-                                                fontSize: 12,
-                                                color: Color(0xff705123),
-                                              ),
-                                            ),
-                                            Text(
-                                              '(95)',
-                                              style: TextStyle(
-                                                fontFamily: "Montserrat-Medium",
-                                                fontSize: 10,
-                                                color: Color(0xff705123),
-                                              ),
-                                            )
-                                          ],
-                                        ))
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: <Widget>[
+                                                Text(
+                                                  '4.5',
+                                                  style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Color(0xff705123),
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '(95)',
+                                                  style: TextStyle(
+                                                    fontFamily:
+                                                        "Montserrat-Medium",
+                                                    fontSize: 10,
+                                                    color: Color(0xff705123),
+                                                  ),
+                                                )
+                                              ],
+                                            ))
                                       ],
                                     ),
                                   ),
@@ -1095,11 +1101,13 @@ class _LandingPageState extends State<LandingPage> {
                                               ),
                                               Container(
                                                 margin: EdgeInsets.only(
-                                                    left: 10 / 60 * ((MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.5) -
-                                              105)),
+                                                    left: 10 /
+                                                        60 *
+                                                        ((MediaQuery.of(context)
+                                                                    .size
+                                                                    .width *
+                                                                0.5) -
+                                                            105)),
                                                 alignment: Alignment.center,
                                                 child: Text(
                                                   '10 m',
@@ -1129,20 +1137,20 @@ class _LandingPageState extends State<LandingPage> {
                                           ),
                                         ),
                                         SizedBox(
-                                          width: 40,
+                                            width: 40,
                                             child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
-                                          children: <Widget>[
-                                            Text(
-                                              '10m',
-                                              style: TextStyle(
-                                                fontSize: 12,
-                                                color: Color(0xff705123),
-                                              ),
-                                            ),
-                                          ],
-                                        ))
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              children: <Widget>[
+                                                Text(
+                                                  '10m',
+                                                  style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Color(0xff705123),
+                                                  ),
+                                                ),
+                                              ],
+                                            ))
                                       ],
                                     ),
                                   ),
@@ -1317,7 +1325,7 @@ class _LandingPageState extends State<LandingPage> {
                     ],
                   ),
                 ),
-                              ],
+              ],
             ),
           ),
         ),

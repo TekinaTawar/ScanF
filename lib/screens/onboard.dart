@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './login.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 class OnBoard extends StatefulWidget {
   OnBoard({Key key}) : super(key: key);
 
@@ -85,19 +86,30 @@ class _OnBoardState extends State<OnBoard> {
                   },
                   children: <Widget>[
                     Container(
-                      child: Image.asset(
-                        "assets/images/clipart-happy-traveller-9-transparent.png",
-                        cacheHeight: 300,
-                        // filterQuality: FilterQuality.high,
+                      child: Stack(
+                        children: <Widget>[
+                          SvgPicture.asset(
+                            "assets/images/betterBack.svg",
+                            // cacheHeight: 300,
+                            // filterQuality: FilterQuality.high,
+                          ),
+                          SvgPicture.asset(
+                            "assets/images/ladkaLadki.svg",
+                            // height:250,
+                            // cacheHeight: 300,
+                            // filterQuality: FilterQuality.high,
+                          ),
+
+                        ],
                       ),
                     ),
                     Container(
                       // color: Colors.green,
-                      child: Image.asset(
-                        "assets/images/road.png",
-                        cacheHeight: 500,
-                        cacheWidth: 500,
-                      ),
+                      child: SvgPicture.asset(
+                            "assets/images/searchAlong.svg",
+                            // cacheHeight: 300,
+                            // filterQuality: FilterQuality.high,
+                          ),
                     ),
                     Container(
                       // color: Colors.blue,
@@ -108,7 +120,12 @@ class _OnBoardState extends State<OnBoard> {
                       ),
                     ),
                     Container(
-                      color: Colors.yellow,
+                      child:SvgPicture.asset(
+                            "assets/images/loc.svg",
+                            // cacheHeight: 300,
+                            // filterQuality: FilterQuality.high,
+                          ),
+                      // color: Colors.yellow,
                     ),
                   ],
                 ),
