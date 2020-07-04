@@ -148,6 +148,7 @@ class _LandingPageState extends State<LandingPage> {
                   height: MediaQuery.of(context).size.height * 0.15,
 
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
