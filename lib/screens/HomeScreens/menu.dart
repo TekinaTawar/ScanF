@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:custom_switch/custom_switch.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
+import '../../widgets/menuItem.dart';
 
 class Menu extends StatefulWidget {
   const Menu({Key key}) : super(key: key);
@@ -11,6 +13,8 @@ class Menu extends StatefulWidget {
 class _MenuState extends State<Menu> {
   bool vegStatus = false;
   bool eggStatus = false;
+  double price = 0;
+ 
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,7 +32,7 @@ class _MenuState extends State<Menu> {
                   "MENU",
                   style: TextStyle(
                     fontFamily: "Montserrat-SemiBold",
-                    fontSize: 14,
+                    fontSize: 12,
                   ),
                 ),
                 Divider(
@@ -37,14 +41,14 @@ class _MenuState extends State<Menu> {
                 Row(
                   children: <Widget>[
                     Text(
-                      "Veg Only",
+                      "  Veg Only",
                       style: TextStyle(
                           fontFamily: "Montserrat-SemiBold", fontSize: 12),
                     ),
                     Transform.scale(
                       scale: 0.6,
                       child: Switch(
-                        activeColor: Color(0xff70AD47),
+                        activeColor: Color(0xff70AD27),
                         value: vegStatus,
                         onChanged: (value) {
                           print("VALUE : $value");
@@ -55,12 +59,15 @@ class _MenuState extends State<Menu> {
                         },
                       ),
                     ),
-                    Text("Includes Egg",style: TextStyle(
-                          fontFamily: "Montserrat-SemiBold", fontSize: 12),),
+                    Text(
+                      "Includes Egg",
+                      style: TextStyle(
+                          fontFamily: "Montserrat-SemiBold", fontSize: 12),
+                    ),
                     Transform.scale(
                       scale: 0.6,
                       child: Switch(
-                        activeColor: Color(0xffF9C114),
+                        activeColor: Color(0xffF9C112),
                         value: eggStatus,
                         onChanged: (value) {
                           print("VALUE : $value");
@@ -73,15 +80,110 @@ class _MenuState extends State<Menu> {
                     ),
                   ],
                 ),
-                new DropdownButton<String>(
-                  items: <String>['A', 'B', 'C', 'D'].map((String value) {
-                    return new DropdownMenuItem<String>(
-                      value: value,
-                      child: new Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (_) {},
-                )
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    GestureDetector(
+                      onTap: () => print("Tapped Chinese"),
+                      child: Text(
+                        "CHINESE",
+                        style: TextStyle(
+                          fontFamily: "Montserrat-SemiBold",
+                          fontSize: 11,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                MenuItem(),
+                MenuItem(),
+                MenuItem(),
+                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    GestureDetector(
+                      onTap: () => print("Tapped Chinese"),
+                      child: Text(
+                        "CHINESE",
+                        style: TextStyle(
+                          fontFamily: "Montserrat-SemiBold",
+                          fontSize: 11,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                 MenuItem(),
+                MenuItem(),
+                MenuItem(),
+                Expanded(
+                  flex: 4,
+                  child: Container(),
+                ),
+                Align(
+                  child: GestureDetector(
+                    child: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text(
+                                "  1 ITEM",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  fontFamily: "Montserrat",
+                                  fontSize: 14,
+                                ),
+                              ),
+                              Text(
+                                "    150  plus taxes",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  fontFamily: "Montserrat",
+                                  fontSize: 8,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Text(
+                                "VIEW CART ",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: "Montserrat",
+                                    fontSize: 14),
+                              ),
+                              Icon(
+                                Icons.arrow_forward,
+                                size: 30,
+                                color: Colors.white,
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Color(0xff296693),
+                      ),
+                      height: 40,
+                    ),
+                  ),
+                  alignment: Alignment.bottomCenter,
+                ),
+                Expanded(
+                  child: Container(),
+                ),
               ],
             ),
           ),
@@ -89,4 +191,10 @@ class _MenuState extends State<Menu> {
       ),
     );
   }
+
+
 }
+
+
+
+
