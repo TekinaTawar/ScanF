@@ -1,3 +1,4 @@
+import 'package:ScanF/screens/HomeScreens/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -171,7 +172,10 @@ class HotelDetails extends StatelessWidget {
                               padding: const EdgeInsets.only(bottom: 8),
                               child: Text(
                                 'Indoor Seating | No Alcohol Served | Self Service | Hygienic Atmosphere',
-                                style: TextStyle(fontSize: 10,fontFamily: "Montserrat-SemiBold",fontWeight: FontWeight.w500),
+                                style: TextStyle(
+                                    fontSize: 10,
+                                    fontFamily: "Montserrat-SemiBold",
+                                    fontWeight: FontWeight.w500),
                               ),
                             ),
                             Padding(
@@ -200,10 +204,9 @@ class HotelDetails extends StatelessWidget {
                               child: Text(
                                 'TOP DISHES PEOPLE ORDER',
                                 style: TextStyle(
-                                  fontFamily: 'Montserrat-SemiBold',
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.w600
-                                ),
+                                    fontFamily: 'Montserrat-SemiBold',
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w600),
                               ),
                             ),
                             Padding(
@@ -293,10 +296,9 @@ class HotelDetails extends StatelessWidget {
                                   Text(
                                     'and save travel time with no waiting time',
                                     style: TextStyle(
-                                      fontFamily: 'Montserrat-SemiBold',
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.w600
-                                    ),
+                                        fontFamily: 'Montserrat-SemiBold',
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w600),
                                   ),
                                 ],
                               ),
@@ -306,21 +308,29 @@ class HotelDetails extends StatelessWidget {
                             ),
                             Row(
                               children: <Widget>[
-                                Container(
-                                  width: 110,
-                                  height: 35,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xff296693),
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    'ORDER NOW',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontFamily: 'Montserrat-SemiBold',
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w600),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Menu()));
+                                  },
+                                  child: Container(
+                                    width: 110,
+                                    height: 35,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xff296693),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      'ORDER NOW',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontFamily: 'Montserrat-SemiBold',
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w600),
+                                    ),
                                   ),
                                 ),
                                 Text(
@@ -345,7 +355,7 @@ class HotelDetails extends StatelessWidget {
                             Align(
                               alignment: Alignment.bottomLeft,
                               child: Padding(
-                                padding: const EdgeInsets.only(left:8.0),
+                                padding: const EdgeInsets.only(left: 8.0),
                                 child: SvgPicture.asset(
                                   'assets/images/scanf.svg',
                                   height: 40,

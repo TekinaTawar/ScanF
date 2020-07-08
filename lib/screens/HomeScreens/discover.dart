@@ -1,9 +1,35 @@
+import 'package:ScanF/screens/HomeScreens/landing_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Random extends StatelessWidget {
+class Random extends StatefulWidget {
   const Random({Key key}) : super(key: key);
 
+  @override
+  _RandomState createState() => _RandomState();
+}
+
+class _RandomState extends State<Random> {
+  int _selectedIndex = 1;
+  void _onItemTapped(int index) {
+    setState(() {
+      if(index==1 && _selectedIndex!=index){
+        Navigator.pop(context);
+        Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Random()));
+      }
+      if(index==0 && _selectedIndex!=index){
+        Navigator.pop(context);
+        Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => LandingPage()));
+      }
+      _selectedIndex = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -57,9 +83,8 @@ class Random extends StatelessWidget {
                 ),
               ),
             ],
-            // currentIndex: _selectedIndex,
-            selectedItemColor: Colors.amber[800],
-            onTap: (_) {},
+            currentIndex: _selectedIndex,
+            onTap: _onItemTapped,
           ),
           body: Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10),

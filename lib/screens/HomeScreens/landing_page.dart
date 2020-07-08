@@ -1,3 +1,7 @@
+import 'package:ScanF/screens/HomeScreens/discover.dart';
+import 'package:ScanF/screens/HomeScreens/hotelDetails.dart';
+import 'package:ScanF/screens/HomeScreens/menu.dart';
+// import 'package:ScanF/widgets/menuItem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -9,11 +13,30 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  int _selectedIndex = 0;
+  void _onItemTapped(int index) {
+    setState(() {
+      if (index == 1 && _selectedIndex != index) {
+        Navigator.pop(context);
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Random()));
+      }
+      if (index == 0 && _selectedIndex != index) {
+        Navigator.pop(context);
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => LandingPage()));
+      }
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double cardWidth = MediaQuery.of(context).size.width * 0.2;
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -61,9 +84,6 @@ class _LandingPageState extends State<LandingPage> {
             ),
           ),
         ],
-        // currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: (_) {},
       ),
       body: SafeArea(
         child: Padding(
@@ -394,926 +414,963 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 5),
-                  height: 215,
-                  width: double.infinity,
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        height: 130,
-                        child: Row(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 130,
-                              width: (MediaQuery.of(context).size.width * 0.5) +
-                                  20,
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                  right: 5.0,
-                                  top: 5,
-                                  bottom: 5,
-                                ),
-                                child: Image.asset(
-                                  "assets/images/sherpunjab.jpeg",
-                                  fit: BoxFit.fill,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HotelDetails()));
+                  },
+                  child: Container(
+                    margin: EdgeInsets.symmetric(vertical: 5),
+                    height: 215,
+                    width: double.infinity,
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(
+                          height: 130,
+                          child: Row(
+                            children: <Widget>[
+                              SizedBox(
+                                height: 130,
+                                width:
+                                    (MediaQuery.of(context).size.width * 0.5) +
+                                        20,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    right: 5.0,
+                                    top: 5,
+                                    bottom: 5,
+                                  ),
+                                  child: Image.asset(
+                                    "assets/images/sherpunjab.jpeg",
+                                    fit: BoxFit.fill,
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 130,
-                              width: (MediaQuery.of(context).size.width * 0.5) -
-                                  40,
-                              child: Column(
-                                children: <Widget>[
-                                  SizedBox(
-                                    height: 32.5,
-                                    child: Row(
-                                      children: <Widget>[
-                                        SizedBox(
-                                          width: (MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.5) -
-                                              80,
-                                          height: 32.5,
-                                          child: Stack(
-                                            alignment: Alignment.centerLeft,
-                                            children: <Widget>[
-                                              Container(
-                                                margin: EdgeInsets.symmetric(
-                                                    horizontal: 5),
-                                                height: 2.5,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xff24BE9B),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          2.5),
-                                                ),
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.only(
-                                                    left: 4.3 /
-                                                        5 *
-                                                        ((MediaQuery.of(context)
-                                                                    .size
-                                                                    .width *
-                                                                0.5) -
-                                                            105)),
-                                                alignment: Alignment.center,
-                                                child: Text(
-                                                  '4.3',
-                                                  style: TextStyle(fontSize: 7),
-                                                ),
-                                                height: 10,
-                                                width: 20,
-                                                decoration: BoxDecoration(
-                                                    color: Color(0xffFAD350),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5)),
-                                              ),
-                                              Positioned(
-                                                top: 21,
-                                                left: 5,
-                                                child: Text(
-                                                  'Taste Score',
-                                                  style: TextStyle(
-                                                    fontSize: 10,
-                                                    fontFamily:
-                                                        "Montserrat-Medium",
-                                                  ),
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                            width: 40,
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: <Widget>[
-                                                Text(
-                                                  '4.3',
-                                                  style: TextStyle(
-                                                    fontSize: 12,
-                                                    color: Color(0xff705123),
-                                                  ),
-                                                ),
-                                                Text(
-                                                  '(100+)',
-                                                  style: TextStyle(
-                                                    fontFamily:
-                                                        "Montserrat-Medium",
-                                                    fontSize: 10,
-                                                    color: Color(0xff705123),
-                                                  ),
-                                                )
-                                              ],
-                                            ))
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 32.5,
-                                    child: Row(
-                                      children: <Widget>[
-                                        SizedBox(
-                                          width: (MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.5) -
-                                              80,
-                                          height: 32.5,
-                                          child: Stack(
-                                            alignment: Alignment.centerLeft,
-                                            children: <Widget>[
-                                              Container(
-                                                margin: EdgeInsets.symmetric(
-                                                    horizontal: 5),
-                                                height: 2.5,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xff24BE9B),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          2.5),
-                                                ),
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.only(
-                                                    left: 4.5 /
-                                                        5 *
-                                                        ((MediaQuery.of(context)
-                                                                    .size
-                                                                    .width *
-                                                                0.5) -
-                                                            105)),
-                                                alignment: Alignment.center,
-                                                child: Text(
-                                                  '4.5',
-                                                  style: TextStyle(fontSize: 7),
-                                                ),
-                                                height: 10,
-                                                width: 20,
-                                                decoration: BoxDecoration(
-                                                    color: Color(0xffFAD350),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5)),
-                                              ),
-                                              Positioned(
-                                                top: 21,
-                                                left: 5,
-                                                child: Text(
-                                                  'Quantity Score',
-                                                  style: TextStyle(
-                                                    fontSize: 10,
-                                                    fontFamily:
-                                                        "Montserrat-Medium",
-                                                  ),
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                            width: 40,
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: <Widget>[
-                                                Text(
-                                                  '4.5',
-                                                  style: TextStyle(
-                                                    fontSize: 12,
-                                                    color: Color(0xff705123),
-                                                  ),
-                                                ),
-                                                Text(
-                                                  '(95)',
-                                                  style: TextStyle(
-                                                    fontFamily:
-                                                        "Montserrat-Medium",
-                                                    fontSize: 10,
-                                                    color: Color(0xff705123),
-                                                  ),
-                                                )
-                                              ],
-                                            ))
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 32.5,
-                                    child: Row(
-                                      children: <Widget>[
-                                        SizedBox(
-                                          width: (MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.5) -
-                                              80,
-                                          height: 32.5,
-                                          child: Stack(
-                                            alignment: Alignment.centerLeft,
-                                            children: <Widget>[
-                                              Container(
-                                                margin: EdgeInsets.symmetric(
-                                                    horizontal: 5),
-                                                height: 2.5,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xff24BE9B),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          2.5),
-                                                ),
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.only(
-                                                    left: 10 /
-                                                        60 *
-                                                        ((MediaQuery.of(context)
-                                                                    .size
-                                                                    .width *
-                                                                0.5) -
-                                                            105)),
-                                                alignment: Alignment.center,
-                                                child: Text(
-                                                  '10 m',
-                                                  style: TextStyle(fontSize: 7),
-                                                ),
-                                                height: 10,
-                                                width: 22,
-                                                decoration: BoxDecoration(
-                                                    color: Color(0xffFAD350),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5)),
-                                              ),
-                                              Positioned(
-                                                top: 21,
-                                                left: 5,
-                                                child: Text(
-                                                  'Serving Time',
-                                                  style: TextStyle(
-                                                    fontSize: 10,
-                                                    fontFamily:
-                                                        "Montserrat-Medium",
-                                                  ),
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                            width: 40,
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: <Widget>[
-                                                Text(
-                                                  '10m',
-                                                  style: TextStyle(
-                                                    fontSize: 12,
-                                                    color: Color(0xff705123),
-                                                  ),
-                                                ),
-                                              ],
-                                            ))
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 32.5,
-                                    child: Container(
+                              SizedBox(
+                                height: 130,
+                                width:
+                                    (MediaQuery.of(context).size.width * 0.5) -
+                                        40,
+                                child: Column(
+                                  children: <Widget>[
+                                    SizedBox(
+                                      height: 32.5,
                                       child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
                                         children: <Widget>[
-                                          Text(
-                                            "   Local Speciality",
-                                            style: TextStyle(
-                                                fontSize: 10,
-                                                fontFamily:
-                                                    "Montserrat-SemiBold"),
+                                          SizedBox(
+                                            width: (MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.5) -
+                                                80,
+                                            height: 32.5,
+                                            child: Stack(
+                                              alignment: Alignment.centerLeft,
+                                              children: <Widget>[
+                                                Container(
+                                                  margin: EdgeInsets.symmetric(
+                                                      horizontal: 5),
+                                                  height: 2.5,
+                                                  decoration: BoxDecoration(
+                                                    color: Color(0xff24BE9B),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            2.5),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      left: 4.3 /
+                                                          5 *
+                                                          ((MediaQuery.of(context)
+                                                                      .size
+                                                                      .width *
+                                                                  0.5) -
+                                                              105)),
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                    '4.3',
+                                                    style:
+                                                        TextStyle(fontSize: 7),
+                                                  ),
+                                                  height: 10,
+                                                  width: 20,
+                                                  decoration: BoxDecoration(
+                                                      color: Color(0xffFAD350),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5)),
+                                                ),
+                                                Positioned(
+                                                  top: 21,
+                                                  left: 5,
+                                                  child: Text(
+                                                    'Taste Score',
+                                                    style: TextStyle(
+                                                      fontSize: 10,
+                                                      fontFamily:
+                                                          "Montserrat-Medium",
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
                                           ),
-                                          SvgPicture.asset(
-                                            "assets/images/local_speciality.svg",
-                                            height: 17,
-                                          ),
+                                          SizedBox(
+                                              width: 40,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: <Widget>[
+                                                  Text(
+                                                    '4.3',
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Color(0xff705123),
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    '(100+)',
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          "Montserrat-Medium",
+                                                      fontSize: 10,
+                                                      color: Color(0xff705123),
+                                                    ),
+                                                  )
+                                                ],
+                                              ))
                                         ],
                                       ),
-                                      margin: EdgeInsets.symmetric(
-                                        vertical: 8,
-                                        horizontal: 5,
+                                    ),
+                                    SizedBox(
+                                      height: 32.5,
+                                      child: Row(
+                                        children: <Widget>[
+                                          SizedBox(
+                                            width: (MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.5) -
+                                                80,
+                                            height: 32.5,
+                                            child: Stack(
+                                              alignment: Alignment.centerLeft,
+                                              children: <Widget>[
+                                                Container(
+                                                  margin: EdgeInsets.symmetric(
+                                                      horizontal: 5),
+                                                  height: 2.5,
+                                                  decoration: BoxDecoration(
+                                                    color: Color(0xff24BE9B),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            2.5),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      left: 4.5 /
+                                                          5 *
+                                                          ((MediaQuery.of(context)
+                                                                      .size
+                                                                      .width *
+                                                                  0.5) -
+                                                              105)),
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                    '4.5',
+                                                    style:
+                                                        TextStyle(fontSize: 7),
+                                                  ),
+                                                  height: 10,
+                                                  width: 20,
+                                                  decoration: BoxDecoration(
+                                                      color: Color(0xffFAD350),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5)),
+                                                ),
+                                                Positioned(
+                                                  top: 21,
+                                                  left: 5,
+                                                  child: Text(
+                                                    'Quantity Score',
+                                                    style: TextStyle(
+                                                      fontSize: 10,
+                                                      fontFamily:
+                                                          "Montserrat-Medium",
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(
+                                              width: 40,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: <Widget>[
+                                                  Text(
+                                                    '4.5',
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Color(0xff705123),
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    '(95)',
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          "Montserrat-Medium",
+                                                      fontSize: 10,
+                                                      color: Color(0xff705123),
+                                                    ),
+                                                  )
+                                                ],
+                                              ))
+                                        ],
                                       ),
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(11.25),
-                                        color: Color(0xfffad350),
+                                    ),
+                                    SizedBox(
+                                      height: 32.5,
+                                      child: Row(
+                                        children: <Widget>[
+                                          SizedBox(
+                                            width: (MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.5) -
+                                                80,
+                                            height: 32.5,
+                                            child: Stack(
+                                              alignment: Alignment.centerLeft,
+                                              children: <Widget>[
+                                                Container(
+                                                  margin: EdgeInsets.symmetric(
+                                                      horizontal: 5),
+                                                  height: 2.5,
+                                                  decoration: BoxDecoration(
+                                                    color: Color(0xff24BE9B),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            2.5),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      left: 10 /
+                                                          60 *
+                                                          ((MediaQuery.of(context)
+                                                                      .size
+                                                                      .width *
+                                                                  0.5) -
+                                                              105)),
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                    '10 m',
+                                                    style:
+                                                        TextStyle(fontSize: 7),
+                                                  ),
+                                                  height: 10,
+                                                  width: 22,
+                                                  decoration: BoxDecoration(
+                                                      color: Color(0xffFAD350),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5)),
+                                                ),
+                                                Positioned(
+                                                  top: 21,
+                                                  left: 5,
+                                                  child: Text(
+                                                    'Serving Time',
+                                                    style: TextStyle(
+                                                      fontSize: 10,
+                                                      fontFamily:
+                                                          "Montserrat-Medium",
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(
+                                              width: 40,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceAround,
+                                                children: <Widget>[
+                                                  Text(
+                                                    '10m',
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Color(0xff705123),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ))
+                                        ],
                                       ),
+                                    ),
+                                    SizedBox(
+                                      height: 32.5,
+                                      child: Container(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: <Widget>[
+                                            Text(
+                                              "   Local Speciality",
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  fontFamily:
+                                                      "Montserrat-SemiBold"),
+                                            ),
+                                            SvgPicture.asset(
+                                              "assets/images/local_speciality.svg",
+                                              height: 17,
+                                            ),
+                                          ],
+                                        ),
+                                        margin: EdgeInsets.symmetric(
+                                          vertical: 8,
+                                          horizontal: 5,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(11.25),
+                                          color: Color(0xfffad350),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 85,
+                          // color: Colors.grey,
+                          child: Row(children: <Widget>[
+                            SizedBox(
+                              width: (MediaQuery.of(context).size.width * 0.5) +
+                                  20,
+                              // color: Colors.deepPurple,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: 3,
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        "Sher-E-Punjab   ",
+                                        style: TextStyle(
+                                          fontFamily: "Montserrat-Medium",
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                      SvgPicture.asset(
+                                        "assets/images/veg.svg",
+                                        height: 15,
+                                      ),
+                                      SizedBox(
+                                        width: 3,
+                                      ),
+                                      SvgPicture.asset(
+                                        "assets/images/non-veg.svg",
+                                        height: 15,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 8),
+                                  Text(
+                                    "North Indian, Chinese, South Indian",
+                                    style: TextStyle(
+                                      wordSpacing: 1,
+                                      fontSize: 10,
+                                      fontFamily: "Montserrat-Medium",
+                                      color: Color(0xff7f7f7f),
+                                    ),
+                                  ),
+                                  SizedBox(height: 4),
+                                  Text(
+                                    "Open Hours : 9 am - 11 pm ■  Since 1990​​",
+                                    style: TextStyle(
+                                      wordSpacing: 1,
+                                      fontSize: 10,
+                                      fontFamily: "Montserrat-Medium",
+                                      color: Color(0xff7f7f7f),
+                                    ),
+                                  ),
+                                  SizedBox(height: 6),
+                                  Text(
+                                    "10 mins away |  ₹ 250 for two​",
+                                    style: TextStyle(
+                                      wordSpacing: 1,
+                                      fontSize: 10,
+                                      fontFamily: "Montserrat-Medium",
+                                      color: Color(0xff7f7f7f),
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                          ],
+                            SizedBox(
+                              width: (MediaQuery.of(context).size.width * 0.5) -
+                                  40,
+                              // color: Colors.red,
+                              child: Row(
+                                children: <Widget>[
+                                  SizedBox(
+                                    width: ((MediaQuery.of(context).size.width *
+                                                0.5) -
+                                            40) *
+                                        0.5,
+                                    // color: Colors.lime,
+                                    child: Column(
+                                      // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      children: <Widget>[
+                                        SizedBox(height: 17),
+                                        SvgPicture.asset(
+                                          "assets/images/google_map.svg",
+                                          height: 45,
+                                        ),
+                                        SizedBox(height: 2),
+                                        Text(
+                                          "Locate",
+                                          style: TextStyle(
+                                            fontSize: 9,
+                                            fontFamily: "Montserrat-Medium",
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => Menu()));
+                                    },
+                                    child: SizedBox(
+                                      width:
+                                          ((MediaQuery.of(context).size.width *
+                                                      0.5) -
+                                                  40) *
+                                              0.5,
+                                      // color: Colors.lime,
+                                      child: Column(
+                                        // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                        children: <Widget>[
+                                          SizedBox(height: 17),
+                                          // SvgPicture.asset(
+                                          //   "assets/images/google_map.svg",
+                                          //   height: 45,
+                                          // ),
+                                          Icon(Icons.shopping_cart, size: 45),
+                                          SizedBox(height: 2),
+                                          Text(
+                                            "Place Order",
+                                            style: TextStyle(
+                                              fontSize: 9,
+                                              fontFamily: "Montserrat-Medium",
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ]),
                         ),
-                      ),
-                      SizedBox(
-                        height: 85,
-                        // color: Colors.grey,
-                        child: Row(children: <Widget>[
-                          SizedBox(
-                            width:
-                                (MediaQuery.of(context).size.width * 0.5) + 20,
-                            // color: Colors.deepPurple,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                SizedBox(
-                                  height: 3,
-                                ),
-                                Row(
-                                  children: <Widget>[
-                                    Text(
-                                      "Sher-E-Punjab   ",
-                                      style: TextStyle(
-                                        fontFamily: "Montserrat-Medium",
-                                        fontSize: 14,
-                                      ),
-                                    ),
-                                    SvgPicture.asset(
-                                      "assets/images/veg.svg",
-                                      height: 15,
-                                    ),
-                                    SizedBox(
-                                      width: 3,
-                                    ),
-                                    SvgPicture.asset(
-                                      "assets/images/non-veg.svg",
-                                      height: 15,
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 8),
-                                Text(
-                                  "North Indian, Chinese, South Indian",
-                                  style: TextStyle(
-                                    wordSpacing: 1,
-                                    fontSize: 10,
-                                    fontFamily: "Montserrat-Medium",
-                                    color: Color(0xff7f7f7f),
-                                  ),
-                                ),
-                                SizedBox(height: 4),
-                                Text(
-                                  "Open Hours : 9 am - 11 pm ■  Since 1990​​",
-                                  style: TextStyle(
-                                    wordSpacing: 1,
-                                    fontSize: 10,
-                                    fontFamily: "Montserrat-Medium",
-                                    color: Color(0xff7f7f7f),
-                                  ),
-                                ),
-                                SizedBox(height: 6),
-                                Text(
-                                  "10 mins away |  ₹ 250 for two​",
-                                  style: TextStyle(
-                                    wordSpacing: 1,
-                                    fontSize: 10,
-                                    fontFamily: "Montserrat-Medium",
-                                    color: Color(0xff7f7f7f),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width:
-                                (MediaQuery.of(context).size.width * 0.5) - 40,
-                            // color: Colors.red,
-                            child: Row(
-                              children: <Widget>[
-                                SizedBox(
-                                  width: ((MediaQuery.of(context).size.width *
-                                              0.5) -
-                                          40) *
-                                      0.5,
-                                  // color: Colors.lime,
-                                  child: Column(
-                                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                    children: <Widget>[
-                                      SizedBox(height: 17),
-                                      SvgPicture.asset(
-                                        "assets/images/google_map.svg",
-                                        height: 45,
-                                      ),
-                                      SizedBox(height: 2),
-                                      Text(
-                                        "Locate",
-                                        style: TextStyle(
-                                          fontSize: 9,
-                                          fontFamily: "Montserrat-Medium",
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: ((MediaQuery.of(context).size.width *
-                                              0.5) -
-                                          40) *
-                                      0.5,
-                                  // color: Colors.lime,
-                                  child: Column(
-                                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                    children: <Widget>[
-                                      SizedBox(height: 17),
-                                      // SvgPicture.asset(
-                                      //   "assets/images/google_map.svg",
-                                      //   height: 45,
-                                      // ),
-                                      Icon(Icons.shopping_cart, size: 45),
-                                      SizedBox(height: 2),
-                                      Text(
-                                        "Place Order",
-                                        style: TextStyle(
-                                          fontSize: 9,
-                                          fontFamily: "Montserrat-Medium",
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          )
-                        ]),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 5),
-                  height: 215,
-                  width: double.infinity,
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        height: 130,
-                        child: Row(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 130,
-                              width: (MediaQuery.of(context).size.width * 0.5) +
-                                  20,
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                  right: 5.0,
-                                  top: 5,
-                                  bottom: 5,
-                                ),
-                                child: Image.asset(
-                                  "assets/images/sherpunjab.jpeg",
-                                  fit: BoxFit.fill,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HotelDetails()));
+                  },
+                  child: Container(
+                    margin: EdgeInsets.symmetric(vertical: 5),
+                    height: 215,
+                    width: double.infinity,
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(
+                          height: 130,
+                          child: Row(
+                            children: <Widget>[
+                              SizedBox(
+                                height: 130,
+                                width:
+                                    (MediaQuery.of(context).size.width * 0.5) +
+                                        20,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    right: 5.0,
+                                    top: 5,
+                                    bottom: 5,
+                                  ),
+                                  child: Image.asset(
+                                    "assets/images/sherpunjab.jpeg",
+                                    fit: BoxFit.fill,
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 130,
-                              width: (MediaQuery.of(context).size.width * 0.5) -
-                                  40,
-                              child: Column(
-                                children: <Widget>[
-                                  SizedBox(
-                                    height: 32.5,
-                                    child: Row(
-                                      children: <Widget>[
-                                        SizedBox(
-                                          width: (MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.5) -
-                                              80,
-                                          height: 32.5,
-                                          child: Stack(
-                                            alignment: Alignment.centerLeft,
-                                            children: <Widget>[
-                                              Container(
-                                                margin: EdgeInsets.symmetric(
-                                                    horizontal: 5),
-                                                height: 2.5,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xff24BE9B),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          2.5),
-                                                ),
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.only(
-                                                    left: 4.3 /
-                                                        5 *
-                                                        ((MediaQuery.of(context)
-                                                                    .size
-                                                                    .width *
-                                                                0.5) -
-                                                            105)),
-                                                alignment: Alignment.center,
-                                                child: Text(
-                                                  '4.3',
-                                                  style: TextStyle(fontSize: 7),
-                                                ),
-                                                height: 10,
-                                                width: 20,
-                                                decoration: BoxDecoration(
-                                                    color: Color(0xffFAD350),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5)),
-                                              ),
-                                              Positioned(
-                                                top: 21,
-                                                left: 5,
-                                                child: Text(
-                                                  'Taste Score',
-                                                  style: TextStyle(
-                                                    fontSize: 10,
-                                                    fontFamily:
-                                                        "Montserrat-Medium",
-                                                  ),
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                            width: 40,
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: <Widget>[
-                                                Text(
-                                                  '4.3',
-                                                  style: TextStyle(
-                                                    fontSize: 12,
-                                                    color: Color(0xff705123),
-                                                  ),
-                                                ),
-                                                Text(
-                                                  '(100+)',
-                                                  style: TextStyle(
-                                                    fontFamily:
-                                                        "Montserrat-Medium",
-                                                    fontSize: 10,
-                                                    color: Color(0xff705123),
-                                                  ),
-                                                )
-                                              ],
-                                            ))
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 32.5,
-                                    child: Row(
-                                      children: <Widget>[
-                                        SizedBox(
-                                          width: (MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.5) -
-                                              80,
-                                          height: 32.5,
-                                          child: Stack(
-                                            alignment: Alignment.centerLeft,
-                                            children: <Widget>[
-                                              Container(
-                                                margin: EdgeInsets.symmetric(
-                                                    horizontal: 5),
-                                                height: 2.5,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xff24BE9B),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          2.5),
-                                                ),
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.only(
-                                                    left: 4.5 /
-                                                        5 *
-                                                        ((MediaQuery.of(context)
-                                                                    .size
-                                                                    .width *
-                                                                0.5) -
-                                                            105)),
-                                                alignment: Alignment.center,
-                                                child: Text(
-                                                  '4.5',
-                                                  style: TextStyle(fontSize: 7),
-                                                ),
-                                                height: 10,
-                                                width: 20,
-                                                decoration: BoxDecoration(
-                                                    color: Color(0xffFAD350),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5)),
-                                              ),
-                                              Positioned(
-                                                top: 21,
-                                                left: 5,
-                                                child: Text(
-                                                  'Quantity Score',
-                                                  style: TextStyle(
-                                                    fontSize: 10,
-                                                    fontFamily:
-                                                        "Montserrat-Medium",
-                                                  ),
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                            width: 40,
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: <Widget>[
-                                                Text(
-                                                  '4.5',
-                                                  style: TextStyle(
-                                                    fontSize: 12,
-                                                    color: Color(0xff705123),
-                                                  ),
-                                                ),
-                                                Text(
-                                                  '(95)',
-                                                  style: TextStyle(
-                                                    fontFamily:
-                                                        "Montserrat-Medium",
-                                                    fontSize: 10,
-                                                    color: Color(0xff705123),
-                                                  ),
-                                                )
-                                              ],
-                                            ))
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 32.5,
-                                    child: Row(
-                                      children: <Widget>[
-                                        SizedBox(
-                                          width: (MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.5) -
-                                              80,
-                                          height: 32.5,
-                                          child: Stack(
-                                            alignment: Alignment.centerLeft,
-                                            children: <Widget>[
-                                              Container(
-                                                margin: EdgeInsets.symmetric(
-                                                    horizontal: 5),
-                                                height: 2.5,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xff24BE9B),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          2.5),
-                                                ),
-                                              ),
-                                              Container(
-                                                margin: EdgeInsets.only(
-                                                    left: 10 /
-                                                        60 *
-                                                        ((MediaQuery.of(context)
-                                                                    .size
-                                                                    .width *
-                                                                0.5) -
-                                                            105)),
-                                                alignment: Alignment.center,
-                                                child: Text(
-                                                  '10 m',
-                                                  style: TextStyle(fontSize: 7),
-                                                ),
-                                                height: 10,
-                                                width: 22,
-                                                decoration: BoxDecoration(
-                                                    color: Color(0xffFAD350),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5)),
-                                              ),
-                                              Positioned(
-                                                top: 21,
-                                                left: 5,
-                                                child: Text(
-                                                  'Serving Time',
-                                                  style: TextStyle(
-                                                    fontSize: 10,
-                                                    fontFamily:
-                                                        "Montserrat-Medium",
-                                                  ),
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                            width: 40,
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: <Widget>[
-                                                Text(
-                                                  '10m',
-                                                  style: TextStyle(
-                                                    fontSize: 12,
-                                                    color: Color(0xff705123),
-                                                  ),
-                                                ),
-                                              ],
-                                            ))
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 32.5,
-                                    child: Container(
+                              SizedBox(
+                                height: 130,
+                                width:
+                                    (MediaQuery.of(context).size.width * 0.5) -
+                                        40,
+                                child: Column(
+                                  children: <Widget>[
+                                    SizedBox(
+                                      height: 32.5,
                                       child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
                                         children: <Widget>[
-                                          Text(
-                                            "   Local Speciality",
-                                            style: TextStyle(
-                                                fontSize: 10,
-                                                fontFamily:
-                                                    "Montserrat-SemiBold"),
+                                          SizedBox(
+                                            width: (MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.5) -
+                                                80,
+                                            height: 32.5,
+                                            child: Stack(
+                                              alignment: Alignment.centerLeft,
+                                              children: <Widget>[
+                                                Container(
+                                                  margin: EdgeInsets.symmetric(
+                                                      horizontal: 5),
+                                                  height: 2.5,
+                                                  decoration: BoxDecoration(
+                                                    color: Color(0xff24BE9B),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            2.5),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      left: 4.3 /
+                                                          5 *
+                                                          ((MediaQuery.of(context)
+                                                                      .size
+                                                                      .width *
+                                                                  0.5) -
+                                                              105)),
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                    '4.3',
+                                                    style:
+                                                        TextStyle(fontSize: 7),
+                                                  ),
+                                                  height: 10,
+                                                  width: 20,
+                                                  decoration: BoxDecoration(
+                                                      color: Color(0xffFAD350),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5)),
+                                                ),
+                                                Positioned(
+                                                  top: 21,
+                                                  left: 5,
+                                                  child: Text(
+                                                    'Taste Score',
+                                                    style: TextStyle(
+                                                      fontSize: 10,
+                                                      fontFamily:
+                                                          "Montserrat-Medium",
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
                                           ),
-                                          SvgPicture.asset(
-                                            "assets/images/local_speciality.svg",
-                                            height: 17,
-                                          ),
+                                          SizedBox(
+                                              width: 40,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: <Widget>[
+                                                  Text(
+                                                    '4.3',
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Color(0xff705123),
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    '(100+)',
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          "Montserrat-Medium",
+                                                      fontSize: 10,
+                                                      color: Color(0xff705123),
+                                                    ),
+                                                  )
+                                                ],
+                                              ))
                                         ],
                                       ),
-                                      margin: EdgeInsets.symmetric(
-                                        vertical: 8,
-                                        horizontal: 5,
+                                    ),
+                                    SizedBox(
+                                      height: 32.5,
+                                      child: Row(
+                                        children: <Widget>[
+                                          SizedBox(
+                                            width: (MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.5) -
+                                                80,
+                                            height: 32.5,
+                                            child: Stack(
+                                              alignment: Alignment.centerLeft,
+                                              children: <Widget>[
+                                                Container(
+                                                  margin: EdgeInsets.symmetric(
+                                                      horizontal: 5),
+                                                  height: 2.5,
+                                                  decoration: BoxDecoration(
+                                                    color: Color(0xff24BE9B),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            2.5),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      left: 4.5 /
+                                                          5 *
+                                                          ((MediaQuery.of(context)
+                                                                      .size
+                                                                      .width *
+                                                                  0.5) -
+                                                              105)),
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                    '4.5',
+                                                    style:
+                                                        TextStyle(fontSize: 7),
+                                                  ),
+                                                  height: 10,
+                                                  width: 20,
+                                                  decoration: BoxDecoration(
+                                                      color: Color(0xffFAD350),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5)),
+                                                ),
+                                                Positioned(
+                                                  top: 21,
+                                                  left: 5,
+                                                  child: Text(
+                                                    'Quantity Score',
+                                                    style: TextStyle(
+                                                      fontSize: 10,
+                                                      fontFamily:
+                                                          "Montserrat-Medium",
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(
+                                              width: 40,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: <Widget>[
+                                                  Text(
+                                                    '4.5',
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Color(0xff705123),
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    '(95)',
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          "Montserrat-Medium",
+                                                      fontSize: 10,
+                                                      color: Color(0xff705123),
+                                                    ),
+                                                  )
+                                                ],
+                                              ))
+                                        ],
                                       ),
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(11.25),
-                                        color: Color(0xfffad350),
+                                    ),
+                                    SizedBox(
+                                      height: 32.5,
+                                      child: Row(
+                                        children: <Widget>[
+                                          SizedBox(
+                                            width: (MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.5) -
+                                                80,
+                                            height: 32.5,
+                                            child: Stack(
+                                              alignment: Alignment.centerLeft,
+                                              children: <Widget>[
+                                                Container(
+                                                  margin: EdgeInsets.symmetric(
+                                                      horizontal: 5),
+                                                  height: 2.5,
+                                                  decoration: BoxDecoration(
+                                                    color: Color(0xff24BE9B),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            2.5),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      left: 10 /
+                                                          60 *
+                                                          ((MediaQuery.of(context)
+                                                                      .size
+                                                                      .width *
+                                                                  0.5) -
+                                                              105)),
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                    '10 m',
+                                                    style:
+                                                        TextStyle(fontSize: 7),
+                                                  ),
+                                                  height: 10,
+                                                  width: 22,
+                                                  decoration: BoxDecoration(
+                                                      color: Color(0xffFAD350),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5)),
+                                                ),
+                                                Positioned(
+                                                  top: 21,
+                                                  left: 5,
+                                                  child: Text(
+                                                    'Serving Time',
+                                                    style: TextStyle(
+                                                      fontSize: 10,
+                                                      fontFamily:
+                                                          "Montserrat-Medium",
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(
+                                              width: 40,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceAround,
+                                                children: <Widget>[
+                                                  Text(
+                                                    '10m',
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Color(0xff705123),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ))
+                                        ],
                                       ),
+                                    ),
+                                    SizedBox(
+                                      height: 32.5,
+                                      child: Container(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: <Widget>[
+                                            Text(
+                                              "   Local Speciality",
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  fontFamily:
+                                                      "Montserrat-SemiBold"),
+                                            ),
+                                            SvgPicture.asset(
+                                              "assets/images/local_speciality.svg",
+                                              height: 17,
+                                            ),
+                                          ],
+                                        ),
+                                        margin: EdgeInsets.symmetric(
+                                          vertical: 8,
+                                          horizontal: 5,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(11.25),
+                                          color: Color(0xfffad350),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 85,
+                          // color: Colors.grey,
+                          child: Row(children: <Widget>[
+                            SizedBox(
+                              width: (MediaQuery.of(context).size.width * 0.5) +
+                                  20,
+                              // color: Colors.deepPurple,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: 3,
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        "Sher-E-Punjab   ",
+                                        style: TextStyle(
+                                          fontFamily: "Montserrat-Medium",
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                      SvgPicture.asset(
+                                        "assets/images/veg.svg",
+                                        height: 15,
+                                      ),
+                                      SizedBox(
+                                        width: 3,
+                                      ),
+                                      SvgPicture.asset(
+                                        "assets/images/non-veg.svg",
+                                        height: 15,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 8),
+                                  Text(
+                                    "North Indian, Chinese, South Indian",
+                                    style: TextStyle(
+                                      wordSpacing: 1,
+                                      fontSize: 10,
+                                      fontFamily: "Montserrat-Medium",
+                                      color: Color(0xff7f7f7f),
+                                    ),
+                                  ),
+                                  SizedBox(height: 4),
+                                  Text(
+                                    "Open Hours : 9 am - 11 pm ■  Since 1990​​",
+                                    style: TextStyle(
+                                      wordSpacing: 1,
+                                      fontSize: 10,
+                                      fontFamily: "Montserrat-Medium",
+                                      color: Color(0xff7f7f7f),
+                                    ),
+                                  ),
+                                  SizedBox(height: 6),
+                                  Text(
+                                    "10 mins away |  ₹ 250 for two​",
+                                    style: TextStyle(
+                                      wordSpacing: 1,
+                                      fontSize: 10,
+                                      fontFamily: "Montserrat-Medium",
+                                      color: Color(0xff7f7f7f),
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                          ],
+                            SizedBox(
+                              width: (MediaQuery.of(context).size.width * 0.5) -
+                                  40,
+                              // color: Colors.red,
+                              child: Row(
+                                children: <Widget>[
+                                  SizedBox(
+                                    width: ((MediaQuery.of(context).size.width *
+                                                0.5) -
+                                            40) *
+                                        0.5,
+                                    // color: Colors.lime,
+                                    child: Column(
+                                      // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      children: <Widget>[
+                                        SizedBox(height: 17),
+                                        SvgPicture.asset(
+                                          "assets/images/google_map.svg",
+                                          height: 45,
+                                        ),
+                                        SizedBox(height: 2),
+                                        Text(
+                                          "Locate",
+                                          style: TextStyle(
+                                            fontSize: 9,
+                                            fontFamily: "Montserrat-Medium",
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: ((MediaQuery.of(context).size.width *
+                                                0.5) -
+                                            40) *
+                                        0.5,
+                                    // color: Colors.lime,
+                                    child: Column(
+                                      // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      children: <Widget>[
+                                        SizedBox(height: 17),
+                                        // SvgPicture.asset(
+                                        //   "assets/images/google_map.svg",
+                                        //   height: 45,
+                                        // ),
+                                        Icon(Icons.shopping_cart, size: 45),
+                                        SizedBox(height: 2),
+                                        Text(
+                                          "Place Order",
+                                          style: TextStyle(
+                                            fontSize: 9,
+                                            fontFamily: "Montserrat-Medium",
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ]),
                         ),
-                      ),
-                      SizedBox(
-                        height: 85,
-                        // color: Colors.grey,
-                        child: Row(children: <Widget>[
-                          SizedBox(
-                            width:
-                                (MediaQuery.of(context).size.width * 0.5) + 20,
-                            // color: Colors.deepPurple,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                SizedBox(
-                                  height: 3,
-                                ),
-                                Row(
-                                  children: <Widget>[
-                                    Text(
-                                      "Sher-E-Punjab   ",
-                                      style: TextStyle(
-                                        fontFamily: "Montserrat-Medium",
-                                        fontSize: 14,
-                                      ),
-                                    ),
-                                    SvgPicture.asset(
-                                      "assets/images/veg.svg",
-                                      height: 15,
-                                    ),
-                                    SizedBox(
-                                      width: 3,
-                                    ),
-                                    SvgPicture.asset(
-                                      "assets/images/non-veg.svg",
-                                      height: 15,
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 8),
-                                Text(
-                                  "North Indian, Chinese, South Indian",
-                                  style: TextStyle(
-                                    wordSpacing: 1,
-                                    fontSize: 10,
-                                    fontFamily: "Montserrat-Medium",
-                                    color: Color(0xff7f7f7f),
-                                  ),
-                                ),
-                                SizedBox(height: 4),
-                                Text(
-                                  "Open Hours : 9 am - 11 pm ■  Since 1990​​",
-                                  style: TextStyle(
-                                    wordSpacing: 1,
-                                    fontSize: 10,
-                                    fontFamily: "Montserrat-Medium",
-                                    color: Color(0xff7f7f7f),
-                                  ),
-                                ),
-                                SizedBox(height: 6),
-                                Text(
-                                  "10 mins away |  ₹ 250 for two​",
-                                  style: TextStyle(
-                                    wordSpacing: 1,
-                                    fontSize: 10,
-                                    fontFamily: "Montserrat-Medium",
-                                    color: Color(0xff7f7f7f),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width:
-                                (MediaQuery.of(context).size.width * 0.5) - 40,
-                            // color: Colors.red,
-                            child: Row(
-                              children: <Widget>[
-                                SizedBox(
-                                  width: ((MediaQuery.of(context).size.width *
-                                              0.5) -
-                                          40) *
-                                      0.5,
-                                  // color: Colors.lime,
-                                  child: Column(
-                                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                    children: <Widget>[
-                                      SizedBox(height: 17),
-                                      SvgPicture.asset(
-                                        "assets/images/google_map.svg",
-                                        height: 45,
-                                      ),
-                                      SizedBox(height: 2),
-                                      Text(
-                                        "Locate",
-                                        style: TextStyle(
-                                          fontSize: 9,
-                                          fontFamily: "Montserrat-Medium",
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: ((MediaQuery.of(context).size.width *
-                                              0.5) -
-                                          40) *
-                                      0.5,
-                                  // color: Colors.lime,
-                                  child: Column(
-                                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                    children: <Widget>[
-                                      SizedBox(height: 17),
-                                      // SvgPicture.asset(
-                                      //   "assets/images/google_map.svg",
-                                      //   height: 45,
-                                      // ),
-                                      Icon(Icons.shopping_cart, size: 45),
-                                      SizedBox(height: 2),
-                                      Text(
-                                        "Place Order",
-                                        style: TextStyle(
-                                          fontSize: 9,
-                                          fontFamily: "Montserrat-Medium",
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          )
-                        ]),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
