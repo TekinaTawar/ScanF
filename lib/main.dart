@@ -1,6 +1,6 @@
 // import 'package:ScanF/screens/create_profile_screen/test.dart';
 // import 'package:ScanF/screens/HomeScreens/hotelDetails.dart';
-// import 'package:ScanF/screens/HomeScreens/hotelDetails.dart';
+import 'package:ScanF/screens/HomeScreens/hotelDetails.dart';
 import 'package:ScanF/screens/onboard.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 //  import './screens/onboard.dart';
 // import './screens/on-boarding-screen.dart';
 
-void main() => runApp(DevicePreview(builder: (context) => MyApp()),);
+void main() => runApp(DevicePreview(builder: (context) => MyApp(),enabled: false,),);
 
 
 class MyApp extends StatelessWidget {
@@ -44,13 +44,7 @@ class MyApp extends StatelessWidget {
         //       ),
         //     ),
       ),
-      home: OnBoard(),
-    //   routes: {
-    //     'create-profile-1': (ctx) => ProfileScreen1(),
-    //     'create-profile-2': (ctx) => ProfileScreen2(),
-    //     'create-profile-3': (ctx) => ProfileScreen3(),
-    //     'splash-screen': (ctx) => SplashScreen()
-    //   },
+      home: HotelDetails(),
     );
   }
 }
