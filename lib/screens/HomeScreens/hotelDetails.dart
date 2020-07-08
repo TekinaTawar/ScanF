@@ -11,7 +11,7 @@ class HotelDetails extends StatelessWidget {
         body: Column(
           children: <Widget>[
             Expanded(
-              flex: 2,
+              flex: 3,
               child: ListView(
                 controller: ScrollController(),
                 scrollDirection: Axis.horizontal,
@@ -38,10 +38,10 @@ class HotelDetails extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 9,
+              flex: 11,
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 9.0, vertical: 8),
+                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
@@ -69,6 +69,7 @@ class HotelDetails extends StatelessWidget {
                         )
                       ],
                     ),
+                    SizedBox(height: 12),
                     Expanded(
                       flex: 1,
                       child: SingleChildScrollView(
@@ -76,15 +77,16 @@ class HotelDetails extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SizedBox(
+                            Container(
                               width: double.infinity,
-                              height: 90,
+                              height: 80,
                               child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Expanded(
                                     child: Column(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          MainAxisAlignment.start,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: <Widget>[
@@ -96,12 +98,22 @@ class HotelDetails extends StatelessWidget {
                                                   'Montserrat-SemiBold'),
                                         ),
                                         SizedBox(
-                                          height: 8,
+                                          height: 12,
                                         ),
                                         Text(
-                                          '2/A, Kalakunj, Mall Road, Manali\n10 mins away |  ₹ 250 for two',
+                                          '2/A, Kalakunj, Mall Road, Manali',
                                           style: TextStyle(
-                                              fontSize: 12,
+                                              fontSize: 10,
+                                              fontFamily:
+                                                  'Montserrat-SemiBold'),
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(
+                                          '10 mins away |  ₹ 250 for two',
+                                          style: TextStyle(
+                                              fontSize: 10,
                                               fontFamily:
                                                   'Montserrat-SemiBold'),
                                         )
@@ -112,7 +124,7 @@ class HotelDetails extends StatelessWidget {
                                   Expanded(
                                     child: Column(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          MainAxisAlignment.start,
                                       children: <Widget>[
                                         Text(
                                           'AMENITIES',
@@ -122,7 +134,7 @@ class HotelDetails extends StatelessWidget {
                                                   'Montserrat-SemiBold'),
                                         ),
                                         SizedBox(
-                                          height: 8,
+                                          height: 12,
                                         ),
                                         Row(
                                           mainAxisAlignment:
@@ -132,13 +144,19 @@ class HotelDetails extends StatelessWidget {
                                               padding:
                                                   const EdgeInsets.symmetric(
                                                       horizontal: 2.0),
-                                              child: Icon(Icons.wifi),
+                                              child: Icon(
+                                                Icons.wifi,
+                                                size: 20,
+                                              ),
                                             ),
                                             Padding(
                                               padding:
                                                   const EdgeInsets.symmetric(
                                                       horizontal: 2.0),
-                                              child: Icon(Icons.radio),
+                                              child: Icon(
+                                                Icons.radio,
+                                                size: 20,
+                                              ),
                                             )
                                           ],
                                         )
@@ -150,10 +168,10 @@ class HotelDetails extends StatelessWidget {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 8),
+                              padding: const EdgeInsets.only(bottom: 8),
                               child: Text(
                                 'Indoor Seating | No Alcohol Served | Self Service | Hygienic Atmosphere',
-                                style: TextStyle(fontSize: 10),
+                                style: TextStyle(fontSize: 10,fontFamily: "Montserrat-SemiBold",fontWeight: FontWeight.w500),
                               ),
                             ),
                             Padding(
@@ -163,13 +181,13 @@ class HotelDetails extends StatelessWidget {
                                 children: <Widget>[
                                   Icon(
                                     Icons.directions,
-                                    size: 14,
+                                    size: 11,
                                   ),
                                   Text(
-                                    'GET DIRECTIONS',
+                                    ' GET DIRECTIONS',
                                     style: TextStyle(
                                         fontFamily: 'Montserrat-SemiBold',
-                                        fontSize: 12,
+                                        fontSize: 10,
                                         color: Colors.red,
                                         decoration: TextDecoration.underline),
                                   ),
@@ -183,7 +201,8 @@ class HotelDetails extends StatelessWidget {
                                 'TOP DISHES PEOPLE ORDER',
                                 style: TextStyle(
                                   fontFamily: 'Montserrat-SemiBold',
-                                  fontSize: 14,
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w600
                                 ),
                               ),
                             ),
@@ -193,21 +212,24 @@ class HotelDetails extends StatelessWidget {
                               child: Text(
                                 'Chicken Dum Biryani, Chicken Curry, Kadhai Paneer, Naan, Mutton Bhuna,  Paneer Butter Masala',
                                 style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 10,
+                                  fontFamily: "Montserrat",
+                                  fontWeight: FontWeight.w400,
                                 ),
                               ),
                             ),
                             SizedBox(
-                              height: 15,
+                              height: 10,
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.symmetric(vertical: 8.0),
+                                  const EdgeInsets.symmetric(vertical: 6.0),
                               child: Text(
                                 'LOCAL DISHES',
                                 style: TextStyle(
                                   fontFamily: 'Montserrat-SemiBold',
-                                  fontSize: 14,
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ),
@@ -217,7 +239,7 @@ class HotelDetails extends StatelessWidget {
                               child: Text(
                                 'Patande, Bhey, Aktori, Chana Madra, Sidu, River Trout, Local Tea',
                                 style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 10,
                                 ),
                               ),
                             ),
@@ -236,13 +258,14 @@ class HotelDetails extends StatelessWidget {
                                 'MENU',
                                 style: TextStyle(
                                   fontFamily: 'Montserrat-SemiBold',
-                                  fontSize: 14,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
                             ),
                             Container(
                               // color: Colors.cyan,
-                              height: 70,
+                              height: 60,
                             ),
                             Padding(
                               padding:
@@ -253,35 +276,39 @@ class HotelDetails extends StatelessWidget {
                                     'Order',
                                     style: TextStyle(
                                       fontFamily: 'Montserrat-SemiBold',
-                                      fontSize: 12,
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w600,
                                     ),
                                   ),
                                   Text(
-                                    ' On-The-Go',
+                                    '  On-The-Go  ',
                                     style: TextStyle(
                                       fontFamily: 'Montserrat-SemiBold',
-                                      fontSize: 12,
+                                      fontSize: 10,
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.w600,
                                       color: Colors.red,
                                     ),
                                   ),
                                   Text(
-                                    ' and save travel time with no waiting time',
+                                    'and save travel time with no waiting time',
                                     style: TextStyle(
                                       fontFamily: 'Montserrat-SemiBold',
-                                      fontSize: 12,
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w600
                                     ),
                                   ),
                                 ],
                               ),
                             ),
                             SizedBox(
-                              height: 10,
+                              height: 20,
                             ),
                             Row(
                               children: <Widget>[
                                 Container(
-                                  width: 125,
-                                  height: 40,
+                                  width: 110,
+                                  height: 35,
                                   decoration: BoxDecoration(
                                     color: Color(0xff296693),
                                     borderRadius: BorderRadius.circular(20),
@@ -292,7 +319,8 @@ class HotelDetails extends StatelessWidget {
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontFamily: 'Montserrat-SemiBold',
-                                        fontSize: 14),
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600),
                                   ),
                                 ),
                                 Text(
@@ -300,23 +328,30 @@ class HotelDetails extends StatelessWidget {
                                   style: TextStyle(
                                     color: Color(0xff7F7F7F),
                                     fontFamily: 'Montserrat-SemiBold',
-                                    fontSize: 12,
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w400,
                                   ),
                                 ),
                               ],
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(top: 15, bottom: 4),
+                                  const EdgeInsets.only(top: 15, bottom: 8),
                               child: Divider(
-                                thickness: 3.5,
+                                thickness: 3,
                                 color: Color.fromRGBO(128, 128, 128, 0.07),
                               ),
                             ),
-                            SvgPicture.asset(
-                              'assets/images/scanf.svg',
-                              height: 40,
-                              color: Colors.grey[300],
+                            Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.only(left:8.0),
+                                child: SvgPicture.asset(
+                                  'assets/images/scanf.svg',
+                                  height: 40,
+                                  color: Colors.grey[300],
+                                ),
+                              ),
                             ),
                           ],
                         ),
